@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://calorie-calculator.example.com/sitemap.xml

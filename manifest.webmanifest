@@ -1,0 +1,12 @@
+{
+  "name": "حاسبة السعرات",
+  "short_name": "حاسبة السعرات",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fbfaf6",
+  "theme_color": "#1d6959",
+  "description": "أدوات عربية مبسطة لحساب السعرات وBMI والماكروز.",
+  "icons": []
+}
