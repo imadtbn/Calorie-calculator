@@ -11,6 +11,7 @@ const links = {
   articles: rootPath + 'articles.html',
   faq: rootPath + 'faq.html',
   about: rootPath + 'about.html',
+  contact: rootPath + 'contact.html',
   privacy: rootPath + 'privacy.html',
   terms: rootPath + 'terms.html',
   disclaimer: rootPath + 'disclaimer.html'
@@ -59,7 +60,7 @@ function renderShell() {
       <div class="footer-grid">
         <div><a class="brand" href="${links.home}"><span class="brand-mark">${icon('leaf', 22)}</span><span class="brand-name">حاسبة السعرات</span></a><p style="color:#b5d3c5;max-width:280px;font-size:.84rem;margin-top:18px">أدوات صحية مبسطة تساعدك على فهم احتياجاتك اليومية واتخاذ قرارات أكثر وعيًا.</p></div>
         <div><div class="footer-title">الأدوات</div><div class="footer-links"><a href="${links.calorie}">حاسبة السعرات اليومية</a><a href="${links.bmi}">حاسبة مؤشر BMI</a><a href="${links.macros}">حاسبة الماكروز</a><a href="${links.water}">حاسبة الماء اليومية</a><a href="${links.ideal}">حاسبة الوزن التقريبي</a><a href="${links.foods}">السعرات في الأطعمة</a></div></div>
-        <div><div class="footer-title">المحتوى</div><div class="footer-links"><a href="${links.articles}">المقالات</a><a href="${links.faq}">الأسئلة الشائعة</a><a href="${links.about}">عن الموقع</a></div></div>
+        <div><div class="footer-title">المحتوى</div><div class="footer-links"><a href="${links.articles}">المقالات</a><a href="${links.faq}">الأسئلة الشائعة</a><a href="${links.about}">عن الموقع</a><a href="${links.contact}">اتصل بنا</a></div></div>
         <div><div class="footer-title">معلومات قانونية</div><div class="footer-links"><a href="${links.privacy}">الخصوصية</a><a href="${links.terms}">شروط الاستخدام</a><a href="${links.disclaimer}">إخلاء المسؤولية</a></div></div>
       </div>
       <div class="footer-bottom"><span>© 2026 حاسبة السعرات. جميع الحقوق محفوظة.</span><span>هذه الأدوات للتقدير والتثقيف وليست تشخيصًا طبيًا.</span></div>

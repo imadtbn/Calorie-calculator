@@ -96,7 +96,7 @@
       return;
     }
 
-    if (['about', 'faq'].includes(page)) {
+    if (['about', 'faq', 'contact', 'privacy'].includes(page)) {
       insertAfter(main.querySelector('.page-hero')?.nextElementSibling, 'display02', 'ad-container--after-content');
     }
   };
