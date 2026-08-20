@@ -55,5 +55,30 @@
     });
     document.getElementById('share-macros')?.addEventListener('click', () => shareResult(`توزيع الماكروز: بروتين ${document.getElementById('macro-protein').textContent}، كربوهيدرات ${document.getElementById('macro-carbs').textContent}، دهون ${document.getElementById('macro-fats').textContent}.`));
   }
-  initCalorie(); initBmi(); initMacros();
+  function initWater() {
+    const form = document.getElementById('water-form'); if (!form) return;
+    form.addEventListener('submit', event => {
+      event.preventDefault(); clearError('water-error');
+      const weight = getNumber('water-weight'); const activity = Number(document.getElementById('water-activity')?.value || 1);
+      if (!validRange(weight, 25, 350)) { showError('water-error', 'أدخل وزنًا بين 25 و350 كجم للحصول على تقدير مناسب.'); return; }
+      const liters = (weight * 30 * activity) / 1000;
+      document.getElementById('water-liters').textContent = liters.toFixed(1);
+      document.getElementById('water-cups').textContent = formatNumber(liters * 4.1667);
+      document.getElementById('water-result').hidden = false; document.getElementById('water-empty').hidden = true; document.getElementById('water-result').classList.add('show');
+    });
+  }
+
+  function initIdealWeight() {
+    const form = document.getElementById('ideal-form'); if (!form) return;
+    form.addEventListener('submit', event => {
+      event.preventDefault(); clearError('ideal-error');
+      const height = getNumber('ideal-height'); const gender = form.querySelector('input[name="ideal-gender"]:checked')?.value || 'male';
+      if (!validRange(height, 100, 240)) { showError('ideal-error', 'أدخل طولًا بين 100 و240 سم.'); return; }
+      const inches = Math.max(0, height / 2.54 - 60); const base = gender === 'female' ? 45.5 : 50; const estimate = base + (2.3 * inches);
+      document.getElementById('ideal-value').textContent = formatNumber(estimate, 1);
+      document.getElementById('ideal-range').textContent = `${formatNumber(estimate - 5, 1)} – ${formatNumber(estimate + 5, 1)} كجم`;
+      document.getElementById('ideal-result').hidden = false; document.getElementById('ideal-empty').hidden = true; document.getElementById('ideal-result').classList.add('show');
+    });
+  }
+  initCalorie(); initBmi(); initMacros(); initWater(); initIdealWeight();
 })();

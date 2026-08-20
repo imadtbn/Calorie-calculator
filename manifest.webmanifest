@@ -8,5 +8,7 @@
   "background_color": "#fbfaf6",
   "theme_color": "#1d6959",
   "description": "أدوات عربية مبسطة لحساب السعرات وBMI والماكروز.",
-  "icons": []
+  "icons": [
+    {"src":"assets/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
 }

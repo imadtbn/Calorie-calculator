@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">حاسبة السعرات</title><desc id="desc">أدوات عربية لفهم السعرات والماكروز ومؤشر كتلة الجسم</desc>
+  <rect width="1200" height="630" fill="#e7f3ed"/>
+  <circle cx="1040" cy="80" r="240" fill="#f3c76b" opacity=".55"/><circle cx="110" cy="590" r="260" fill="#bfe2d2" opacity=".7"/>
+  <rect x="84" y="96" width="92" height="92" rx="28" fill="#1d6959"/><path d="M130 163c-18-10-24-30-14-47 11-18 34-20 51-20-1 21-6 42-21 57-5 5-10 8-16 10Z" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M121 167c14-24 29-39 49-51" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+  <text x="1084" y="254" text-anchor="end" font-family="Arial, sans-serif" font-size="68" font-weight="700" fill="#17342e">حاسبة السعرات</text>
+  <text x="1084" y="334" text-anchor="end" font-family="Arial, sans-serif" font-size="34" fill="#54706a">احسب احتياجك اليومي، وافهم أرقامك بهدوء.</text>
+  <rect x="720" y="414" width="364" height="92" rx="18" fill="#fff" stroke="#dce8e1"/><text x="1050" y="470" text-anchor="end" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#1d6959">السعرات · BMI · الماكروز</text>
+</svg>
