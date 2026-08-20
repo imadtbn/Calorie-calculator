@@ -64,7 +64,7 @@
       const liters = (weight * 30 * activity) / 1000;
       document.getElementById('water-liters').textContent = liters.toFixed(1);
       document.getElementById('water-cups').textContent = formatNumber(liters * 4.1667);
-      document.getElementById('water-result').hidden = false; document.getElementById('water-empty').hidden = true; document.getElementById('water-result').classList.add('show');
+      document.getElementById('water-result').hidden = false; document.getElementById('water-empty').hidden = true; document.getElementById('water-result').classList.add('show'); document.getElementById('water-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
   }
 

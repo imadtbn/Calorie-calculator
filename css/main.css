@@ -191,6 +191,21 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
 }
 @media (max-width: 650px) {
   html { font-size: 15px; }
+  body[data-page="water"] .page-hero { padding-top: 32px; padding-bottom: 28px; }
+  body[data-page="water"] .page-hero .lead { max-width: 34rem; line-height: 1.8; }
+  body[data-page="water"] .section { padding-top: 38px; padding-bottom: 46px; }
+  body[data-page="water"] .calculator-layout { gap: 18px; }
+  body[data-page="water"] .calculator-card { padding: 22px 18px; border-radius: 18px; }
+  body[data-page="water"] .calculator-card h2 { font-size: 1.7rem; }
+  body[data-page="water"] .calculator-card .notice { margin-top: 16px; font-size: .78rem; }
+  body[data-page="water"] .field input, body[data-page="water"] .field select { min-height: 50px; font-size: 1rem; }
+  body[data-page="water"] .calculator-card .btn { min-height: 50px; }
+  body[data-page="water"] .result-panel { border-radius: 18px; padding: 22px 18px; min-height: 300px; }
+  body[data-page="water"] .result-main { margin-bottom: 16px; }
+  body[data-page="water"] .result-main strong { font-size: clamp(2.65rem, 16vw, 3.35rem); }
+  body[data-page="water"] .result-note { line-height: 1.7; }
+  body[data-page="water"] .section.alt .section-heading { margin-bottom: 0; }
+  body[data-page="water"] .section.alt h2 { font-size: 1.65rem; }
   .container { width: calc(100% - 28px); max-width: 1160px; }
   h1, h2, h3, p, a, button, label, input, select { overflow-wrap: anywhere; }
   .section { overflow: clip; }
