@@ -163,6 +163,32 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
 .content-with-aside { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 34px; align-items: start; }
 .content-with-aside .ad-slot { position: sticky; top: 100px; }
 
+.water-benefit-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.water-info-card { min-width: 0; padding: 22px; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 10px 30px rgba(23,52,46,.05); }
+.water-info-icon { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 13px; color: var(--teal-dark); background: var(--mint); border-radius: 13px; font-size: 1.25rem; font-weight: 700; }
+.water-info-card h3 { margin: 0 0 8px; font-size: 1rem; }
+.water-info-card p { margin: 0; color: var(--ink-soft); font-size: .87rem; line-height: 1.8; }
+.water-tips-layout { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: 42px; align-items: start; }
+.tip-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+.tip-item { display: flex; flex-direction: column; gap: 6px; padding: 17px; background: rgba(255,255,255,.68); border: 1px solid var(--line); border-radius: 15px; }
+.tip-item strong { color: var(--teal-dark); font-size: .92rem; }
+.tip-item span { color: var(--ink-soft); font-size: .82rem; line-height: 1.75; }
+.water-health-note { margin-top: 28px; padding: 17px 19px; color: #6f5b2d; background: #fff8df; border: 1px solid #efdfaa; border-radius: 15px; font-size: .86rem; }
+.water-health-note strong { color: #8a6e27; }
+.signs-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+.signs-row span { padding: 9px 14px; color: var(--teal-dark); background: var(--mint); border: 1px solid #cfe5d9; border-radius: 999px; font-size: .84rem; }
+.water-alert { display: flex; gap: 12px; align-items: flex-start; margin-top: 25px; padding: 17px 19px; color: #70443b; background: #fff0eb; border: 1px solid #f1c7bb; border-right: 4px solid var(--coral); border-radius: 15px; font-size: .86rem; }
+.water-alert strong { flex: 0 0 auto; color: #9a4d3b; }
+.water-faq-list { display: grid; gap: 10px; max-width: 860px; margin: 0 auto; }
+.water-faq-list details { padding: 0 19px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; }
+.water-faq-list summary { padding: 16px 0; color: var(--teal-dark); font-weight: 700; cursor: pointer; list-style: none; }
+.water-faq-list summary::-webkit-details-marker { display: none; }
+.water-faq-list summary::after { content: '+'; float: left; color: var(--coral); font-size: 1.25rem; line-height: 1; }
+.water-faq-list details[open] summary::after { content: '−'; }
+.water-faq-list details p { margin: 0; padding: 0 0 17px; color: var(--ink-soft); font-size: .88rem; line-height: 1.9; }
+.water-sources { max-width: 860px; margin: 24px auto 0; color: var(--ink-soft); font-size: .78rem; text-align: center; }
+.water-sources a { display: inline-block; margin-inline-start: 10px; color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+
 .site-footer { background: var(--teal-dark); color: #d8ebe1; padding: 58px 0 25px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 34px; padding-bottom: 38px; }
 .site-footer .brand { color: #fff; }
@@ -185,6 +211,8 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .hero-card { max-width: 520px; margin: 0 auto; }
   .result-panel { position: static; }
   .grid-3, .article-grid { grid-template-columns: repeat(2,1fr); }
+  .water-benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .water-tips-layout { grid-template-columns: 1fr; gap: 24px; }
   .footer-grid { grid-template-columns: repeat(2,1fr); }
   .content-with-aside { grid-template-columns: 1fr; }
   .content-with-aside .ad-slot { position: static; order: -1; min-height: 70px; }
@@ -206,6 +234,17 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   body[data-page="water"] .result-note { line-height: 1.7; }
   body[data-page="water"] .section.alt .section-heading { margin-bottom: 0; }
   body[data-page="water"] .section.alt h2 { font-size: 1.65rem; }
+  .water-benefit-grid, .tip-list { grid-template-columns: 1fr; gap: 12px; }
+  .water-info-card { padding: 18px; }
+  .tip-item { padding: 15px; }
+  .water-health-note { margin-top: 20px; font-size: .8rem; }
+  .signs-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .signs-row span { padding: 8px 7px; text-align: center; font-size: .76rem; }
+  .water-alert { flex-direction: column; gap: 4px; margin-top: 18px; padding: 15px; font-size: .8rem; }
+  .water-faq-list details { padding-inline: 15px; }
+  .water-faq-list summary { padding: 14px 0; font-size: .9rem; }
+  .water-faq-list details p { font-size: .82rem; }
+  .water-sources { line-height: 2; }
   .container { width: calc(100% - 28px); max-width: 1160px; }
   h1, h2, h3, p, a, button, label, input, select { overflow-wrap: anywhere; }
   .section { overflow: clip; }
