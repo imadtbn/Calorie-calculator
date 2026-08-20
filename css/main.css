@@ -19,8 +19,10 @@
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--cream); color: var(--ink); font-family: 'Cairo', sans-serif; line-height: 1.75; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body { min-height: 100vh; min-height: 100dvh; margin: 0; display: flex; flex-direction: column; overflow-x: hidden; background: var(--cream); color: var(--ink); font-family: 'Cairo', sans-serif; line-height: 1.75; }
+main { width: 100%; flex: 1 0 auto; }
+.site-footer { width: 100%; flex-shrink: 0; margin-top: auto; }
 body::selection { background: var(--mint-deep); color: var(--teal-dark); }
 a { color: inherit; text-decoration: none; }
 button, input, select { font: inherit; }
@@ -188,7 +190,23 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .content-with-aside .ad-slot { position: static; order: -1; min-height: 70px; }
 }
 @media (max-width: 650px) {
-  .container { width: min(100% - 28px, 1160px); }
+  html { font-size: 15px; }
+  .container { width: calc(100% - 28px); max-width: 1160px; }
+  h1, h2, h3, p, a, button, label, input, select { overflow-wrap: anywhere; }
+  .section { overflow: clip; }
+  .page-hero { padding: 40px 0 34px; }
+  .page-hero h1 { font-size: clamp(2rem, 9vw, 3rem); }
+  .lead { font-size: 1rem; }
+  .hero-grid { min-width: 0; }
+  .hero-card { transform: none; padding: 16px; }
+  .hero-card-inner { transform: none; padding: 20px; }
+  .result-panel { min-width: 0; padding: 22px; }
+  .result-main strong { font-size: clamp(2.4rem, 12vw, 3.35rem); }
+  .search-row { flex-direction: column; }
+  .search-row input, .search-row select { width: 100%; min-width: 0; }
+  .table-wrap { max-width: 100%; }
+  .site-footer { padding: 42px 0 20px; }
+  .site-footer .container { width: calc(100% - 28px); }
   .navbar { min-height: 68px; }
   .nav-toggle { display: block; }
   .nav-links { display: none; position: absolute; top: 68px; right: 14px; left: 14px; padding: 10px; background: var(--paper); border: 1px solid var(--line); border-radius: 15px; box-shadow: var(--shadow); flex-direction: column; align-items: stretch; }
