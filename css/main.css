@@ -189,6 +189,16 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
 .water-sources { max-width: 860px; margin: 24px auto 0; color: var(--ink-soft); font-size: .78rem; text-align: center; }
 .water-sources a { display: inline-block; margin-inline-start: 10px; color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
 
+.ad-container { position: relative; width: min(1160px, calc(100% - 36px)); min-height: 96px; margin: 28px auto; padding: 10px 0; overflow: hidden; text-align: center; }
+.ad-container__label { display: block; margin-bottom: 5px; color: #83988f; font-size: .65rem; line-height: 1.2; letter-spacing: .04em; }
+.ad-container .adsbygoogle { display: block; width: 100%; min-height: 74px; }
+.ad-container--fluid { min-height: 104px; }
+.ad-container--autorelaxed { min-height: 180px; }
+.ad-container--sidebar { width: 100%; min-height: 240px; margin: 0; padding: 10px 0; background: rgba(231,243,237,.42); border: 1px dashed var(--mint-deep); border-radius: 14px; }
+.ad-container--sidebar .adsbygoogle { min-height: 200px; }
+.ad-container--between-sections { margin-top: 8px; margin-bottom: 32px; }
+.ad-container--bottom { margin-top: 34px; margin-bottom: 34px; }
+
 .site-footer { background: var(--teal-dark); color: #d8ebe1; padding: 58px 0 25px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 34px; padding-bottom: 38px; }
 .site-footer .brand { color: #fff; }
@@ -245,6 +255,13 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .water-faq-list summary { padding: 14px 0; font-size: .9rem; }
   .water-faq-list details p { font-size: .82rem; }
   .water-sources { line-height: 2; }
+  .ad-container { width: calc(100% - 28px); min-height: 82px; margin: 22px auto; padding: 8px 0; }
+  .ad-container .adsbygoogle { min-height: 62px; }
+  .ad-container--autorelaxed { min-height: 150px; }
+  .ad-container--sidebar { width: 100%; min-height: 180px; margin: 0; }
+  .ad-container--sidebar .adsbygoogle { min-height: 150px; }
+  .ad-container--after-calculator { margin-top: 8px; }
+  .ad-container--bottom { margin-top: 26px; margin-bottom: 26px; }
   .container { width: calc(100% - 28px); max-width: 1160px; }
   h1, h2, h3, p, a, button, label, input, select { overflow-wrap: anywhere; }
   .section { overflow: clip; }
