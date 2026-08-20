@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main tools -->
   <url><loc>https://imadtbn.github.io/Calorie-calculator/</loc><lastmod>2026-08-20</lastmod></url>
   <url><loc>https://imadtbn.github.io/Calorie-calculator/calorie-calculator.html</loc><lastmod>2026-08-20</lastmod></url>
   <url><loc>https://imadtbn.github.io/Calorie-calculator/bmi-calculator.html</loc><lastmod>2026-08-20</lastmod></url>
@@ -7,6 +8,8 @@
   <url><loc>https://imadtbn.github.io/Calorie-calculator/water-calculator.html</loc><lastmod>2026-08-20</lastmod></url>
   <url><loc>https://imadtbn.github.io/Calorie-calculator/ideal-weight-calculator.html</loc><lastmod>2026-08-20</lastmod></url>
   <url><loc>https://imadtbn.github.io/Calorie-calculator/food-calories.html</loc><lastmod>2026-08-20</lastmod></url>
+
+  <!-- Content hub and articles -->
   <url><loc>https://imadtbn.github.io/Calorie-calculator/articles.html</loc><lastmod>2026-08-20</lastmod></url>
   <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/bmr-vs-tdee.html</loc><lastmod>2026-08-20</lastmod></url>
   <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/calorie-deficit.html</loc><lastmod>2026-08-20</lastmod></url>
@@ -16,6 +19,8 @@
   <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/how-to-count-calories.html</loc><lastmod>2026-08-20</lastmod></url>
   <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/calorie-needs-change.html</loc><lastmod>2026-08-20</lastmod></url>
   <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/water-and-exercise.html</loc><lastmod>2026-08-20</lastmod></url>
+
+  <!-- Trust and legal pages -->
   <url><loc>https://imadtbn.github.io/Calorie-calculator/faq.html</loc><lastmod>2026-08-20</lastmod></url>
   <url><loc>https://imadtbn.github.io/Calorie-calculator/about.html</loc><lastmod>2026-08-20</lastmod></url>
   <url><loc>https://imadtbn.github.io/Calorie-calculator/contact.html</loc><lastmod>2026-08-20</lastmod></url>

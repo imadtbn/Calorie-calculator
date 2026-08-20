@@ -1,3 +1,8 @@
+# robots.txt for https://imadtbn.github.io/Calorie-calculator/
+# Public HTML pages and the assets required to render them are crawlable.
 User-agent: *
 Allow: /
+Disallow: /SEO-SETUP.md
+
+# Submit the canonical XML sitemap for this GitHub Pages site.
 Sitemap: https://imadtbn.github.io/Calorie-calculator/sitemap.xml
