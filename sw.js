@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calorie-calculator-v4';
+const CACHE_NAME = 'calorie-calculator-v5';
 const CORE_ASSETS = ['./', './index.html', './css/main.css', './js/app.js', './js/deferred-adsense.js', './js/comments.js'];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS))); self.skipWaiting(); });
 self.addEventListener('activate', event => { event.waitUntil(self.clients.claim()); });

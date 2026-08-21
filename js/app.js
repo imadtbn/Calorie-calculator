@@ -124,10 +124,109 @@ function mountArticleShare() {
   document.querySelector('main')?.append(section);
 }
 
+function mountRelatedArticles() {
+  const isPublishedArticle = document.body.dataset.page === 'articles' && /\/articles\/[^/]+\.html$/.test(window.location.pathname);
+  if (!isPublishedArticle || document.querySelector('.related-articles')) return;
+
+  const currentSlug = window.location.pathname.split('/').pop().replace(/\.html$/, '');
+  const articleData = {
+    'bmr-vs-tdee': [
+      ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'خطوات هادئة ومستدامة بدل الحلول السريعة.', 'calorie-deficit.webp'],
+      ['macros-guide', 'دليل مبسط للماكروز', 'توازن الطبق', 'تعرّف على دور البروتين والدهون والكربوهيدرات.', 'macros-guide.webp'],
+      ['how-to-count-calories', 'كيف تحسب السعرات بطريقة عملية؟', 'أساسيات التغذية', 'طريقة أبسط لفهم الأرقام دون تعقيد.', 'how-to-count-calories.webp']
+    ],
+    'calorie-deficit': [
+      ['bmr-vs-tdee', 'ما الفرق بين BMR وTDEE؟', 'أساسيات التغذية', 'افهم الرقم الذي تبدأ منه قبل تحديد هدفك.', 'bmr-tdee.webp'],
+      ['healthy-weight', 'ما معنى الوزن الصحي؟', 'وعي صحي', 'نظرة متوازنة إلى الوزن بعيدًا عن رقم واحد.', 'healthy-weight.webp'],
+      ['calorie-needs-change', 'لماذا تتغير احتياجاتك من السعرات؟', 'عادات يومية', 'تعرف على العوامل التي تؤثر في احتياجك اليومي.', 'calorie-needs-change.webp']
+    ],
+    'calorie-needs-change': [
+      ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'خطوات هادئة ومستدامة بدل الحلول السريعة.', 'calorie-deficit.webp'],
+      ['bmr-vs-tdee', 'ما الفرق بين BMR وTDEE؟', 'أساسيات التغذية', 'افهم العلاقة بين الأيض والاحتياج اليومي.', 'bmr-tdee.webp'],
+      ['healthy-weight', 'ما معنى الوزن الصحي؟', 'وعي صحي', 'نظرة متوازنة إلى الوزن بعيدًا عن رقم واحد.', 'healthy-weight.webp']
+    ],
+    'healthy-weight': [
+      ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'تقدم تدريجي بدل الحلول السريعة.', 'calorie-deficit.webp'],
+      ['calorie-needs-change', 'لماذا تتغير احتياجاتك من السعرات؟', 'عادات يومية', 'تعرف على العوامل التي تؤثر في احتياجك اليومي.', 'calorie-needs-change.webp'],
+      ['bmr-vs-tdee', 'ما الفرق بين BMR وTDEE؟', 'أساسيات التغذية', 'افهم الرقم الذي تبدأ منه قبل تحديد هدفك.', 'bmr-tdee.webp']
+    ],
+    'how-much-water': [
+      ['water-and-exercise', 'الماء والرياضة: ماذا تحتاج؟', 'الترطيب', 'كيف يتغير احتياجك للماء مع الحركة.', 'water-and-exercise.webp'],
+      ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'خطوات هادئة ومستدامة بدل الحلول السريعة.', 'calorie-deficit.webp'],
+      ['macros-guide', 'دليل مبسط للماكروز', 'توازن الطبق', 'تعرّف على دور المغذيات الأساسية.', 'macros-guide.webp']
+    ],
+    'how-to-count-calories': [
+      ['bmr-vs-tdee', 'ما الفرق بين BMR وTDEE؟', 'أساسيات التغذية', 'افهم المصطلحات التي تظهر في الحاسبات.', 'bmr-tdee.webp'],
+      ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'استخدم الأرقام كدليل لا كقاعدة جامدة.', 'calorie-deficit.webp'],
+      ['calorie-needs-change', 'لماذا تتغير احتياجاتك من السعرات؟', 'عادات يومية', 'تعرف على العوامل المؤثرة في احتياجك.', 'calorie-needs-change.webp']
+    ],
+    'macros-guide': [
+      ['bmr-vs-tdee', 'ما الفرق بين BMR وTDEE؟', 'أساسيات التغذية', 'افهم احتياجك اليومي قبل توزيع الماكروز.', 'bmr-tdee.webp'],
+      ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'خطوات هادئة ومستدامة بدل الحلول السريعة.', 'calorie-deficit.webp'],
+      ['how-to-count-calories', 'كيف تحسب السعرات بطريقة عملية؟', 'أساسيات التغذية', 'طريقة أبسط لفهم الأرقام اليومية.', 'how-to-count-calories.webp']
+    ],
+    'water-and-exercise': [
+      ['how-much-water', 'كم تحتاج من الماء يوميًا؟', 'الترطيب', 'تقدير بسيط لاحتياجك اليومي من الماء.', 'how-much-water.webp'],
+      ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'تقدم تدريجي بدل الحلول السريعة.', 'calorie-deficit.webp'],
+      ['macros-guide', 'دليل مبسط للماكروز', 'توازن الطبق', 'تعرّف على دور البروتين والدهون والكربوهيدرات.', 'macros-guide.webp']
+    ]
+  };
+  const related = articleData[currentSlug] || [];
+  if (!related.length) return;
+
+  const section = document.createElement('section');
+  section.className = 'related-articles section';
+  section.setAttribute('aria-labelledby', 'related-articles-title');
+  const container = document.createElement('div');
+  container.className = 'container';
+  const heading = document.createElement('div');
+  heading.className = 'section-heading related-heading';
+  heading.innerHTML = '<span class="eyebrow">واصل القراءة</span><h2 id="related-articles-title">أحدث المقالات المرتبطة</h2><p>موضوعات إضافية تساعدك على تحويل المعرفة إلى خطوات عملية.</p>';
+  const grid = document.createElement('div');
+  grid.className = 'related-articles-grid';
+
+  related.forEach(([slug, title, category, description, image]) => {
+    const card = document.createElement('a');
+    card.className = 'related-article-card';
+    card.href = `${rootPath}articles/${slug}.html`;
+    card.setAttribute('aria-label', `قراءة مقال: ${title}`);
+    const imageElement = document.createElement('img');
+    imageElement.src = `${rootPath}assets/articles/${image}`;
+    imageElement.alt = title;
+    imageElement.width = 1200;
+    imageElement.height = 900;
+    imageElement.loading = 'lazy';
+    imageElement.decoding = 'async';
+    const art = document.createElement('div');
+    art.className = 'related-article-art';
+    art.append(imageElement);
+    const body = document.createElement('div');
+    body.className = 'related-article-body';
+    const categoryElement = document.createElement('span');
+    categoryElement.className = 'related-article-category';
+    categoryElement.textContent = category;
+    const titleElement = document.createElement('h3');
+    titleElement.textContent = title;
+    const descriptionElement = document.createElement('p');
+    descriptionElement.textContent = description;
+    const linkElement = document.createElement('span');
+    linkElement.className = 'related-article-link';
+    linkElement.textContent = 'اقرأ المقال ←';
+    body.append(categoryElement, titleElement, descriptionElement, linkElement);
+    card.append(art, body);
+    grid.append(card);
+  });
+
+  container.append(heading, grid);
+  section.append(container);
+  document.querySelector('main')?.append(section);
+}
+
 window.CalorieApp = { links, icon, formatNumber, getNumber, showError, clearError, validRange, shareResult };
 renderShell();
 observeReveals();
 mountArticleShare();
+mountRelatedArticles();
 
 if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
   window.addEventListener('load', () => navigator.serviceWorker.register(`${rootPath}sw.js`).catch(() => {}));
