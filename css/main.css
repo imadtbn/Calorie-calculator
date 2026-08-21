@@ -427,3 +427,21 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .ad-container--between-sections { margin-bottom: 24px; }
   .ad-container--bottom { margin-top: 26px; margin-bottom: 24px; }
 }
+
+/* Brand icon asset */
+.brand-mark {
+  overflow: hidden;
+  padding: 2px;
+  background: var(--mint);
+}
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+@media (max-width: 650px) {
+  .brand-mark { width: 36px; height: 36px; padding: 2px; }
+  .brand-logo { width: 100%; height: 100%; }
+}
