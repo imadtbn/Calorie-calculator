@@ -88,9 +88,46 @@ async function shareResult(text) {
   try { await navigator.clipboard.writeText(text); alert('تم نسخ النتيجة. يمكنك مشاركتها الآن.'); } catch (_) { alert(text); }
 }
 
+function mountArticleShare() {
+  const isPublishedArticle = document.body.dataset.page === 'articles' && /\/articles\/[^/]+\.html$/.test(window.location.pathname);
+  if (!isPublishedArticle || document.querySelector('.article-share')) return;
+
+  const title = document.querySelector('.article-hero-copy h1')?.textContent?.trim() || document.title;
+  const canonical = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
+  const shareText = `${title} — من حاسبة السعرات`;
+  const encodedUrl = encodeURIComponent(canonical);
+  const encodedText = encodeURIComponent(shareText);
+
+  const section = document.createElement('section');
+  section.className = 'article-share section';
+  section.setAttribute('aria-labelledby', 'article-share-title');
+  section.innerHTML = `<div class="container"><div class="article-share-card"><div class="article-share-copy"><span class="eyebrow">شارك المعرفة</span><h2 id="article-share-title">هل كان المقال مفيدًا؟</h2><p>ساعد شخصًا آخر على الوصول إلى معلومات غذائية أوضح.</p></div><div class="share-actions" aria-label="خيارات مشاركة المقال"><a class="share-button share-whatsapp" href="https://wa.me/?text=${encodedText}%20${encodedUrl}" target="_blank" rel="noopener noreferrer" aria-label="مشاركة المقال عبر واتساب">واتساب</a><a class="share-button share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" target="_blank" rel="noopener noreferrer" aria-label="مشاركة المقال عبر فيسبوك">فيسبوك</a><a class="share-button share-x" href="https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}" target="_blank" rel="noopener noreferrer" aria-label="مشاركة المقال عبر منصة X">X</a><a class="share-button share-telegram" href="https://t.me/share/url?url=${encodedUrl}&text=${encodedText}" target="_blank" rel="noopener noreferrer" aria-label="مشاركة المقال عبر تيليجرام">تيليجرام</a><button class="share-button share-copy" type="button" aria-label="نسخ رابط المقال">نسخ الرابط</button><button class="share-button share-native" type="button" aria-label="مشاركة المقال من الجهاز">مشاركة</button></div><p class="share-status" role="status" aria-live="polite"></p></div></div>`;
+
+  const copyButton = section.querySelector('.share-copy');
+  const nativeButton = section.querySelector('.share-native');
+  const status = section.querySelector('.share-status');
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(canonical);
+      status.textContent = 'تم نسخ رابط المقال.';
+    } catch (_) {
+      status.textContent = canonical;
+    }
+  };
+  copyButton.addEventListener('click', copyLink);
+  nativeButton.addEventListener('click', async () => {
+    if (navigator.share) {
+      try { await navigator.share({ title, text: shareText, url: canonical }); status.textContent = 'تم فتح خيارات المشاركة.'; return; } catch (_) {}
+    }
+    await copyLink();
+  });
+  document.querySelector('main')?.append(section);
+}
+
 window.CalorieApp = { links, icon, formatNumber, getNumber, showError, clearError, validRange, shareResult };
 renderShell();
 observeReveals();
+mountArticleShare();
 
 if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
   window.addEventListener('load', () => navigator.serviceWorker.register(`${rootPath}sw.js`).catch(() => {}));

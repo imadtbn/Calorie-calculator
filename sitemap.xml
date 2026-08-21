@@ -1,30 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main tools -->
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/calorie-calculator.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/bmi-calculator.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/macros-calculator.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/water-calculator.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/ideal-weight-calculator.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/food-calories.html</loc><lastmod>2026-08-20</lastmod></url>
-
-  <!-- Content hub and articles -->
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/bmr-vs-tdee.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/calorie-deficit.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/macros-guide.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/how-much-water.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/healthy-weight.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/how-to-count-calories.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/calorie-needs-change.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/water-and-exercise.html</loc><lastmod>2026-08-20</lastmod></url>
-
-  <!-- Trust and legal pages -->
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/faq.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/about.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/contact.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/privacy.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/terms.html</loc><lastmod>2026-08-20</lastmod></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/disclaimer.html</loc><lastmod>2026-08-20</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Generated from public canonical HTML pages; verification files are intentionally excluded. -->
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/about.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>عن حاسبة السعرات | أدوات غذائية عربية مبسطة</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/articles-hero.webp</image:loc>
+      <image:title>مقالات السعرات والتغذية والماء | دليل عربي</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/bmi-calculator.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>حاسبة BMI ومؤشر كتلة الجسم حسب الطول والوزن</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/calorie-calculator.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>حاسبة السعرات الحرارية اليومية مجانًا | BMR وTDEE</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/contact.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>اتصل بنا | حاسبة السعرات</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/disclaimer.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>إخلاء المسؤولية الطبية | حاسبة السعرات</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/faq.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>الأسئلة الشائعة عن السعرات وBMI والماكروز</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/food-calories.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>السعرات في الأطعمة | جدول السعرات والبروتين والكربوهيدرات</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/ideal-weight-calculator.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>حاسبة الوزن المثالي حسب الطول والجنس | تقدير تقريبي</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>حاسبة السعرات الحرارية اليومية مجانًا | BMR وTDEE</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/macros-calculator.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>حاسبة الماكروز | احسب البروتين والكربوهيدرات والدهون</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/privacy.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>سياسة الخصوصية والإعلانات | حاسبة السعرات</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/terms.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>شروط الاستخدام | حاسبة السعرات</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/water-calculator.html</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>حاسبة الماء اليومية حسب الوزن والنشاط</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/bmr-vs-tdee.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</image:loc>
+      <image:title>ما الفرق بين BMR وTDEE؟ شرح معدل الأيض والاحتياج اليومي</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/calorie-deficit.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/calorie-deficit.webp</image:loc>
+      <image:title>العجز الحراري لخسارة الوزن | دليل معتدل ومستدام</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/calorie-needs-change.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</image:loc>
+      <image:title>لماذا تختلف احتياجات السعرات بين الأشخاص؟ شرح BMR وTDEE</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/healthy-weight.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</image:loc>
+      <image:title>ما هو الوزن الصحي؟ ولماذا لا يوجد وزن مثالي واحد؟</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/how-much-water.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc>
+      <image:title>كم يحتاج الجسم من الماء يوميًا؟ دليل مبسط</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/how-to-count-calories.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/calorie-deficit.webp</image:loc>
+      <image:title>كيف تحسب السعرات في الوجبة؟ دليل قراءة الحصص والملصق الغذائي</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/macros-guide.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/macros-guide.webp</image:loc>
+      <image:title>دليل الماكروز: البروتين والكربوهيدرات والدهون</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/water-and-exercise.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc>
+      <image:title>الماء والرياضة: كيف تحافظ على الترطيب أثناء التمرين؟</image:title>
+    </image:image>
+  </url>
 </urlset>
