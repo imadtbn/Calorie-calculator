@@ -445,3 +445,136 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .brand-mark { width: 36px; height: 36px; padding: 2px; }
   .brand-logo { width: 100%; height: 100%; }
 }
+
+/* Article page visual storytelling */
+.article-page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(58px, 8vw, 94px) 0 clamp(50px, 7vw, 78px);
+  background: linear-gradient(115deg, #d9eee3 0%, var(--mint) 56%, #f8eee2 100%);
+}
+.article-page-hero::before,
+.article-page-hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.article-page-hero::before {
+  width: 340px;
+  height: 340px;
+  left: -150px;
+  bottom: -210px;
+  background: rgba(29, 105, 89, .1);
+}
+.article-page-hero::after {
+  width: 220px;
+  height: 220px;
+  right: 5%;
+  top: -145px;
+  background: rgba(235, 128, 99, .13);
+}
+.article-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, .95fr);
+  align-items: center;
+  gap: clamp(30px, 6vw, 76px);
+}
+.article-hero-copy { max-width: 660px; }
+.article-hero-copy h1 { max-width: 620px; margin-bottom: 17px; }
+.article-hero-copy .lead { max-width: 590px; margin: 0; }
+.article-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 25px;
+}
+.article-hero-points span {
+  padding: 7px 13px;
+  color: var(--teal-dark);
+  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(29,105,89,.14);
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 700;
+}
+.article-hero-art {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--paper);
+  border: 9px solid rgba(255,255,255,.68);
+  border-radius: 28px;
+  box-shadow: 0 24px 55px rgba(23,52,46,.15);
+  transform: rotate(-1.5deg);
+}
+.article-hero-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(18,72,61,0) 55%, rgba(18,72,61,.1) 100%);
+}
+.article-hero-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.article-page-hero .breadcrumbs { margin-bottom: 22px; }
+
+.article-card .article-art {
+  position: relative;
+  height: 190px;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(135deg, var(--teal), #8bbba4);
+}
+.article-card .article-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(18,72,61,0) 35%, rgba(18,72,61,.72) 100%);
+}
+.article-card .article-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .45s var(--ease-out), filter .45s var(--ease-out);
+}
+.article-card .article-art span {
+  position: absolute;
+  right: 18px;
+  bottom: 15px;
+  z-index: 2;
+  padding: 6px 11px;
+  color: #fff;
+  background: rgba(18,72,61,.68);
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  font-size: .76rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+}
+.article-card:hover .article-art img { transform: scale(1.055); filter: saturate(1.06); }
+.article-page-hero + .section .article-card { transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out); }
+.article-page-hero + .section .article-card:hover { transform: translateY(-5px); box-shadow: 0 18px 35px rgba(23,52,46,.1); }
+
+@media (max-width: 900px) {
+  .article-hero-grid { grid-template-columns: 1fr; gap: 30px; }
+  .article-hero-art { order: -1; width: min(100%, 720px); margin: 0 auto; }
+  .article-hero-copy { max-width: 720px; }
+}
+@media (max-width: 650px) {
+  .article-page-hero { padding: 34px 0 40px; }
+  .article-page-hero .breadcrumbs { margin-bottom: 15px; }
+  .article-hero-art { border-width: 5px; border-radius: 21px; transform: none; }
+  .article-hero-copy h1 { font-size: clamp(2rem, 10vw, 2.8rem); }
+  .article-hero-points { gap: 7px; margin-top: 19px; }
+  .article-hero-points span { padding: 6px 10px; font-size: .73rem; }
+  .article-card .article-art { height: 175px; }
+}
