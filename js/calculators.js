@@ -80,5 +80,50 @@
       document.getElementById('ideal-result').hidden = false; document.getElementById('ideal-empty').hidden = true; document.getElementById('ideal-result').classList.add('show');
     });
   }
-  initCalorie(); initBmi(); initMacros(); initWater(); initIdealWeight();
+
+function parseDateInput(id) {
+  const value = document.getElementById(id)?.value || '';
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
+  const [year, month, day] = value.split('-').map(Number);
+  const date = new Date(year, month - 1, day);
+  return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day ? date : null;
+}
+function addDays(date, days) { const next = new Date(date); next.setDate(next.getDate() + days); return next; }
+function formatArabicDate(date) { return new Intl.DateTimeFormat('ar', { day: 'numeric', month: 'long', year: 'numeric' }).format(date); }
+function initDueDate() {
+  const form = document.getElementById('pregnancy-due-date-form'); if (!form) return;
+  form.addEventListener('submit', event => {
+    event.preventDefault(); clearError('due-error'); const lmp = parseDateInput('due-lmp');
+    if (!lmp || lmp > new Date()) { showError('due-error', 'أدخلي تاريخًا صحيحًا لا يتجاوز تاريخ اليوم.'); return; }
+    document.getElementById('due-date').textContent = formatArabicDate(addDays(lmp, 280));
+    document.getElementById('due-empty').hidden = true; document.getElementById('due-result').hidden = false; document.getElementById('due-result').classList.add('show');
+  });
+}
+function initFertileWindow() {
+  const form = document.getElementById('fertile-window-form'); if (!form) return;
+  form.addEventListener('submit', event => {
+    event.preventDefault(); clearError('fertile-error'); const lmp = parseDateInput('fertile-lmp'); const cycle = getNumber('fertile-cycle');
+    if (!lmp || lmp > new Date() || !validRange(cycle, 21, 40)) { showError('fertile-error', 'أدخلي تاريخًا صحيحًا وطول دورة بين 21 و40 يومًا.'); return; }
+    const ovulation = addDays(lmp, cycle - 14); const start = addDays(ovulation, -5); const end = addDays(ovulation, 1);
+    document.getElementById('fertile-ovulation').textContent = formatArabicDate(ovulation);
+    document.getElementById('fertile-window').textContent = `${formatArabicDate(start)} — ${formatArabicDate(end)}`;
+    document.getElementById('fertile-empty').hidden = true; document.getElementById('fertile-result').hidden = false; document.getElementById('fertile-result').classList.add('show');
+  });
+}
+function initPrediabetes() {
+  const form = document.getElementById('prediabetes-risk-form'); if (!form) return;
+  form.addEventListener('submit', event => {
+    event.preventDefault(); clearError('pred-error'); const age = getNumber('pred-age'); const weight = getNumber('pred-weight'); const height = getNumber('pred-height');
+    if (!validRange(age, 18, 120) || !validRange(weight, 25, 350) || !validRange(height, 100, 240)) { showError('pred-error', 'تحقق من العمر والطول والوزن ضمن نطاق منطقي للبالغين.'); return; }
+    const gender = form.querySelector('input[name="pred-gender"]:checked')?.value || 'female'; const bmi = weight / Math.pow(height / 100, 2); let score = age >= 60 ? 3 : age >= 50 ? 2 : age >= 40 ? 1 : 0;
+    if (gender === 'male') score += 1; if (gender === 'female' && form.querySelector('input[name="pred-gest"]:checked')?.value === 'yes') score += 1;
+    if (form.querySelector('input[name="pred-family"]:checked')?.value === 'yes') score += 1; if (form.querySelector('input[name="pred-bp"]:checked')?.value === 'yes') score += 1; if (form.querySelector('input[name="pred-active"]:checked')?.value === 'no') score += 1;
+    score += bmi >= 40 ? 3 : bmi >= 30 ? 2 : bmi >= 25 ? 1 : 0;
+    const high = score >= 5; document.getElementById('pred-score').textContent = formatNumber(score); document.getElementById('pred-category').textContent = high ? 'خطر أعلى' : 'خطر أقل وفق الاستبيان'; document.getElementById('pred-note').textContent = high ? 'تحدث مع الطبيب عن فحص ما قبل السكري أو السكري، ولا تعتبر النتيجة تشخيصًا.' : 'استمر في العادات الصحية، واطلب المشورة الطبية عند وجود أعراض أو عوامل خطر.';
+    document.getElementById('pred-empty').hidden = true; document.getElementById('pred-result').hidden = false; document.getElementById('pred-result').classList.add('show');
+  });
+  document.getElementById('share-pred')?.addEventListener('click', () => shareResult(`نتيجتي التقديرية في اختبار خطر ما قبل السكري: ${document.getElementById('pred-score').textContent} من 10 نقاط — ${document.getElementById('pred-category').textContent}.`));
+}
+
+  initCalorie(); initBmi(); initMacros(); initWater(); initIdealWeight(); initDueDate(); initFertileWindow(); initPrediabetes();
 })();

@@ -221,4 +221,60 @@
       <image:title>الماء والرياضة: كيف تحافظ على الترطيب أثناء التمرين؟</image:title>
     </image:image>
   </url>
+
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/health-tools.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>أدوات صحية وحاسبات طبية</image:title></image:image>
+  </url>
+
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/pregnancy-due-date.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>حاسبة موعد الولادة المتوقع</image:title></image:image>
+  </url>
+
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/fertile-window.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>حاسبة نافذة الخصوبة والإباضة</image:title></image:image>
+  </url>
+
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/prediabetes-risk.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>اختبار خطر ما قبل السكري</image:title></image:image>
+  </url>
+
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/pregnancy-due-date.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc><image:title>كيف يُحسب موعد الولادة المتوقع؟</image:title></image:image>
+  </url>
+
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/fertile-window.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc><image:title>نافذة الخصوبة والإباضة: كيف نقرأ التقدير؟</image:title></image:image>
+  </url>
+
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/prediabetes-risk.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/calorie-deficit.webp</image:loc><image:title>اختبار خطر ما قبل السكري: ماذا تعني النتيجة؟</image:title></image:image>
+  </url>
 </urlset>

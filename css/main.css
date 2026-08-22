@@ -1214,3 +1214,24 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
     justify-content: center;
   }
 }
+
+
+/* Health tools directory and MOH-inspired educational tools */
+.health-tool-hero { background: radial-gradient(circle at 10% 18%, rgba(235,128,99,.16), transparent 24%), linear-gradient(135deg, var(--mint), var(--cream) 76%); }
+.health-tools-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.health-tool-card { display: flex; flex-direction: column; min-width: 0; padding: 24px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); transition: transform .18s var(--ease-out), border-color .18s, box-shadow .18s; }
+.health-tool-card:hover { color: var(--ink); border-color: var(--mint-deep); box-shadow: 0 18px 38px rgba(23,52,46,.1); transform: translateY(-3px); }
+.health-tool-card.external { background: linear-gradient(180deg, #fff, #fbfdfb); }
+.health-tool-card h2 { margin: 13px 0 8px; font-size: 1.12rem; }
+.health-tool-card p { min-height: 52px; margin: 0; color: var(--ink-soft); font-size: .88rem; line-height: 1.8; }
+.health-tool-card .card-link { margin-top: auto; padding-top: 17px; }
+.tool-badge { align-self: flex-start; padding: 5px 10px; color: var(--teal); background: var(--mint); border-radius: 999px; font-size: .7rem; font-weight: 700; }
+.health-tool-card.external .tool-badge { color: #7a6633; background: #fff5d8; }
+.health-tool-icon { display: grid; place-items: center; width: 45px; height: 45px; margin-top: 18px; color: var(--teal-dark); background: var(--mint); border-radius: 14px; font-size: 1.3rem; font-weight: 800; }
+.health-tool-card.external .health-tool-icon { color: #9a5a46; background: #fff0e9; }
+.tool-sources { color: var(--ink-soft); font-size: .82rem; text-align: center; }
+.tool-sources a { display: inline-block; margin-inline-start: 12px; color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+#pred-result .result-main strong { font-size: 3.6rem; }
+#fertile-result .result-stat strong, #due-result .result-main strong { font-size: 1.35rem; line-height: 1.5; }
+@media (max-width: 900px) { .health-tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 650px) { .health-tools-grid { grid-template-columns: 1fr; gap: 13px; } .health-tool-card { padding: 20px; } .health-tool-card p { min-height: auto; } .tool-sources { line-height: 2; } .tool-sources a { margin-inline: 6px; } }

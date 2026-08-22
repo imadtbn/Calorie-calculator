@@ -8,6 +8,10 @@ const links = {
   water: rootPath + 'water-calculator.html',
   ideal: rootPath + 'ideal-weight-calculator.html',
   foods: rootPath + 'food-calories.html',
+  healthTools: rootPath + 'health-tools.html',
+  healthTools: rootPath + 'health-tools.html',
+  healthTools: rootPath + 'health-tools.html',
+  healthTools: rootPath + 'health-tools.html',
   articles: rootPath + 'articles.html',
   faq: rootPath + 'faq.html',
   about: rootPath + 'about.html',
@@ -47,7 +51,7 @@ function renderShell() {
         <a class="${active === 'bmi' ? 'active' : ''}" href="${links.bmi}">BMI</a>
         <a class="${active === 'macros' ? 'active' : ''}" href="${links.macros}">الماكروز</a>
         <a class="${active === 'foods' ? 'active' : ''}" href="${links.foods}">الأطعمة</a>
-        <a class="${active === 'articles' ? 'active' : ''}" href="${links.articles}">المقالات</a>
+        <a class="${active === 'articles' ? 'active' : ''}" href="${links.articles}">المقالات</a><a class="${active === 'health-tools' ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a><a class="${active === 'health-tools' ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a><a class="${active === 'health-tools' ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a><a class="${active === 'health-tools' ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a>
       </nav>
     </div>`;
     const toggle = header.querySelector('.nav-toggle');
@@ -59,7 +63,7 @@ function renderShell() {
     footer.innerHTML = `<div class="container">
       <div class="footer-grid">
         <div><a class="brand" href="${links.home}"><span class="brand-mark"><img class="brand-logo" src="${rootPath}assets/calorie-mark-512.png" alt="" width="38" height="38" decoding="async"></span><span class="brand-name">حاسبة السعرات</span></a><p style="color:#b5d3c5;max-width:280px;font-size:.84rem;margin-top:18px">أدوات صحية مبسطة تساعدك على فهم احتياجاتك اليومية واتخاذ قرارات أكثر وعيًا.</p></div>
-        <div><div class="footer-title">الأدوات</div><div class="footer-links"><a href="${links.calorie}">حاسبة السعرات اليومية</a><a href="${links.bmi}">حاسبة مؤشر BMI</a><a href="${links.macros}">حاسبة الماكروز</a><a href="${links.water}">حاسبة الماء اليومية</a><a href="${links.ideal}">حاسبة الوزن التقريبي</a><a href="${links.foods}">السعرات في الأطعمة</a></div></div>
+        <div><div class="footer-title">الأدوات</div><div class="footer-links"><a href="${links.calorie}">حاسبة السعرات اليومية</a><a href="${links.bmi}">حاسبة مؤشر BMI</a><a href="${links.macros}">حاسبة الماكروز</a><a href="${links.water}">حاسبة الماء اليومية</a><a href="${links.ideal}">حاسبة الوزن التقريبي</a><a href="${links.foods}">السعرات في الأطعمة</a><a href="${links.healthTools}">الأدوات الصحية</a></div></div>
         <div><div class="footer-title">المحتوى</div><div class="footer-links"><a href="${links.articles}">المقالات</a><a href="${links.faq}">الأسئلة الشائعة</a><a href="${links.about}">عن الموقع</a><a href="${links.contact}">اتصل بنا</a></div></div>
         <div><div class="footer-title">معلومات قانونية</div><div class="footer-links"><a href="${links.privacy}">الخصوصية</a><a href="${links.terms}">شروط الاستخدام</a><a href="${links.disclaimer}">إخلاء المسؤولية</a></div></div>
       </div>
@@ -165,6 +169,9 @@ function mountRelatedArticles() {
       ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'خطوات هادئة ومستدامة بدل الحلول السريعة.', 'calorie-deficit.webp'],
       ['how-to-count-calories', 'كيف تحسب السعرات بطريقة عملية؟', 'أساسيات التغذية', 'طريقة أبسط لفهم الأرقام اليومية.', 'how-to-count-calories.webp']
     ],
+    'pregnancy-due-date': [['fertile-window', 'نافذة الخصوبة والإباضة: كيف نقرأ التقدير؟', 'الخصوبة والتخطيط', 'فهم التقدير التقويمي وأهم حدوده.', 'water-hydration.webp']],
+    'fertile-window': [['pregnancy-due-date', 'كيف يُحسب موعد الولادة المتوقع؟', 'الحمل والمتابعة', 'طريقة قراءة الموعد المتوقع وحدود الحاسبة.', 'water-hydration.webp']],
+    'prediabetes-risk': [['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'خطوات تدريجية لدعم نمط حياة متوازن.', 'calorie-deficit.webp'], ['healthy-weight', 'ما معنى الوزن الصحي؟', 'وعي صحي', 'لماذا لا يكفي رقم واحد لوصف الصحة.', 'bmr-tdee.webp']],
     'water-and-exercise': [
       ['how-much-water', 'كم تحتاج من الماء يوميًا؟', 'الترطيب', 'تقدير بسيط لاحتياجك اليومي من الماء.', 'how-much-water.webp'],
       ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'تقدم تدريجي بدل الحلول السريعة.', 'calorie-deficit.webp'],
