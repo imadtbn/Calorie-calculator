@@ -177,5 +177,32 @@ function initInfantGrowth() {
   });
 }
 
-  initCalorie(); initBmi(); initMacros(); initWater(); initIdealWeight(); initDueDate(); initFertileWindow(); initPrediabetes(); initChildBmi(); initPregnancyCalories(); initInfantGrowth();
+  function initHealthQuiz() {
+    const slug = document.body.dataset.tool; const form = document.getElementById(`${slug}-form`); if (!form || !form.classList.contains('health-quiz-card')) return;
+    form.addEventListener('submit', event => {
+      event.preventDefault(); clearError(`${slug}-error`);
+      const groups = [...form.querySelectorAll('fieldset.quiz-question')]; if (groups.some(group => !group.querySelector('input:checked'))) { showError(`${slug}-error`, 'أجب عن جميع الأسئلة قبل عرض النتيجة.'); return; }
+      const score = groups.reduce((sum, group) => sum + Number(group.querySelector('input:checked').value), 0);
+      const max = groups.reduce((sum, group) => sum + Math.max(...[...group.querySelectorAll('input')].map(input => Number(input.value))), 0);
+      let category = 'مؤشر منخفض نسبيًا'; let note = 'استخدم النتيجة للتأمل والتثقيف، واطلب المشورة عند استمرار الأعراض.';
+      if (slug === 'asthma-control') { category = score >= 20 ? 'تحكم جيد مُبلغ عنه' : score >= 16 ? 'تحكم جزئي مُبلغ عنه' : 'تحكم ضعيف مُبلغ عنه'; note = score >= 20 ? 'تحدث مع طبيبك عن استمرار خطة التحكم الحالية.' : 'حدّد موعدًا قريبًا مع طبيبك لمراجعة خطة التحكم بالربو؛ لا تعدّل الدواء بنفسك.'; }
+      if (slug === 'anxiety-screening') { category = score >= 15 ? 'أعراض شديدة في الاستبيان' : score >= 10 ? 'أعراض متوسطة في الاستبيان' : score >= 5 ? 'أعراض خفيفة في الاستبيان' : 'أعراض قليلة في الاستبيان'; note = score >= 5 ? 'إذا أثرت الأعراض في يومك أو استمرت، تحدث مع مختص.' : 'استمر في مراقبة ما تشعر به واطلب الدعم إذا تغيرت الأعراض.'; }
+      if (slug === 'eating-awareness') { category = score >= 8 ? 'إشارات تستحق دعمًا متخصصًا' : 'إشارات أقل في هذا الفحص'; note = score >= 8 ? 'تحدث مع مختص بطريقة داعمة وسرية؛ النتيجة ليست تشخيصًا ولا حكمًا على شخصك.' : 'لا تنفِ النتيجة المنخفضة وجود مشكلة؛ اطلب الدعم إذا كان الطعام أو صورة الجسد يسببان ضيقًا.'; }
+      if (slug === 'sleep-assessment') { category = score >= 25 ? 'مؤشرات قوية على اضطراب النوم' : score >= 17 ? 'مؤشرات متعددة تستحق الانتباه' : score >= 9 ? 'بعض مؤشرات اضطراب النوم' : 'نوم جيد وفق الإجابات'; note = score >= 9 ? 'جرّب تحسين روتين النوم وراجع الطبيب إذا استمرت المشكلة أو أثرت في يقظتك.' : 'حافظ على مواعيد نوم منتظمة وراقب أي تغير مستمر.'; }
+      if (slug === 'depression-screening') { category = score >= 20 ? 'أعراض شديدة في الاستبيان' : score >= 15 ? 'أعراض متوسطة إلى شديدة' : score >= 10 ? 'أعراض متوسطة' : score >= 5 ? 'أعراض خفيفة' : 'أعراض قليلة أو معدومة'; note = score >= 5 ? 'تحدث مع طبيب أو مختص للصحة النفسية لتقييم مناسب.' : 'إذا تغير مزاجك أو أثّر في حياتك، اطلب الدعم حتى لو كانت الدرجة منخفضة.'; if (Number(form.querySelector('fieldset:nth-of-type(9) input:checked')?.value || 0) > 0) note = 'تتطلب أفكار إيذاء النفس مساعدة عاجلة: تواصل الآن مع الطوارئ المحلية أو شخص موثوق ولا تبقَ وحدك.'; }
+      if (slug === 'phone-balance') { category = score >= 16 ? 'أثر مرتفع محتمل على اليوم' : score >= 8 ? 'أثر متوسط محتمل' : 'أثر منخفض وفق الإجابات'; note = score >= 8 ? 'جرّب حدودًا واضحة للإشعارات والهاتف، واطلب دعمًا إذا شعرت بفقدان السيطرة.' : 'حافظ على فترات بلا شاشة وروتين نوم يحمي وقت الراحة.'; }
+      document.getElementById(`${slug}-score`).textContent = `${formatNumber(score)} / ${formatNumber(max)}`; document.getElementById(`${slug}-category`).textContent = category; document.getElementById(`${slug}-note`).textContent = note; document.getElementById(`${slug}-empty`).hidden = true; document.getElementById(`${slug}-result`).hidden = false; document.getElementById(`${slug}-result`).classList.add('show');
+    });
+  }
+  function initChecklist() {
+    const slug = document.body.dataset.tool; const form = document.getElementById(`${slug}-form`); if (!form || !form.classList.contains('health-quiz-card') || !form.querySelector('.checklist')) return;
+    const boxes = [...form.querySelectorAll('input[type="checkbox"]')]; const update = () => { const done = boxes.filter(box => box.checked).length; const percent = boxes.length ? Math.round(done / boxes.length * 100) : 0; document.getElementById(`${slug}-score`).textContent = `${percent}%`; document.getElementById(`${slug}-progress`).textContent = `${done} من ${boxes.length} بنود`; document.getElementById(`${slug}-progress-bar`).style.width = `${percent}%`; document.getElementById(`${slug}-category`).textContent = percent === 100 ? 'اكتملت القائمة' : percent >= 60 ? 'استعداد جيد' : 'ابدأ بالمراجعة'; document.getElementById(`${slug}-note`).textContent = percent === 100 ? 'راجع تعليمات طبيبك والجهات الرسمية قبل السفر.' : 'حدّد البنود التي أنجزتها وتابع البقية قبل الموعد.'; };
+    boxes.forEach(box => box.addEventListener('change', update)); update();
+  }
+  function initVisualAcuity() {
+    const form = document.getElementById('visual-acuity-screening-form'); if (!form) return;
+    form.addEventListener('submit', event => { event.preventDefault(); const level = document.getElementById('visual-acuity-level').value; const numeric = Number(level); const category = numeric >= 12 ? 'يحتاج فحصًا مهنيًا' : numeric >= 7.5 ? 'قراءة قريبة من المعتاد' : 'قراءة تقريبية جيدة'; const note = numeric >= 12 ? 'النتيجة أسوأ من 6/12 تقريبًا؛ احجز فحص عيون ولا تستخدمها لوصف نظارات.' : 'هذه قراءة شاشة غير معايرة؛ حافظ على فحوص العين الدورية ولا تعتبرها تشخيصًا.'; document.getElementById('visual-acuity-screening-score').textContent = `6/${level}`; document.getElementById('visual-acuity-screening-category').textContent = category; document.getElementById('visual-acuity-screening-note').textContent = note; document.getElementById('visual-acuity-screening-empty').hidden = true; document.getElementById('visual-acuity-screening-result').hidden = false; document.getElementById('visual-acuity-screening-result').classList.add('show'); });
+  }
+
+  initCalorie(); initBmi(); initMacros(); initWater(); initIdealWeight(); initDueDate(); initFertileWindow(); initPrediabetes(); initChildBmi(); initPregnancyCalories(); initInfantGrowth(); initHealthQuiz(); initChecklist(); initVisualAcuity();
 })();

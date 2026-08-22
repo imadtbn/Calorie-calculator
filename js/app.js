@@ -176,7 +176,16 @@ function mountRelatedArticles() {
       ['how-much-water', 'كم تحتاج من الماء يوميًا؟', 'الترطيب', 'تقدير بسيط لاحتياجك اليومي من الماء.', 'how-much-water.webp'],
       ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'تقدم تدريجي بدل الحلول السريعة.', 'calorie-deficit.webp'],
       ['macros-guide', 'دليل مبسط للماكروز', 'توازن الطبق', 'تعرّف على دور البروتين والدهون والكربوهيدرات.', 'macros-guide.webp']
-    ]
+    ],
+    'asthma-control': [['sleep-assessment', 'تقييم النوم التوعوي', 'النوم', 'كيف يؤثر النوم في الإحساس بالأعراض والطاقة.', 'sleep-assessment.jpg'], ['anxiety-screening', 'استبيان القلق التوعوي', 'الصحة النفسية', 'قراءة أولية لمشاعر القلق دون تشخيص.', 'anxiety-screening.jpg']],
+    'anxiety-screening': [['depression-screening', 'استبيان المزاج والاكتئاب', 'الصحة النفسية', 'متى يصبح طلب الدعم خطوة مناسبة.', 'depression-support.jpg'], ['phone-balance', 'التوازن مع الهاتف', 'وعي رقمي', 'ملاحظة أثر الهاتف على النوم والمهام.', 'phone-balance.jpg']],
+    'eating-awareness': [['diabetes-awareness', 'التوعية اليومية بالسكري', 'التوعية الصحية', 'عادات يومية تدعم المتابعة دون تشخيص ذاتي.', 'diabetes-awareness.jpg'], ['phone-balance', 'التوازن مع الهاتف', 'وعي رقمي', 'كيف نلاحظ العادة قبل أن تؤثر في يومنا.', 'phone-balance.jpg']],
+    'sleep-assessment': [['anxiety-screening', 'استبيان القلق التوعوي', 'الصحة النفسية', 'العلاقة بين القلق والاسترخاء والنوم.', 'anxiety-screening.jpg'], ['phone-balance', 'التوازن مع الهاتف', 'وعي رقمي', 'أثر استخدام الهاتف على روتين النوم.', 'phone-balance.jpg']],
+    'depression-screening': [['anxiety-screening', 'استبيان القلق التوعوي', 'الصحة النفسية', 'أسئلة توعوية لفهم مشاعر القلق.', 'anxiety-screening.jpg'], ['sleep-assessment', 'تقييم النوم التوعوي', 'النوم', 'مراجعة نمط النوم وتأثيره في المزاج.', 'sleep-assessment.jpg']],
+    'visual-acuity-screening': [['infant-growth', 'كيف نقرأ طول الرضيع على مخطط WHO؟', 'نمو الرضع', 'مقال صحي يشرح المئين ودرجة Z.', 'water-hydration.webp'], ['healthy-weight', 'ما معنى الوزن الصحي؟', 'وعي صحي', 'قراءة متوازنة للوزن بعيدًا عن رقم واحد.', 'bmr-tdee.webp']],
+    'phone-balance': [['sleep-assessment', 'تقييم النوم التوعوي', 'النوم', 'أثر الهاتف والروتين في جودة النوم.', 'sleep-assessment.jpg'], ['anxiety-screening', 'استبيان القلق التوعوي', 'الصحة النفسية', 'ملاحظة مشاعر القلق وطلب الدعم.', 'anxiety-screening.jpg']],
+    'pilgrim-health-checklist': [['water-and-exercise', 'الماء والرياضة: كيف توازن بينهما؟', 'الترطيب', 'نصائح عملية للترطيب والنشاط.', 'water-hydration.webp'], ['diabetes-awareness', 'التوعية اليومية بالسكري', 'التوعية الصحية', 'قائمة متابعة بسيطة للعادات الصحية.', 'diabetes-awareness.jpg']],
+    'diabetes-awareness': [['prediabetes-risk', 'اختبار خطر ما قبل السكري: ماذا تعني النتيجة؟', 'السكري', 'متى تناقش عوامل الخطر مع الطبيب.', 'bmr-tdee.webp'], ['eating-awareness', 'الوعي بأنماط الأكل وطلب الدعم', 'التغذية', 'علاقة متوازنة مع الطعام بعيدًا عن الوصمة.', 'eating-awareness.jpg']],
   };
   const related = articleData[currentSlug] || [];
   if (!related.length) return;
