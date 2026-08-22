@@ -48,7 +48,7 @@ function renderShell() {
         <a class="${active === 'bmi' ? 'active' : ''}" href="${links.bmi}">BMI</a>
         <a class="${active === 'macros' ? 'active' : ''}" href="${links.macros}">الماكروز</a>
         <a class="${active === 'foods' ? 'active' : ''}" href="${links.foods}">الأطعمة</a>
-        <a class="${active === 'articles' ? 'active' : ''}" href="${links.articles}">المقالات</a><a class="${['health-tools', 'child-bmi', 'pregnancy-calorie'].includes(active) ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a>
+        <a class="${active === 'articles' ? 'active' : ''}" href="${links.articles}">المقالات</a><a class="${['health-tools', 'child-bmi', 'pregnancy-calorie', 'infant-growth'].includes(active) ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a>
       </nav>
     </div>`;
     const toggle = header.querySelector('.nav-toggle');
@@ -171,6 +171,7 @@ function mountRelatedArticles() {
     'prediabetes-risk': [['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'خطوات تدريجية لدعم نمط حياة متوازن.', 'calorie-deficit.webp'], ['healthy-weight', 'ما معنى الوزن الصحي؟', 'وعي صحي', 'لماذا لا يكفي رقم واحد لوصف الصحة.', 'bmr-tdee.webp']],
     'child-bmi': [['pregnancy-calories', 'السعرات أثناء الحمل: كيف نقرأ التقدير؟', 'الحمل والتغذية', 'فهم الزيادة التقريبية وحدود الرقم.', 'water-hydration.webp'], ['healthy-weight', 'ما معنى الوزن الصحي؟', 'وعي صحي', 'نظرة متوازنة إلى الوزن بعيدًا عن رقم واحد.', 'bmr-tdee.webp']],
     'pregnancy-calories': [['child-bmi', 'BMI للأطفال: لماذا نستخدم المئينات؟', 'نمو الأطفال', 'لماذا يعتمد BMI للأطفال على المئينات.', 'bmr-tdee.webp'], ['bmr-vs-tdee', 'ما الفرق بين BMR وTDEE؟', 'أساسيات التغذية', 'افهم الفرق بين الأيض والاحتياج اليومي.', 'bmr-tdee.webp']],
+    'infant-growth': [['child-bmi', 'BMI للأطفال: لماذا نستخدم المئينات؟', 'نمو الأطفال', 'الفرق بين BMI للبالغين ومئينات الأطفال.', 'bmr-tdee.webp'], ['healthy-weight', 'ما معنى الوزن الصحي؟', 'وعي صحي', 'قراءة متوازنة للوزن بعيدًا عن رقم واحد.', 'bmr-tdee.webp']],
     'water-and-exercise': [
       ['how-much-water', 'كم تحتاج من الماء يوميًا؟', 'الترطيب', 'تقدير بسيط لاحتياجك اليومي من الماء.', 'how-much-water.webp'],
       ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'تقدم تدريجي بدل الحلول السريعة.', 'calorie-deficit.webp'],

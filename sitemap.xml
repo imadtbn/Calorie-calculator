@@ -309,4 +309,8 @@
     <priority>0.6</priority>
     <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc><image:title>السعرات أثناء الحمل: كيف نقرأ التقدير؟</image:title></image:image>
   </url>
+
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/infant-growth-calculator.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>حاسبة نمو الرضع والطول حسب العمر</image:title></image:image></url>
+
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/infant-growth.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc><image:title>كيف نقرأ طول الرضيع على مخطط WHO؟</image:title></image:image></url>
 </urlset>

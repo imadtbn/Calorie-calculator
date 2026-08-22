@@ -159,5 +159,23 @@ function initPregnancyCalories() {
   });
 }
 
-  initCalorie(); initBmi(); initMacros(); initWater(); initIdealWeight(); initDueDate(); initFertileWindow(); initPrediabetes(); initChildBmi(); initPregnancyCalories();
+
+function initInfantGrowth() {
+  const form = document.getElementById('infant-growth-form'); if (!form) return;
+  let dataset = null;
+  fetch(`${document.body.dataset.root || './'}data/who-infant-growth.json`).then(response => { if (!response.ok) throw new Error('data'); return response.json(); }).then(data => { dataset = data; }).catch(() => showError('infant-growth-error', 'تعذر تحميل جداول WHO حاليًا. حاول مرة أخرى لاحقًا.'));
+  form.addEventListener('submit', event => {
+    event.preventDefault(); clearError('infant-growth-error');
+    if (!dataset) { showError('infant-growth-error', 'انتظر لحظة حتى تكتمل جداول WHO ثم حاول مرة أخرى.'); return; }
+    const month = getNumber('infant-age-months'), length = getNumber('infant-length'), weight = getNumber('infant-weight');
+    if (!validRange(month, 0, 24) || !Number.isInteger(month) || !validRange(length, 35, 110) || (Number.isFinite(weight) && weight !== 0 && !validRange(weight, 1, 25))) { showError('infant-growth-error', 'تحقق من العمر بين 0 و24 شهرًا، والطول بين 35 و110 سم، والوزن الاختياري ضمن نطاق منطقي.'); return; }
+    const gender = form.querySelector('input[name="infant-gender"]:checked')?.value || 'male'; const row = dataset.length[gender].find(item => item.month === month); const weightRow = dataset.weight[gender].find(item => item.month === month);
+    const zScore = (value, item) => item.L === 0 ? Math.log(value / item.M) / item.S : (Math.pow(value / item.M, item.L) - 1) / (item.L * item.S); const percentile = z => Math.max(.1, Math.min(99.9, normalCdf(z) * 100)); const lengthZ = zScore(length, row); const lengthP = percentile(lengthZ);
+    document.getElementById('infant-length-z').textContent = `Z ${lengthZ.toFixed(2)}`; document.getElementById('infant-length-percentile').textContent = `المئين ${lengthP.toFixed(1)}%`;
+    if (Number.isFinite(weight) && weight > 0) { const weightZ = zScore(weight, weightRow); document.getElementById('infant-weight-z').textContent = `Z ${weightZ.toFixed(2)}`; document.getElementById('infant-weight-percentile').textContent = `المئين ${percentile(weightZ).toFixed(1)}%`; } else { document.getElementById('infant-weight-z').textContent = 'غير مدخل'; document.getElementById('infant-weight-percentile').textContent = 'الوزن اختياري'; }
+    document.getElementById('infant-growth-note').textContent = `تمت المقارنة بجدول WHO للشهر ${month}. درجة Z والمئين وصفان إحصائيان للتثقيف ولا يشخّصان حالة الرضيع.`; document.getElementById('infant-growth-empty').hidden = true; document.getElementById('infant-growth-result').hidden = false; document.getElementById('infant-growth-result').classList.add('show');
+  });
+}
+
+  initCalorie(); initBmi(); initMacros(); initWater(); initIdealWeight(); initDueDate(); initFertileWindow(); initPrediabetes(); initChildBmi(); initPregnancyCalories(); initInfantGrowth();
 })();
