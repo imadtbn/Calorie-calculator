@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calorie-calculator-v9';
+const CACHE_NAME = 'calorie-calculator-v10';
 const CORE_ASSETS = [
   './', './index.html', './css/main.css', './js/app.js', './js/calculators.js', './js/deferred-adsense.js', './js/comments.js',
   './health-tools.html', './bmi-calculator.html', './calorie-calculator.html', './water-calculator.html', './ideal-weight-calculator.html',
@@ -6,7 +6,7 @@ const CORE_ASSETS = [
   './asthma-control.html', './anxiety-screening.html', './eating-awareness.html', './sleep-assessment.html', './depression-screening.html', './visual-acuity-screening.html', './phone-balance.html', './pilgrim-health-checklist.html', './diabetes-awareness.html',
   './data/cdc-bmi-for-age.json', './data/who-infant-growth.json',
   './articles/asthma-control.html', './articles/anxiety-screening.html', './articles/eating-awareness.html', './articles/sleep-assessment.html', './articles/depression-screening.html', './articles/visual-acuity-screening.html', './articles/phone-balance.html', './articles/pilgrim-health-checklist.html', './articles/diabetes-awareness.html',
-  './assets/tools/asthma-control.jpg', './assets/tools/anxiety-screening.jpg', './assets/tools/eating-awareness.jpg', './assets/tools/sleep-assessment.jpg', './assets/tools/depression-support.jpg', './assets/tools/visual-acuity.jpg', './assets/tools/phone-balance.jpg', './assets/tools/pilgrim-health.jpg', './assets/tools/diabetes-awareness.jpg', './assets/tools/infant-growth.jpg', './assets/tools/pregnancy-care.jpg', './assets/tools/fertility-calendar.jpg', './assets/tools/body-metrics.jpg'
+  './assets/tools/asthma-control.jpg', './assets/tools/anxiety-screening.jpg', './assets/tools/eating-awareness.jpg', './assets/tools/sleep-assessment.jpg', './assets/tools/depression-support.jpg', './assets/tools/visual-acuity.jpg', './assets/tools/phone-balance.jpg', './assets/tools/pilgrim-health.jpg', './assets/tools/diabetes-awareness.jpg', './assets/tools/infant-growth.jpg', './assets/tools/pregnancy-care.jpg', './assets/tools/fertility-calendar.jpg', './assets/tools/body-metrics.jpg', './assets/tools/health-tools-hero.jpg'
 ];
 
 self.addEventListener('install', event => {

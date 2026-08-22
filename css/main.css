@@ -1271,3 +1271,55 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .quiz-options { grid-template-columns: 1fr; }
   .health-tool-card.with-image .health-tool-image { height: 168px; }
 }
+
+
+/* Search, filters and health-tool hero art */
+.directory-search { margin: 26px 0 34px; padding: 20px; background: var(--paper); border: 1px solid rgba(29,105,89,.14); border-radius: 22px; box-shadow: 0 12px 30px rgba(18,72,61,.06); }
+.directory-search-line { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.search-field { position: relative; display: flex; align-items: center; flex: 1 1 270px; min-width: 0; }
+.search-field input { width: 100%; min-height: 48px; padding: 12px 44px 12px 60px; color: var(--ink); background: var(--cream); border: 1px solid rgba(29,105,89,.2); border-radius: 14px; font: inherit; font-size: .95rem; }
+.search-field input:focus { outline: 3px solid rgba(235,128,99,.25); border-color: var(--teal); }
+.search-field-icon { position: absolute; right: 17px; color: var(--teal); font-size: 1.55rem; line-height: 1; pointer-events: none; }
+.search-clear { position: absolute; left: 9px; padding: 6px 9px; color: var(--teal); background: transparent; border: 0; font: inherit; font-size: .8rem; cursor: pointer; }
+.directory-filter-bar { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-chip { padding: 9px 13px; color: var(--ink-soft); background: var(--cream); border: 1px solid rgba(29,105,89,.16); border-radius: 999px; font: inherit; font-size: .8rem; cursor: pointer; transition: color .18s, background .18s, border-color .18s, transform .18s; }
+.filter-chip:hover, .filter-chip:focus-visible, .filter-chip.active { color: #fff; background: var(--teal); border-color: var(--teal); }
+.filter-chip:active { transform: scale(.97); }
+.directory-status { margin: 13px 0 0; color: var(--ink-soft); font-size: .84rem; }
+.directory-empty { margin: 16px 0 0; padding: 16px; color: var(--ink-soft); background: var(--mint); border-radius: 14px; }
+.health-tool-hero .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .75fr); align-items: center; gap: 38px; }
+.health-tool-hero-art { order: -1; overflow: hidden; min-height: 230px; border: 1px solid rgba(29,105,89,.1); border-radius: 28px; box-shadow: 0 20px 50px rgba(18,72,61,.1); }
+.health-tool-hero-art img { display: block; width: 100%; height: 100%; min-height: 230px; max-height: 310px; object-fit: cover; }
+.health-tool-hero-copy { min-width: 0; }
+.health-tool-hero-copy .breadcrumbs { margin-bottom: 18px; }
+.home-search-section { padding-top: 28px; }
+.home-search-card { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 28px; align-items: start; padding: 28px; background: linear-gradient(135deg, var(--mint), #fff); border: 1px solid rgba(29,105,89,.15); border-radius: 26px; box-shadow: 0 16px 44px rgba(18,72,61,.07); }
+.home-search-copy h2 { margin: 10px 0 8px; }
+.home-search-copy p { margin: 0; color: var(--ink-soft); line-height: 1.8; }
+.home-search-form { min-width: 0; }
+.search-field-large input { min-height: 56px; background: #fff; }
+.home-search-form > .btn { margin-top: 12px; }
+.home-search-status { margin: 12px 0; color: var(--ink-soft); font-size: .84rem; }
+.home-search-results { display: grid; gap: 8px; max-height: 380px; overflow: auto; padding: 4px; }
+.local-search-result { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 13px 14px; color: var(--ink); background: #fff; border: 1px solid rgba(29,105,89,.12); border-radius: 14px; text-decoration: none; transition: border-color .18s, transform .18s, box-shadow .18s; }
+.local-search-result:hover, .local-search-result:focus-visible { border-color: var(--teal); box-shadow: 0 8px 18px rgba(18,72,61,.08); transform: translateY(-1px); }
+.local-search-kind { padding: 5px 8px; color: var(--teal); background: var(--mint); border-radius: 999px; font-size: .72rem; white-space: nowrap; }
+.local-search-result-copy { display: grid; gap: 3px; min-width: 0; }
+.local-search-result-copy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.local-search-result-copy small { color: var(--ink-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.local-search-arrow { color: var(--coral); font-size: 1.2rem; }
+@media (max-width: 800px) {
+  .health-tool-hero .container, .home-search-card { grid-template-columns: 1fr; }
+  .health-tool-hero-art { order: 0; min-height: 180px; }
+  .health-tool-hero-art img { min-height: 180px; max-height: 230px; }
+  .home-search-card { padding: 22px; }
+}
+@media (max-width: 540px) {
+  .directory-search { padding: 16px; border-radius: 18px; }
+  .directory-search-line { display: grid; gap: 12px; }
+  .search-field { width: 100%; }
+  .directory-filter-bar { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 3px; scrollbar-width: thin; }
+  .filter-chip { flex: 0 0 auto; }
+  .local-search-result { grid-template-columns: auto minmax(0, 1fr); }
+  .local-search-arrow { display: none; }
+}

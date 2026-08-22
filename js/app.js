@@ -238,8 +238,62 @@ function mountRelatedArticles() {
   document.querySelector('main')?.append(section);
 }
 
-window.CalorieApp = { links, icon, formatNumber, getNumber, showError, clearError, validRange, shareResult };
+const LOCAL_SEARCH_INDEX = [
+  ['أداة','حاسبة السعرات اليومية','احسب BMR وTDEE والسعرات حسب هدفك ونشاطك.','calorie-calculator.html','سعرات bmr tdee تغذية'],
+  ['أداة','حاسبة مؤشر كتلة الجسم BMI','اعرف مؤشر BMI للبالغين بالطول والوزن.','bmi-calculator.html','bmi وزن طول'],
+  ['أداة','حاسبة الماكروز','حوّل السعرات إلى بروتين وكربوهيدرات ودهون.','macros-calculator.html','ماكروز بروتين دهون كربوهيدرات'],
+  ['أداة','حاسبة الماء اليومية','قدّر احتياجك من الماء حسب الوزن والنشاط.','water-calculator.html','ماء ترطيب hydration'],
+  ['أداة','حاسبة الوزن التقريبي','تقدير إرشادي لنطاق الوزن حسب الطول والجنس.','ideal-weight-calculator.html','وزن طول'],
+  ['أداة','السعرات في الأطعمة','ابحث في قاعدة الأطعمة والسعرات.','food-calories.html','أطعمة غذاء سعرات'],
+  ['أداة','نمو الرضع والطول','قارن الطول والوزن بمخططات WHO حسب العمر والجنس.','infant-growth-calculator.html','رضيع طفل نمو طول who'],
+  ['أداة','سعرات الحمل','قدّر السعرات العامة حسب ثلث الحمل وخط الأساس.','pregnancy-calorie-calculator.html','حمل سعرات تغذية'],
+  ['أداة','BMI للأطفال والمراهقين','احسب المئين التقريبي حسب العمر والجنس.','child-bmi-calculator.html','طفل مراهق bmi نمو'],
+  ['أداة','حاسبة موعد الولادة','تقدير أولي لموعد الولادة من آخر دورة.','pregnancy-due-date.html','حمل ولادة موعد'],
+  ['أداة','نافذة الخصوبة والإباضة','تقدير تقويمي للأيام الأكثر احتمالًا للخصوبة.','fertile-window.html','خصوبة إباضة دورة'],
+  ['أداة','اختبار خطر ما قبل السكري','استبيان توعوي لعوامل خطر ما قبل السكري.','prediabetes-risk.html','سكري سكر خطر'],
+  ['أداة','اختبار التحكم بالربو','فحص توعوي للتحكم بالأعراض.','asthma-control.html','ربو تنفس'],
+  ['أداة','استبيان القلق التوعوي','أسئلة توعوية عن مشاعر القلق.','anxiety-screening.html','قلق صحة نفسية'],
+  ['أداة','الوعي بأنماط الأكل','مراجعة ذاتية للعلاقة بالطعام وطلب الدعم.','eating-awareness.html','أكل تغذية اضطراب'],
+  ['أداة','تقييم النوم التوعوي','أسئلة عن جودة النوم وتأثيره.','sleep-assessment.html','نوم أرق'],
+  ['أداة','استبيان المزاج والاكتئاب','فحص توعوي للمزاج دون تشخيص.','depression-screening.html','مزاج اكتئاب صحة نفسية'],
+  ['أداة','اختبار حدة البصر التقريبي','قراءة شاشة تقريبية مع تنبيه محدودية الدقة.','visual-acuity-screening.html','نظر عيون بصر'],
+  ['أداة','استبيان التوازن مع الهاتف','ملاحظة أثر الهاتف في النوم والمهام.','phone-balance.html','هاتف توازن رقمي'],
+  ['أداة','قائمة الاستعداد الصحي للحج','قائمة محلية لتجهيزات السفر الصحية.','pilgrim-health-checklist.html','حج سفر صحة'],
+  ['أداة','التوعية اليومية بالسكري','قائمة متابعة للعادات الصحية دون تشخيص.','diabetes-awareness.html','سكري متابعة'],
+  ['مقال','ما الفرق بين BMR وTDEE؟','فهم الأيض الأساسي وإجمالي الإنفاق اليومي قبل تفسير النتيجة.','articles/bmr-vs-tdee.html','bmr tdee أيض'],
+  ['مقال','كيف تبني عجزًا حراريًا معتدلًا؟','لماذا تكون الخطوات الصغيرة أكثر قابلية للاستمرار من الحلول القاسية.','articles/calorie-deficit.html','عجز سعرات وزن'],
+  ['مقال','دليل مبسط للماكروز','دور البروتين والكربوهيدرات والدهون في بناء وجبة متوازنة.','articles/macros-guide.html','ماكروز بروتين'],
+  ['مقال','كم يحتاج الجسم من الماء يوميًا؟','كيف تقدّر احتياجك من الماء دون التعلق برقم جامد.','articles/how-much-water.html','ماء ترطيب'],
+  ['مقال','ما هو الوزن الصحي؟','لماذا لا يوجد وزن مثالي واحد يناسب جميع الأجسام.','articles/healthy-weight.html','وزن صحي مؤشرات'],
+  ['مقال','كيف تحسب السعرات في الوجبة؟','افهم حجم الحصة وعدد الحصص والسعرات في الطعام المعبأ.','articles/how-to-count-calories.html','حساب سعرات ملصق'],
+  ['مقال','لماذا تختلف احتياجات السعرات؟','شرح BMR وTDEE والعوامل التي تغير احتياجك للطاقة.','articles/calorie-needs-change.html','سعرات احتياج طاقة'],
+  ['مقال','الماء والرياضة: كيف تحافظ على الترطيب؟','إرشادات عامة للشرب قبل وأثناء وبعد النشاط البدني.','articles/water-and-exercise.html','ماء رياضة ترطيب'],
+  ['مقال','كيف يُحسب موعد الولادة المتوقع؟','افهم قاعدة 40 أسبوعًا وحدود التقدير التقويمي.','articles/pregnancy-due-date.html','حمل ولادة موعد'],
+  ['مقال','نافذة الخصوبة والإباضة: كيف نقرأ التقدير؟','لماذا تعرض الحاسبة نطاقًا تقريبيًا لا يومًا مضمونًا.','articles/fertile-window.html','خصوبة إباضة دورة'],
+  ['مقال','اختبار خطر ما قبل السكري: ماذا تعني النتيجة؟','افهم دلالة النقاط ولماذا لا يغني الاختبار عن تحليل الدم.','articles/prediabetes-risk.html','سكري سكر خطر'],
+  ['مقال','BMI للأطفال: لماذا نستخدم المئينات؟','افهم الفرق بين BMI للبالغين ومؤشر BMI حسب العمر والجنس.','articles/child-bmi.html','طفل bmi مئين'],
+  ['مقال','السعرات أثناء الحمل: كيف نقرأ التقدير؟','شرح الزيادة التقريبية حسب الثلث وحدود استخدام الرقم.','articles/pregnancy-calories.html','حمل سعرات'],
+  ['مقال','كيف نقرأ طول الرضيع على مخطط WHO؟','شرح الطول المستلقي والمئين ودرجة Z وحدود القراءة المنزلية.','articles/infant-growth.html','رضيع who نمو'],
+  ['مقال','كيف نقرأ نتيجة اختبار التحكم بالربو؟','فهم نتيجة ACT وحدود استخدامها مع خطة الطبيب.','articles/asthma-control.html','ربو اختبار'],
+  ['مقال','استبيان القلق: ماذا تعني الدرجة؟','طريقة قراءة الإجابات ومتى تطلب دعمًا متخصصًا.','articles/anxiety-screening.html','قلق صحة نفسية'],
+  ['مقال','الوعي بأنماط الأكل وطلب الدعم','إشارات تستحق الحديث مع مختص دون وصمة أو تشخيص ذاتي.','articles/eating-awareness.html','أكل تغذية اضطراب'],
+  ['مقال','كيف نقرأ تقييم النوم؟','ثمانية أسئلة تساعدك على ملاحظة نمط النوم خلال الشهر.','articles/sleep-assessment.html','نوم أرق صحة نفسية'],
+  ['مقال','استبيان المزاج: متى أطلب المساعدة؟','شرح فحص المزاج والتنبيه المهم عند وجود أفكار إيذاء النفس.','articles/depression-screening.html','مزاج اكتئاب صحة نفسية'],
+  ['مقال','هل اختبار النظر على الهاتف دقيق؟','حدود اختبارات الشاشة ومتى تحتاج فحص عيون مهنيًا.','articles/visual-acuity-screening.html','نظر عيون بصر'],
+  ['مقال','التوازن مع الهاتف: مراجعة ذاتية قصيرة','أسئلة تساعدك على ملاحظة أثر الهاتف على النوم والمهام.','articles/phone-balance.html','هاتف توازن رقمي'],
+  ['مقال','قائمة الاستعداد الصحي للحج','تجهيزات عملية للأدوية والماء والملابس والمشي الآمن.','articles/pilgrim-health-checklist.html','حج سفر صحة'],
+  ['مقال','التوعية اليومية بالسكري دون تشخيص ذاتي','كيف تجعل المتابعة والعادات الصحية جزءًا من يومك.','articles/diabetes-awareness.html','سكري متابعة']
+];
+function normalizeSearch(value) { return String(value || '').toLocaleLowerCase('ar').normalize('NFKD').replace(/[\\u064B-\\u065F\\u0670]/g, '').replace(/[أإآ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/ـ/g, '').replace(/\\s+/g, ' ').trim(); }
+function matchesSearchText(text, query) { const normalizedText = normalizeSearch(text); const normalizedQuery = normalizeSearch(query); if (!normalizedQuery) return false; const tokens = normalizedText.split(/[^\p{L}\p{N}%+#.-]+/u).filter(Boolean); return tokens.some(word => word === normalizedQuery || word.startsWith(normalizedQuery) || word.endsWith(normalizedQuery)); }
+function searchResultElement(item) { const [kind,title,description,href,tags] = item; const link = document.createElement('a'); link.className = 'local-search-result'; link.href = `${rootPath}${href}`; link.innerHTML = `<span class="local-search-kind">${kind}</span><span class="local-search-result-copy"><strong></strong><small></small></span><span class="local-search-arrow" aria-hidden="true">←</span>`; link.querySelector('strong').textContent = title; link.querySelector('small').textContent = description; link.dataset.searchText = normalizeSearch(`${kind} ${title} ${description} ${tags}`); return link; }
+function mountHomeSearch() { if (document.body.dataset.page !== 'home') return; const form = document.querySelector('[data-home-search-form]'); if (!form) return; const input = form.querySelector('input'); const results = form.querySelector('[data-home-search-results]'); const status = form.querySelector('[data-home-search-status]'); const clear = form.querySelector('[data-home-search-clear]'); const render = () => { const query = normalizeSearch(input.value); const matches = query ? LOCAL_SEARCH_INDEX.filter(item => matchesSearchText(`${item[0]} ${item[1]} ${item[2]} ${item[4]}`, query)).slice(0, 8) : []; results.replaceChildren(...matches.map(searchResultElement)); results.hidden = !query; status.textContent = query ? `${formatNumber(matches.length)} نتيجة مطابقة` : 'ابحث عن أداة أو مقال من الموقع'; clear.hidden = !query; }; input.addEventListener('input', render); form.addEventListener('submit', event => { event.preventDefault(); render(); if (results.querySelector('a')) results.querySelector('a').focus(); }); clear.addEventListener('click', () => { input.value = ''; input.focus(); render(); }); render(); }
+const TOOL_GROUPS = { 'infant-growth-calculator':'الأطفال', 'child-bmi-calculator':'الأطفال', 'pregnancy-calorie-calculator':'الحمل والخصوبة', 'pregnancy-due-date':'الحمل والخصوبة', 'fertile-window':'الحمل والخصوبة', 'anxiety-screening':'الصحة النفسية والنوم', 'eating-awareness':'الصحة النفسية والنوم', 'sleep-assessment':'الصحة النفسية والنوم', 'depression-screening':'الصحة النفسية والنوم', 'phone-balance':'الصحة النفسية والنوم', 'asthma-control':'فحوصات', 'visual-acuity-screening':'فحوصات', 'prediabetes-risk':'فحوصات' };
+function mountDirectorySearch() { const page = document.body.dataset.page; const isArticleIndex = page === 'articles' && !window.location.pathname.includes('/articles/'); const isToolIndex = page === 'health-tools'; if (!isArticleIndex && !isToolIndex) return; const toolbar = document.querySelector('[data-directory-search]'); const grid = document.querySelector(isToolIndex ? '.health-tools-grid' : '.article-grid'); if (!toolbar || !grid) return; const cards = [...grid.children]; const input = toolbar.querySelector('input'); const status = toolbar.querySelector('[data-directory-status]'); const empty = toolbar.querySelector('[data-directory-empty]'); const clear = toolbar.querySelector('[data-directory-clear]'); const buttons = [...toolbar.querySelectorAll('[data-filter]')]; cards.forEach(card => { const href = card.getAttribute('href') || ''; const slug = href.split('/').pop().replace(/\.html$/, ''); const category = isToolIndex ? (TOOL_GROUPS[slug] || 'الصحة العامة') : (card.querySelector('.article-art span')?.textContent || 'مقالات'); card.dataset.searchText = normalizeSearch(card.textContent); card.dataset.category = normalizeSearch(category); }); let active = 'all'; const render = () => { const query = normalizeSearch(input.value); let count = 0; cards.forEach(card => { const matchesText = !query || matchesSearchText(card.dataset.searchText, query); const matchesFilter = active === 'all' || card.dataset.category.includes(normalizeSearch(active)); const visible = matchesText && matchesFilter; card.hidden = !visible; if (visible) count += 1; }); status.textContent = query || active !== 'all' ? `${formatNumber(count)} نتيجة ظاهرة` : `${formatNumber(count)} أداة أو مقال متاح`; empty.hidden = count !== 0; clear.hidden = !query; buttons.forEach(button => button.classList.toggle('active', button.dataset.filter === active)); }; input.addEventListener('input', render); clear.addEventListener('click', () => { input.value = ''; input.focus(); render(); }); buttons.forEach(button => button.addEventListener('click', () => { active = button.dataset.filter; render(); })); render(); }
+window.CalorieApp = { links, icon, formatNumber, getNumber, showError, clearError, validRange, shareResult, LOCAL_SEARCH_INDEX, normalizeSearch, matchesSearchText };
 renderShell();
+mountHomeSearch();
+mountDirectorySearch();
 observeReveals();
 mountArticleShare();
 mountRelatedArticles();
