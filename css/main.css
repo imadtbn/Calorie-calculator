@@ -1323,3 +1323,17 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .local-search-result { grid-template-columns: auto minmax(0, 1fr); }
   .local-search-arrow { display: none; }
 }
+
+/* Health-tool FAQ blocks */
+.health-faq { background: var(--mint); }
+.health-faq .section-heading { max-width: 850px; margin: 0 auto 24px; text-align: center; }
+.health-faq .faq-list { max-width: 850px; }
+.health-faq .faq-list details { background: rgba(255,255,255,.88); box-shadow: 0 8px 24px rgba(18,72,61,.04); }
+.health-faq-note { max-width: 850px; margin: 18px auto 0; padding: 15px 17px; color: #70443b; background: #fff8df; border: 1px solid #efdfaa; border-right: 4px solid var(--coral); border-radius: 14px; font-size: .84rem; line-height: 1.85; }
+.health-faq-note strong { color: #9a4d3b; }
+@media (max-width: 540px) {
+  .health-faq .section-heading { text-align: right; }
+  .health-faq details { padding: 0 14px; }
+  .health-faq summary { gap: 12px; font-size: .92rem; line-height: 1.7; }
+  .health-faq details p { font-size: .86rem; line-height: 1.85; }
+}
