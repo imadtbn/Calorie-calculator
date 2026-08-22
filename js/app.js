@@ -9,9 +9,6 @@ const links = {
   ideal: rootPath + 'ideal-weight-calculator.html',
   foods: rootPath + 'food-calories.html',
   healthTools: rootPath + 'health-tools.html',
-  healthTools: rootPath + 'health-tools.html',
-  healthTools: rootPath + 'health-tools.html',
-  healthTools: rootPath + 'health-tools.html',
   articles: rootPath + 'articles.html',
   faq: rootPath + 'faq.html',
   about: rootPath + 'about.html',
@@ -51,7 +48,7 @@ function renderShell() {
         <a class="${active === 'bmi' ? 'active' : ''}" href="${links.bmi}">BMI</a>
         <a class="${active === 'macros' ? 'active' : ''}" href="${links.macros}">الماكروز</a>
         <a class="${active === 'foods' ? 'active' : ''}" href="${links.foods}">الأطعمة</a>
-        <a class="${active === 'articles' ? 'active' : ''}" href="${links.articles}">المقالات</a><a class="${active === 'health-tools' ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a><a class="${active === 'health-tools' ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a><a class="${active === 'health-tools' ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a><a class="${active === 'health-tools' ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a>
+        <a class="${active === 'articles' ? 'active' : ''}" href="${links.articles}">المقالات</a><a class="${['health-tools', 'child-bmi', 'pregnancy-calorie'].includes(active) ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a>
       </nav>
     </div>`;
     const toggle = header.querySelector('.nav-toggle');
@@ -172,6 +169,8 @@ function mountRelatedArticles() {
     'pregnancy-due-date': [['fertile-window', 'نافذة الخصوبة والإباضة: كيف نقرأ التقدير؟', 'الخصوبة والتخطيط', 'فهم التقدير التقويمي وأهم حدوده.', 'water-hydration.webp']],
     'fertile-window': [['pregnancy-due-date', 'كيف يُحسب موعد الولادة المتوقع؟', 'الحمل والمتابعة', 'طريقة قراءة الموعد المتوقع وحدود الحاسبة.', 'water-hydration.webp']],
     'prediabetes-risk': [['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'خطوات تدريجية لدعم نمط حياة متوازن.', 'calorie-deficit.webp'], ['healthy-weight', 'ما معنى الوزن الصحي؟', 'وعي صحي', 'لماذا لا يكفي رقم واحد لوصف الصحة.', 'bmr-tdee.webp']],
+    'child-bmi': [['pregnancy-calories', 'السعرات أثناء الحمل: كيف نقرأ التقدير؟', 'الحمل والتغذية', 'فهم الزيادة التقريبية وحدود الرقم.', 'water-hydration.webp'], ['healthy-weight', 'ما معنى الوزن الصحي؟', 'وعي صحي', 'نظرة متوازنة إلى الوزن بعيدًا عن رقم واحد.', 'bmr-tdee.webp']],
+    'pregnancy-calories': [['child-bmi', 'BMI للأطفال: لماذا نستخدم المئينات؟', 'نمو الأطفال', 'لماذا يعتمد BMI للأطفال على المئينات.', 'bmr-tdee.webp'], ['bmr-vs-tdee', 'ما الفرق بين BMR وTDEE؟', 'أساسيات التغذية', 'افهم الفرق بين الأيض والاحتياج اليومي.', 'bmr-tdee.webp']],
     'water-and-exercise': [
       ['how-much-water', 'كم تحتاج من الماء يوميًا؟', 'الترطيب', 'تقدير بسيط لاحتياجك اليومي من الماء.', 'how-much-water.webp'],
       ['calorie-deficit', 'كيف تبني عجزًا حراريًا معتدلًا؟', 'عادات يومية', 'تقدم تدريجي بدل الحلول السريعة.', 'calorie-deficit.webp'],

@@ -125,5 +125,39 @@ function initPrediabetes() {
   document.getElementById('share-pred')?.addEventListener('click', () => shareResult(`نتيجتي التقديرية في اختبار خطر ما قبل السكري: ${document.getElementById('pred-score').textContent} من 10 نقاط — ${document.getElementById('pred-category').textContent}.`));
 }
 
-  initCalorie(); initBmi(); initMacros(); initWater(); initIdealWeight(); initDueDate(); initFertileWindow(); initPrediabetes();
+
+function normalCdf(z) {
+  const sign = z < 0 ? -1 : 1; const x = Math.abs(z) / Math.sqrt(2); const t = 1 / (1 + 0.3275911 * x);
+  const erf = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+  return 0.5 * (1 + sign * erf);
+}
+function initChildBmi() {
+  const form = document.getElementById('child-bmi-form'); if (!form) return;
+  let dataset = null;
+  fetch(`${document.body.dataset.root || './'}data/cdc-bmi-for-age.json`).then(response => { if (!response.ok) throw new Error('data'); return response.json(); }).then(data => { dataset = data; }).catch(() => { showError('child-bmi-error', 'تعذر تحميل جداول النمو حاليًا. حاول مرة أخرى لاحقًا.'); });
+  form.addEventListener('submit', event => {
+    event.preventDefault(); clearError('child-bmi-error');
+    if (!dataset) { showError('child-bmi-error', 'انتظر لحظة حتى تكتمل جداول النمو ثم حاول مرة أخرى.'); return; }
+    const years = getNumber('child-age-years'), extraMonths = getNumber('child-age-months') || 0, weight = getNumber('child-weight'), height = getNumber('child-height');
+    if (!validRange(years, 2, 19) || !validRange(extraMonths, 0, 11) || !validRange(weight, 5, 250) || !validRange(height, 70, 230) || (years === 19 && extraMonths > 11)) { showError('child-bmi-error', 'تحقق من العمر بين سنتين و19 سنة، والأشهر بين 0 و11، والطول والوزن ضمن نطاق منطقي.'); return; }
+    const ageMonths = years * 12 + extraMonths; const gender = form.querySelector('input[name="child-gender"]:checked')?.value || 'male'; const bmi = weight / Math.pow(height / 100, 2); const rows = dataset[gender];
+    const row = rows.reduce((best, item) => Math.abs(item.ageMonths - ageMonths) < Math.abs(best.ageMonths - ageMonths) ? item : best, rows[0]);
+    const z = row.L === 0 ? Math.log(bmi / row.M) / row.S : (Math.pow(bmi / row.M, row.L) - 1) / (row.L * row.S); const percentile = Math.max(.1, Math.min(99.9, normalCdf(z) * 100));
+    const category = percentile < 5 ? 'أقل من الوزن المتوقع' : percentile < 85 ? 'نطاق الوزن الصحي' : percentile < 95 ? 'وزن زائد' : 'سمنة';
+    document.getElementById('child-bmi-value').textContent = bmi.toFixed(1); document.getElementById('child-bmi-percentile').textContent = `${percentile.toFixed(1)}%`; document.getElementById('child-bmi-category').textContent = category; document.getElementById('child-bmi-note').textContent = `تمت مقارنة القياس بجدول CDC الأقرب لعمر ${years} سنة و${extraMonths} شهرًا. النتيجة فحص أولي وليست تشخيصًا.`;
+    document.getElementById('child-bmi-empty').hidden = true; document.getElementById('child-bmi-result').hidden = false; document.getElementById('child-bmi-result').classList.add('show');
+  });
+}
+function initPregnancyCalories() {
+  const form = document.getElementById('pregnancy-calorie-form'); if (!form) return;
+  form.addEventListener('submit', event => {
+    event.preventDefault(); clearError('pregnancy-calorie-error'); const base = getNumber('pregnancy-base-calories'); const trimester = document.getElementById('pregnancy-trimester')?.value || '1';
+    if (!validRange(base, 1200, 5000)) { showError('pregnancy-calorie-error', 'أدخل سعرات خط أساس بين 1,200 و5,000 سعرة يوميًا.'); return; }
+    const extra = trimester === '2' ? 340 : trimester === '3' ? 450 : 0; const label = trimester === '2' ? 'الثاني' : trimester === '3' ? 'الثالث' : 'الأول';
+    document.getElementById('pregnancy-calorie-total').textContent = formatNumber(base + extra); document.getElementById('pregnancy-calorie-extra').textContent = `+${formatNumber(extra)}`; document.getElementById('pregnancy-calorie-trimester').textContent = `الثلث ${label}`;
+    document.getElementById('pregnancy-calorie-empty').hidden = true; document.getElementById('pregnancy-calorie-result').hidden = false; document.getElementById('pregnancy-calorie-result').classList.add('show');
+  });
+}
+
+  initCalorie(); initBmi(); initMacros(); initWater(); initIdealWeight(); initDueDate(); initFertileWindow(); initPrediabetes(); initChildBmi(); initPregnancyCalories();
 })();

@@ -277,4 +277,36 @@
     <priority>0.6</priority>
     <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/calorie-deficit.webp</image:loc><image:title>اختبار خطر ما قبل السكري: ماذا تعني النتيجة؟</image:title></image:image>
   </url>
+
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/child-bmi-calculator.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>حاسبة BMI للأطفال والمراهقين</image:title></image:image>
+  </url>
+
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/pregnancy-calorie-calculator.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>حاسبة السعرات الحرارية أثناء الحمل</image:title></image:image>
+  </url>
+
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/child-bmi.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</image:loc><image:title>BMI للأطفال: لماذا نستخدم المئينات؟</image:title></image:image>
+  </url>
+
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/articles/pregnancy-calories.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc><image:title>السعرات أثناء الحمل: كيف نقرأ التقدير؟</image:title></image:image>
+  </url>
 </urlset>
