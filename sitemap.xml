@@ -1,334 +1,333 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <!-- Generated from public canonical HTML pages; verification files are intentionally excluded. -->
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:ns1="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/about.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>عن حاسبة السعرات | أدوات غذائية عربية مبسطة</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>عن حاسبة السعرات | أدوات غذائية عربية مبسطة</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/about.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/about.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/articles-hero.webp</image:loc>
-      <image:title>مقالات السعرات والتغذية والماء | دليل عربي</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/articles-hero.webp</ns1:loc>
+      <ns1:title>مقالات السعرات والتغذية والماء | دليل عربي</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/bmi-calculator.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>حاسبة BMI ومؤشر كتلة الجسم حسب الطول والوزن</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>حاسبة BMI ومؤشر كتلة الجسم حسب الطول والوزن</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/bmi-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/bmi-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/calorie-calculator.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>حاسبة السعرات الحرارية اليومية مجانًا | BMR وTDEE</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>حاسبة السعرات الحرارية اليومية مجانًا | BMR وTDEE</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/calorie-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/calorie-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/contact.html</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>اتصل بنا | حاسبة السعرات</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>اتصل بنا | حاسبة السعرات</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/contact.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/contact.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/disclaimer.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>إخلاء المسؤولية الطبية | حاسبة السعرات</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>إخلاء المسؤولية الطبية | حاسبة السعرات</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/disclaimer.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/disclaimer.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/faq.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>الأسئلة الشائعة عن السعرات وBMI والماكروز</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>الأسئلة الشائعة عن السعرات وBMI والماكروز</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/faq.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/faq.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/food-calories.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>السعرات في الأطعمة | جدول السعرات والبروتين والكربوهيدرات</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>السعرات في الأطعمة | جدول السعرات والبروتين والكربوهيدرات</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/food-calories.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/food-calories.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/ideal-weight-calculator.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>حاسبة الوزن المثالي حسب الطول والجنس | تقدير تقريبي</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>حاسبة الوزن المثالي حسب الطول والجنس | تقدير تقريبي</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/ideal-weight-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/ideal-weight-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>حاسبة السعرات الحرارية اليومية مجانًا | BMR وTDEE</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>حاسبة السعرات الحرارية اليومية مجانًا | BMR وTDEE</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/index.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/macros-calculator.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>حاسبة الماكروز | احسب البروتين والكربوهيدرات والدهون</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>حاسبة الماكروز | احسب البروتين والكربوهيدرات والدهون</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/macros-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/macros-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/privacy.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>سياسة الخصوصية والإعلانات | حاسبة السعرات</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>سياسة الخصوصية والإعلانات | حاسبة السعرات</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/privacy.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/privacy.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/terms.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>شروط الاستخدام | حاسبة السعرات</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>شروط الاستخدام | حاسبة السعرات</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/terms.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/terms.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/water-calculator.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
-      <image:title>حاسبة الماء اليومية حسب الوزن والنشاط</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc>
+      <ns1:title>حاسبة الماء اليومية حسب الوزن والنشاط</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/water-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/water-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/bmr-vs-tdee.html</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</image:loc>
-      <image:title>ما الفرق بين BMR وTDEE؟ شرح معدل الأيض والاحتياج اليومي</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</ns1:loc>
+      <ns1:title>ما الفرق بين BMR وTDEE؟ شرح معدل الأيض والاحتياج اليومي</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/bmr-vs-tdee.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/bmr-vs-tdee.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/calorie-deficit.html</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/calorie-deficit.webp</image:loc>
-      <image:title>العجز الحراري لخسارة الوزن | دليل معتدل ومستدام</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/calorie-deficit.webp</ns1:loc>
+      <ns1:title>العجز الحراري لخسارة الوزن | دليل معتدل ومستدام</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/calorie-deficit.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/calorie-deficit.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/calorie-needs-change.html</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</image:loc>
-      <image:title>لماذا تختلف احتياجات السعرات بين الأشخاص؟ شرح BMR وTDEE</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</ns1:loc>
+      <ns1:title>لماذا تختلف احتياجات السعرات بين الأشخاص؟ شرح BMR وTDEE</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/calorie-needs-change.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/calorie-needs-change.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/healthy-weight.html</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</image:loc>
-      <image:title>ما هو الوزن الصحي؟ ولماذا لا يوجد وزن مثالي واحد؟</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</ns1:loc>
+      <ns1:title>ما هو الوزن الصحي؟ ولماذا لا يوجد وزن مثالي واحد؟</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/healthy-weight.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/healthy-weight.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/how-much-water.html</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc>
-      <image:title>كم يحتاج الجسم من الماء يوميًا؟ دليل مبسط</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</ns1:loc>
+      <ns1:title>كم يحتاج الجسم من الماء يوميًا؟ دليل مبسط</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/how-much-water.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/how-much-water.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/how-to-count-calories.html</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/calorie-deficit.webp</image:loc>
-      <image:title>كيف تحسب السعرات في الوجبة؟ دليل قراءة الحصص والملصق الغذائي</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/calorie-deficit.webp</ns1:loc>
+      <ns1:title>كيف تحسب السعرات في الوجبة؟ دليل قراءة الحصص والملصق الغذائي</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/how-to-count-calories.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/how-to-count-calories.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/macros-guide.html</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/macros-guide.webp</image:loc>
-      <image:title>دليل الماكروز: البروتين والكربوهيدرات والدهون</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/macros-guide.webp</ns1:loc>
+      <ns1:title>دليل الماكروز: البروتين والكربوهيدرات والدهون</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/macros-guide.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/macros-guide.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/water-and-exercise.html</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc>
-      <image:title>الماء والرياضة: كيف تحافظ على الترطيب أثناء التمرين؟</image:title>
-    </image:image>
-  </url>
+    <ns1:image>
+      <ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</ns1:loc>
+      <ns1:title>الماء والرياضة: كيف تحافظ على الترطيب أثناء التمرين؟</ns1:title>
+    </ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/water-and-exercise.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/water-and-exercise.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/health-tools.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>أدوات صحية وحاسبات طبية</image:title></image:image>
-  </url>
+    <ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc><ns1:title>أدوات صحية وحاسبات طبية</ns1:title></ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/health-tools.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/health-tools.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/pregnancy-due-date.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>حاسبة موعد الولادة المتوقع</image:title></image:image>
-  </url>
+    <ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc><ns1:title>حاسبة موعد الولادة المتوقع</ns1:title></ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/pregnancy-due-date.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/pregnancy-due-date.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/fertile-window.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>حاسبة نافذة الخصوبة والإباضة</image:title></image:image>
-  </url>
+    <ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc><ns1:title>حاسبة نافذة الخصوبة والإباضة</ns1:title></ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/fertile-window.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/fertile-window.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/prediabetes-risk.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>اختبار خطر ما قبل السكري</image:title></image:image>
-  </url>
+    <ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc><ns1:title>اختبار خطر ما قبل السكري</ns1:title></ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/prediabetes-risk.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/prediabetes-risk.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/pregnancy-due-date.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc><image:title>كيف يُحسب موعد الولادة المتوقع؟</image:title></image:image>
-  </url>
+    <ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</ns1:loc><ns1:title>كيف يُحسب موعد الولادة المتوقع؟</ns1:title></ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/pregnancy-due-date.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/pregnancy-due-date.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/fertile-window.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc><image:title>نافذة الخصوبة والإباضة: كيف نقرأ التقدير؟</image:title></image:image>
-  </url>
+    <ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</ns1:loc><ns1:title>نافذة الخصوبة والإباضة: كيف نقرأ التقدير؟</ns1:title></ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/fertile-window.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/fertile-window.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/prediabetes-risk.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/calorie-deficit.webp</image:loc><image:title>اختبار خطر ما قبل السكري: ماذا تعني النتيجة؟</image:title></image:image>
-  </url>
+    <ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/calorie-deficit.webp</ns1:loc><ns1:title>اختبار خطر ما قبل السكري: ماذا تعني النتيجة؟</ns1:title></ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/prediabetes-risk.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/prediabetes-risk.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/child-bmi-calculator.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>حاسبة BMI للأطفال والمراهقين</image:title></image:image>
-  </url>
+    <ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc><ns1:title>حاسبة BMI للأطفال والمراهقين</ns1:title></ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/child-bmi-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/child-bmi-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/pregnancy-calorie-calculator.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>حاسبة السعرات الحرارية أثناء الحمل</image:title></image:image>
-  </url>
+    <ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc><ns1:title>حاسبة السعرات الحرارية أثناء الحمل</ns1:title></ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/pregnancy-calorie-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/pregnancy-calorie-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/child-bmi.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</image:loc><image:title>BMI للأطفال: لماذا نستخدم المئينات؟</image:title></image:image>
-  </url>
+    <ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/bmr-tdee.webp</ns1:loc><ns1:title>BMI للأطفال: لماذا نستخدم المئينات؟</ns1:title></ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/child-bmi.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/child-bmi.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/articles/pregnancy-calories.html</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc><image:title>السعرات أثناء الحمل: كيف نقرأ التقدير؟</image:title></image:image>
-  </url>
+    <ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</ns1:loc><ns1:title>السعرات أثناء الحمل: كيف نقرأ التقدير؟</ns1:title></ns1:image>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/pregnancy-calories.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/pregnancy-calories.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/infant-growth-calculator.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc><image:title>حاسبة نمو الرضع والطول حسب العمر</image:title></image:image></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/infant-growth-calculator.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</ns1:loc><ns1:title>حاسبة نمو الرضع والطول حسب العمر</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/infant-growth-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/infant-growth-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
 
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/infant-growth.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</image:loc><image:title>كيف نقرأ طول الرضيع على مخطط WHO؟</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/asthma-control.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/asthma-control.jpg</image:loc><image:title>اختبار التحكم بالربو</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/anxiety-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/anxiety-screening.jpg</image:loc><image:title>استبيان القلق التوعوي</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/eating-awareness.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/eating-awareness.jpg</image:loc><image:title>استبيان الوعي بأنماط الأكل</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/sleep-assessment.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/sleep-assessment.jpg</image:loc><image:title>تقييم النوم التوعوي</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/depression-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/depression-support.jpg</image:loc><image:title>استبيان المزاج والاكتئاب</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/phone-balance.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/phone-balance.jpg</image:loc><image:title>استبيان التوازن مع الهاتف</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/pilgrim-health-checklist.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/pilgrim-health.jpg</image:loc><image:title>قائمة الاستعداد الصحي للحج</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/diabetes-awareness.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/diabetes-awareness.jpg</image:loc><image:title>قائمة التوعية اليومية بالسكري</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/visual-acuity-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/visual-acuity.jpg</image:loc><image:title>اختبار حدة البصر التقريبي</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/asthma-control.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/asthma-control.jpg</image:loc><image:title>كيف نقرأ نتيجة اختبار التحكم بالربو؟</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/anxiety-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/anxiety-screening.jpg</image:loc><image:title>استبيان القلق: ماذا تعني الدرجة؟</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/eating-awareness.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/eating-awareness.jpg</image:loc><image:title>الوعي بأنماط الأكل وطلب الدعم</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/sleep-assessment.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/sleep-assessment.jpg</image:loc><image:title>كيف نقرأ تقييم النوم؟</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/depression-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/depression-support.jpg</image:loc><image:title>استبيان المزاج: متى أطلب المساعدة؟</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/visual-acuity-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/visual-acuity.jpg</image:loc><image:title>هل اختبار النظر على الهاتف دقيق؟</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/phone-balance.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/phone-balance.jpg</image:loc><image:title>التوازن مع الهاتف: مراجعة ذاتية قصيرة</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/pilgrim-health-checklist.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/pilgrim-health.jpg</image:loc><image:title>قائمة الاستعداد الصحي للحج</image:title></image:image></url>
-  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/diabetes-awareness.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/diabetes-awareness.jpg</image:loc><image:title>التوعية اليومية بالسكري دون تشخيص ذاتي</image:title></image:image></url>
-</urlset>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/infant-growth.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/articles/water-hydration.webp</ns1:loc><ns1:title>كيف نقرأ طول الرضيع على مخطط WHO؟</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/infant-growth.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/infant-growth.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/asthma-control.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/asthma-control.jpg</ns1:loc><ns1:title>اختبار التحكم بالربو</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/asthma-control.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/asthma-control.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/anxiety-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/anxiety-screening.jpg</ns1:loc><ns1:title>استبيان القلق التوعوي</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/anxiety-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/anxiety-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/eating-awareness.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/eating-awareness.jpg</ns1:loc><ns1:title>استبيان الوعي بأنماط الأكل</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/eating-awareness.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/eating-awareness.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/sleep-assessment.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/sleep-assessment.jpg</ns1:loc><ns1:title>تقييم النوم التوعوي</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/sleep-assessment.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/sleep-assessment.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/depression-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/depression-support.jpg</ns1:loc><ns1:title>استبيان المزاج والاكتئاب</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/depression-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/depression-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/phone-balance.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/phone-balance.jpg</ns1:loc><ns1:title>استبيان التوازن مع الهاتف</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/phone-balance.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/phone-balance.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/pilgrim-health-checklist.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/pilgrim-health.jpg</ns1:loc><ns1:title>قائمة الاستعداد الصحي للحج</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/pilgrim-health-checklist.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/pilgrim-health-checklist.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/diabetes-awareness.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/diabetes-awareness.jpg</ns1:loc><ns1:title>قائمة التوعية اليومية بالسكري</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/diabetes-awareness.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/diabetes-awareness.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/visual-acuity-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/visual-acuity.jpg</ns1:loc><ns1:title>اختبار حدة البصر التقريبي</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/visual-acuity-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/visual-acuity-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/asthma-control.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/asthma-control.jpg</ns1:loc><ns1:title>كيف نقرأ نتيجة اختبار التحكم بالربو؟</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/asthma-control.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/asthma-control.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/anxiety-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/anxiety-screening.jpg</ns1:loc><ns1:title>استبيان القلق: ماذا تعني الدرجة؟</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/anxiety-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/anxiety-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/eating-awareness.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/eating-awareness.jpg</ns1:loc><ns1:title>الوعي بأنماط الأكل وطلب الدعم</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/eating-awareness.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/eating-awareness.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/sleep-assessment.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/sleep-assessment.jpg</ns1:loc><ns1:title>كيف نقرأ تقييم النوم؟</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/sleep-assessment.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/sleep-assessment.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/depression-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/depression-support.jpg</ns1:loc><ns1:title>استبيان المزاج: متى أطلب المساعدة؟</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/depression-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/depression-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/visual-acuity-screening.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/visual-acuity.jpg</ns1:loc><ns1:title>هل اختبار النظر على الهاتف دقيق؟</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/visual-acuity-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/visual-acuity-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/phone-balance.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/phone-balance.jpg</ns1:loc><ns1:title>التوازن مع الهاتف: مراجعة ذاتية قصيرة</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/phone-balance.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/phone-balance.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/pilgrim-health-checklist.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/pilgrim-health.jpg</ns1:loc><ns1:title>قائمة الاستعداد الصحي للحج</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/pilgrim-health-checklist.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/pilgrim-health-checklist.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url><loc>https://imadtbn.github.io/Calorie-calculator/articles/diabetes-awareness.html</loc><lastmod>2026-08-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><ns1:image><ns1:loc>https://imadtbn.github.io/Calorie-calculator/assets/tools/diabetes-awareness.jpg</ns1:loc><ns1:title>التوعية اليومية بالسكري دون تشخيص ذاتي</ns1:title></ns1:image><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/diabetes-awareness.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/diabetes-awareness.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+<url><loc>https://imadtbn.github.io/Calorie-calculator/en/about.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/about.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/about.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/bmi-calculator.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/bmi-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/bmi-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/calorie-calculator.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/calorie-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/calorie-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/contact.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/contact.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/contact.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/disclaimer.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/disclaimer.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/disclaimer.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/faq.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/faq.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/faq.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/food-calories.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/food-calories.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/food-calories.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/ideal-weight-calculator.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/ideal-weight-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/ideal-weight-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/index.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/index.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/macros-calculator.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/macros-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/macros-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/privacy.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/privacy.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/privacy.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/terms.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/terms.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/terms.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/water-calculator.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/water-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/water-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/bmr-vs-tdee.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/bmr-vs-tdee.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/bmr-vs-tdee.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/calorie-deficit.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/calorie-deficit.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/calorie-deficit.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/calorie-needs-change.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/calorie-needs-change.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/calorie-needs-change.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/healthy-weight.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/healthy-weight.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/healthy-weight.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/how-much-water.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/how-much-water.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/how-much-water.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/how-to-count-calories.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/how-to-count-calories.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/how-to-count-calories.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/macros-guide.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/macros-guide.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/macros-guide.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/water-and-exercise.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/water-and-exercise.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/water-and-exercise.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/health-tools.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/health-tools.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/health-tools.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/pregnancy-due-date.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/pregnancy-due-date.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/pregnancy-due-date.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/fertile-window.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/fertile-window.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/fertile-window.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/prediabetes-risk.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/prediabetes-risk.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/prediabetes-risk.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/pregnancy-due-date.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/pregnancy-due-date.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/pregnancy-due-date.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/fertile-window.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/fertile-window.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/fertile-window.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/prediabetes-risk.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/prediabetes-risk.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/prediabetes-risk.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/child-bmi-calculator.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/child-bmi-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/child-bmi-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/pregnancy-calorie-calculator.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/pregnancy-calorie-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/pregnancy-calorie-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/child-bmi.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/child-bmi.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/child-bmi.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/pregnancy-calories.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/pregnancy-calories.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/pregnancy-calories.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/infant-growth-calculator.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/infant-growth-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/infant-growth-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/infant-growth.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/infant-growth.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/infant-growth.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/asthma-control.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/asthma-control.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/asthma-control.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/anxiety-screening.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/anxiety-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/anxiety-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/eating-awareness.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/eating-awareness.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/eating-awareness.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/sleep-assessment.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/sleep-assessment.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/sleep-assessment.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/depression-screening.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/depression-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/depression-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/phone-balance.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/phone-balance.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/phone-balance.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/pilgrim-health-checklist.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/pilgrim-health-checklist.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/pilgrim-health-checklist.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/diabetes-awareness.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/diabetes-awareness.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/diabetes-awareness.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/visual-acuity-screening.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/visual-acuity-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/visual-acuity-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/asthma-control.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/asthma-control.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/asthma-control.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/anxiety-screening.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/anxiety-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/anxiety-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/eating-awareness.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/eating-awareness.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/eating-awareness.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/sleep-assessment.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/sleep-assessment.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/sleep-assessment.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/depression-screening.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/depression-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/depression-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/visual-acuity-screening.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/visual-acuity-screening.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/visual-acuity-screening.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/phone-balance.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/phone-balance.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/phone-balance.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/pilgrim-health-checklist.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/pilgrim-health-checklist.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/pilgrim-health-checklist.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url><url><loc>https://imadtbn.github.io/Calorie-calculator/en/articles/diabetes-awareness.html</loc><lastmod>2026-08-23</lastmod><changefreq>weekly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/articles/diabetes-awareness.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/articles/diabetes-awareness.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url></urlset>

@@ -2,6 +2,7 @@
   'use strict';
 
   const CLIENT = 'ca-pub-5656416032906373';
+  const AD_LABEL = document.documentElement.lang?.toLowerCase().startsWith('en') ? 'Advertisement' : 'إعلان';
   const ROOT_MARGIN = '500px 0px';
   const units = {
     fluid01: { slot: '7867079394', format: 'fluid', layoutKey: '-fr+56+4k-d4+74' },
@@ -29,12 +30,12 @@
     const container = document.createElement('section');
     container.className = `ad-container ad-container--${unit.format} ${modifier}`.trim();
     container.dataset.adUnit = name;
-    container.setAttribute('aria-label', 'إعلان');
+    container.setAttribute('aria-label', AD_LABEL);
     container.setAttribute('role', 'complementary');
 
     const label = document.createElement('span');
     label.className = 'ad-container__label';
-    label.textContent = 'إعلان';
+    label.textContent = AD_LABEL;
     container.appendChild(label);
 
     const ins = document.createElement('ins');

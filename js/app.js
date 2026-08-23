@@ -1,5 +1,8 @@
 const rootPath = document.body.dataset.root || './';
 
+const appLocale = (document.documentElement.lang || 'ar').toLowerCase().startsWith('en') ? 'en' : 'ar';
+const appLocaleRoot = appLocale === 'en' ? `${rootPath}en/` : rootPath;
+
 const links = {
   home: rootPath + 'index.html',
   calorie: rootPath + 'calorie-calculator.html',
@@ -40,6 +43,15 @@ function getCurrentLanguage() {
   return code === 'en' ? { code: 'en', label: 'English', currentLabel: 'Current' } : { code: 'ar', label: 'العربية', currentLabel: 'الحالية' };
 }
 
+function getLanguageHref(language) {
+  const pathname = window.location.pathname;
+  const repoBase = pathname.includes('/Calorie-calculator/') ? '/Calorie-calculator/' : '/';
+  const relative = pathname.includes(repoBase) ? pathname.split(repoBase)[1] : pathname.replace(/^\/+/, '');
+  const page = relative.startsWith('en/') ? relative.slice(3) : (relative || 'index.html');
+  const target = language === 'en' ? `en/${page}` : page;
+  return `${window.location.origin}${repoBase}${target}`;
+}
+
 function mountLanguageSwitcher(header) {
   const switcher = header.querySelector('[data-language-switcher]');
   const trigger = switcher?.querySelector('[data-language-trigger]');
@@ -68,29 +80,38 @@ function renderShell() {
   const footer = document.querySelector('[data-site-footer]');
   const active = document.body.dataset.page || '';
   const currentLanguage = getCurrentLanguage();
+  const isEnglish = currentLanguage.code === 'en';
+  const ui = isEnglish ? {
+    home: 'Home', calorie: 'Calorie calculator', bmi: 'BMI', macros: 'Macros', foods: 'Foods', articles: 'Articles', healthTools: 'Health tools',
+    homeAria: 'Back to homepage', openNav: 'Open navigation', chooseLanguage: 'Choose site language', arabic: 'العربية', current: 'Current', english: 'English', soon: 'Available',
+    toolsTitle: 'Tools', contentTitle: 'Content', legalTitle: 'Legal information', dailyCalories: 'Daily calorie calculator', bmiCalc: 'BMI calculator', macrosCalc: 'Macro calculator', waterCalc: 'Daily water calculator', idealCalc: 'Estimated weight calculator', foodCalories: 'Food calories', faq: 'FAQ', about: 'About us', contact: 'Contact us', privacy: 'Privacy', terms: 'Terms of use', disclaimer: 'Disclaimer', description: 'Simple health tools to help you understand your daily needs and make more informed choices.', copyright: '© 2026 Calorie Calculator. All rights reserved.', note: 'These tools are for estimation and education, not medical diagnosis.'
+  } : {
+    home: 'الرئيسية', calorie: 'حاسبة السعرات', bmi: 'BMI', macros: 'الماكروز', foods: 'الأطعمة', articles: 'المقالات', healthTools: 'الأدوات الصحية',
+    homeAria: 'العودة إلى الصفحة الرئيسية', openNav: 'فتح قائمة التنقل', chooseLanguage: 'اختيار لغة الموقع', arabic: 'العربية', current: 'الحالية', english: 'English', soon: 'قريبًا',
+    toolsTitle: 'الأدوات', contentTitle: 'المحتوى', legalTitle: 'معلومات قانونية', dailyCalories: 'حاسبة السعرات اليومية', bmiCalc: 'حاسبة مؤشر BMI', macrosCalc: 'حاسبة الماكروز', waterCalc: 'حاسبة الماء اليومية', idealCalc: 'حاسبة الوزن التقريبي', foodCalories: 'السعرات في الأطعمة', faq: 'الأسئلة الشائعة', about: 'عن الموقع', contact: 'اتصل بنا', privacy: 'الخصوصية', terms: 'شروط الاستخدام', disclaimer: 'إخلاء المسؤولية', description: 'أدوات صحية مبسطة تساعدك على فهم احتياجاتك اليومية واتخاذ قرارات أكثر وعيًا.', copyright: '© 2026 حاسبة السعرات. جميع الحقوق محفوظة.', note: 'هذه الأدوات للتقدير والتثقيف وليست تشخيصًا طبيًا.'
+  };
+  const languageRoot = isEnglish ? `${rootPath}en/` : rootPath;
+  const pageLinks = Object.fromEntries(Object.entries(links).map(([key, href]) => [key, `${languageRoot}${href.slice(rootPath.length)}`]));
+  const navItems = [
+    ['home', ui.home, pageLinks.home], ['calorie', ui.calorie, pageLinks.calorie], ['bmi', ui.bmi, pageLinks.bmi], ['macros', ui.macros, pageLinks.macros], ['foods', ui.foods, pageLinks.foods], ['articles', ui.articles, pageLinks.articles], ['health-tools', ui.healthTools, pageLinks.healthTools]
+  ];
+  const navMarkup = navItems.map(([key, label, href]) => `<a class="${active === key || (key === 'health-tools' && ['health-tools', 'child-bmi', 'pregnancy-calorie', 'infant-growth'].includes(active)) ? 'active' : ''}" href="${href}">${label}</a>`).join('');
   if (header) {
     header.innerHTML = `<div class="container navbar">
-      <a class="brand" href="${links.home}" aria-label="العودة إلى الصفحة الرئيسية"><span class="brand-mark"><img class="brand-logo" src="${rootPath}assets/calorie-mark-512.png" alt="" width="38" height="38" decoding="async"></span><span class="brand-name">حاسبة السعرات</span></a>
+      <a class="brand" href="${pageLinks.home}" aria-label="${ui.homeAria}"><span class="brand-mark"><img class="brand-logo" src="${rootPath}assets/calorie-mark-512.png" alt="" width="38" height="38" decoding="async"></span><span class="brand-name">${isEnglish ? 'Calorie Calculator' : 'حاسبة السعرات'}</span></a>
       <div class="nav-actions">
         <div class="language-switcher" data-language-switcher>
-          <button class="language-trigger" type="button" data-language-trigger aria-expanded="false" aria-controls="language-menu" aria-haspopup="true" aria-label="اختيار لغة الموقع">
+          <button class="language-trigger" type="button" data-language-trigger aria-expanded="false" aria-controls="language-menu" aria-haspopup="true" aria-label="${ui.chooseLanguage}">
             ${icon('language', 19)}<span class="language-current">${currentLanguage.label}</span><span class="language-chevron" aria-hidden="true">⌄</span>
           </button>
           <div class="language-menu" id="language-menu" data-language-menu hidden>
-            <a class="language-option is-current" href="${window.location.href}" lang="ar" aria-current="page"><span>العربية</span><small>${currentLanguage.code === 'ar' ? currentLanguage.currentLabel : 'Arabic'}</small></a>
-            <button class="language-option language-option--disabled" type="button" disabled lang="en"><span>English</span><small>قريبًا</small></button>
+            <a class="language-option ${!isEnglish ? 'is-current' : ''}" href="${getLanguageHref('ar')}" lang="ar" ${!isEnglish ? 'aria-current="page"' : ''}><span>${ui.arabic}</span><small>${!isEnglish ? ui.current : 'Arabic'}</small></a>
+            <a class="language-option ${isEnglish ? 'is-current' : ''}" href="${getLanguageHref('en')}" lang="en" ${isEnglish ? 'aria-current="page"' : ''}><span>${ui.english}</span><small>${isEnglish ? ui.current : ui.soon}</small></a>
           </div>
         </div>
-        <button class="nav-toggle" aria-label="فتح قائمة التنقل" aria-expanded="false">${icon('menu', 25)}</button>
+        <button class="nav-toggle" aria-label="${ui.openNav}" aria-expanded="false">${icon('menu', 25)}</button>
       </div>
-      <nav class="nav-links" aria-label="التنقل الرئيسي">
-        <a class="${active === 'home' ? 'active' : ''}" href="${links.home}">الرئيسية</a>
-        <a class="${active === 'calorie' ? 'active' : ''}" href="${links.calorie}">حاسبة السعرات</a>
-        <a class="${active === 'bmi' ? 'active' : ''}" href="${links.bmi}">BMI</a>
-        <a class="${active === 'macros' ? 'active' : ''}" href="${links.macros}">الماكروز</a>
-        <a class="${active === 'foods' ? 'active' : ''}" href="${links.foods}">الأطعمة</a>
-        <a class="${active === 'articles' ? 'active' : ''}" href="${links.articles}">المقالات</a><a class="${['health-tools', 'child-bmi', 'pregnancy-calorie', 'infant-growth'].includes(active) ? 'active' : ''}" href="${links.healthTools}">الأدوات الصحية</a>
-      </nav>
+      <nav class="nav-links" aria-label="${isEnglish ? 'Main navigation' : 'التنقل الرئيسي'}">${navMarkup}</nav>
     </div>`;
     const toggle = header.querySelector('.nav-toggle');
     const nav = header.querySelector('.nav-links');
@@ -101,12 +122,12 @@ function renderShell() {
   if (footer) {
     footer.innerHTML = `<div class="container">
       <div class="footer-grid">
-        <div><a class="brand" href="${links.home}"><span class="brand-mark"><img class="brand-logo" src="${rootPath}assets/calorie-mark-512.png" alt="" width="38" height="38" decoding="async"></span><span class="brand-name">حاسبة السعرات</span></a><p style="color:#b5d3c5;max-width:280px;font-size:.84rem;margin-top:18px">أدوات صحية مبسطة تساعدك على فهم احتياجاتك اليومية واتخاذ قرارات أكثر وعيًا.</p></div>
-        <div><div class="footer-title">الأدوات</div><div class="footer-links"><a href="${links.calorie}">حاسبة السعرات اليومية</a><a href="${links.bmi}">حاسبة مؤشر BMI</a><a href="${links.macros}">حاسبة الماكروز</a><a href="${links.water}">حاسبة الماء اليومية</a><a href="${links.ideal}">حاسبة الوزن التقريبي</a><a href="${links.foods}">السعرات في الأطعمة</a><a href="${links.healthTools}">الأدوات الصحية</a></div></div>
-        <div><div class="footer-title">المحتوى</div><div class="footer-links"><a href="${links.articles}">المقالات</a><a href="${links.faq}">الأسئلة الشائعة</a><a href="${links.about}">عن الموقع</a><a href="${links.contact}">اتصل بنا</a></div></div>
-        <div><div class="footer-title">معلومات قانونية</div><div class="footer-links"><a href="${links.privacy}">الخصوصية</a><a href="${links.terms}">شروط الاستخدام</a><a href="${links.disclaimer}">إخلاء المسؤولية</a></div></div>
+        <div><a class="brand" href="${pageLinks.home}"><span class="brand-mark"><img class="brand-logo" src="${rootPath}assets/calorie-mark-512.png" alt="" width="38" height="38" decoding="async"></span><span class="brand-name">${isEnglish ? 'Calorie Calculator' : 'حاسبة السعرات'}</span></a><p style="color:#b5d3c5;max-width:280px;font-size:.84rem;margin-top:18px">${ui.description}</p></div>
+        <div><div class="footer-title">${ui.toolsTitle}</div><div class="footer-links"><a href="${pageLinks.calorie}">${ui.dailyCalories}</a><a href="${pageLinks.bmi}">${ui.bmiCalc}</a><a href="${pageLinks.macros}">${ui.macrosCalc}</a><a href="${pageLinks.water}">${ui.waterCalc}</a><a href="${pageLinks.ideal}">${ui.idealCalc}</a><a href="${pageLinks.foods}">${ui.foodCalories}</a><a href="${pageLinks.healthTools}">${ui.healthTools}</a></div></div>
+        <div><div class="footer-title">${ui.contentTitle}</div><div class="footer-links"><a href="${pageLinks.articles}">${ui.articles}</a><a href="${pageLinks.faq}">${ui.faq}</a><a href="${pageLinks.about}">${ui.about}</a><a href="${pageLinks.contact}">${ui.contact}</a></div></div>
+        <div><div class="footer-title">${ui.legalTitle}</div><div class="footer-links"><a href="${pageLinks.privacy}">${ui.privacy}</a><a href="${pageLinks.terms}">${ui.terms}</a><a href="${pageLinks.disclaimer}">${ui.disclaimer}</a></div></div>
       </div>
-      <div class="footer-bottom"><span>© 2026 حاسبة السعرات. جميع الحقوق محفوظة.</span><span>هذه الأدوات للتقدير والتثقيف وليست تشخيصًا طبيًا.</span></div>
+      <div class="footer-bottom"><span>${ui.copyright}</span><span>${ui.note}</span></div>
     </div>`;
   }
 }
@@ -326,12 +347,12 @@ const LOCAL_SEARCH_INDEX = [
   ['مقال','قائمة الاستعداد الصحي للحج','تجهيزات عملية للأدوية والماء والملابس والمشي الآمن.','articles/pilgrim-health-checklist.html','حج سفر صحة'],
   ['مقال','التوعية اليومية بالسكري دون تشخيص ذاتي','كيف تجعل المتابعة والعادات الصحية جزءًا من يومك.','articles/diabetes-awareness.html','سكري متابعة']
 ];
-function normalizeSearch(value) { return String(value || '').toLocaleLowerCase('ar').normalize('NFKD').replace(/[\\u064B-\\u065F\\u0670]/g, '').replace(/[أإآ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/ـ/g, '').replace(/\\s+/g, ' ').trim(); }
+function normalizeSearch(value) { return String(value || '').toLocaleLowerCase(appLocale).normalize('NFKD').replace(/[\\u064B-\\u065F\\u0670]/g, '').replace(/[أإآ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/ـ/g, '').replace(/\\s+/g, ' ').trim(); }
 function matchesSearchText(text, query) { const normalizedText = normalizeSearch(text); const normalizedQuery = normalizeSearch(query); if (!normalizedQuery) return false; const tokens = normalizedText.split(/[^\p{L}\p{N}%+#.-]+/u).filter(Boolean); return tokens.some(word => word === normalizedQuery || word.startsWith(normalizedQuery) || word.endsWith(normalizedQuery)); }
-function searchResultElement(item) { const [kind,title,description,href,tags] = item; const link = document.createElement('a'); link.className = 'local-search-result'; link.href = `${rootPath}${href}`; link.innerHTML = `<span class="local-search-kind">${kind}</span><span class="local-search-result-copy"><strong></strong><small></small></span><span class="local-search-arrow" aria-hidden="true">←</span>`; link.querySelector('strong').textContent = title; link.querySelector('small').textContent = description; link.dataset.searchText = normalizeSearch(`${kind} ${title} ${description} ${tags}`); return link; }
-function mountHomeSearch() { if (document.body.dataset.page !== 'home') return; const form = document.querySelector('[data-home-search-form]'); if (!form) return; const input = form.querySelector('input'); const results = form.querySelector('[data-home-search-results]'); const status = form.querySelector('[data-home-search-status]'); const clear = form.querySelector('[data-home-search-clear]'); const render = () => { const query = normalizeSearch(input.value); const matches = query ? LOCAL_SEARCH_INDEX.filter(item => matchesSearchText(`${item[0]} ${item[1]} ${item[2]} ${item[4]}`, query)).slice(0, 8) : []; results.replaceChildren(...matches.map(searchResultElement)); results.hidden = !query; status.textContent = query ? `${formatNumber(matches.length)} نتيجة مطابقة` : 'ابحث عن أداة أو مقال من الموقع'; clear.hidden = !query; }; input.addEventListener('input', render); form.addEventListener('submit', event => { event.preventDefault(); render(); if (results.querySelector('a')) results.querySelector('a').focus(); }); clear.addEventListener('click', () => { input.value = ''; input.focus(); render(); }); render(); }
-const TOOL_GROUPS = { 'infant-growth-calculator':'الأطفال', 'child-bmi-calculator':'الأطفال', 'pregnancy-calorie-calculator':'الحمل والخصوبة', 'pregnancy-due-date':'الحمل والخصوبة', 'fertile-window':'الحمل والخصوبة', 'anxiety-screening':'الصحة النفسية والنوم', 'eating-awareness':'الصحة النفسية والنوم', 'sleep-assessment':'الصحة النفسية والنوم', 'depression-screening':'الصحة النفسية والنوم', 'phone-balance':'الصحة النفسية والنوم', 'asthma-control':'فحوصات', 'visual-acuity-screening':'فحوصات', 'prediabetes-risk':'فحوصات' };
-function mountDirectorySearch() { const page = document.body.dataset.page; const isArticleIndex = page === 'articles' && !window.location.pathname.includes('/articles/'); const isToolIndex = page === 'health-tools'; if (!isArticleIndex && !isToolIndex) return; const toolbar = document.querySelector('[data-directory-search]'); const grid = document.querySelector(isToolIndex ? '.health-tools-grid' : '.article-grid'); if (!toolbar || !grid) return; const cards = [...grid.children]; const input = toolbar.querySelector('input'); const status = toolbar.querySelector('[data-directory-status]'); const empty = toolbar.querySelector('[data-directory-empty]'); const clear = toolbar.querySelector('[data-directory-clear]'); const buttons = [...toolbar.querySelectorAll('[data-filter]')]; cards.forEach(card => { const href = card.getAttribute('href') || ''; const slug = href.split('/').pop().replace(/\.html$/, ''); const category = isToolIndex ? (TOOL_GROUPS[slug] || 'الصحة العامة') : (card.querySelector('.article-art span')?.textContent || 'مقالات'); card.dataset.searchText = normalizeSearch(card.textContent); card.dataset.category = normalizeSearch(category); }); let active = 'all'; const render = () => { const query = normalizeSearch(input.value); let count = 0; cards.forEach(card => { const matchesText = !query || matchesSearchText(card.dataset.searchText, query); const matchesFilter = active === 'all' || card.dataset.category.includes(normalizeSearch(active)); const visible = matchesText && matchesFilter; card.hidden = !visible; if (visible) count += 1; }); status.textContent = query || active !== 'all' ? `${formatNumber(count)} نتيجة ظاهرة` : `${formatNumber(count)} أداة أو مقال متاح`; empty.hidden = count !== 0; clear.hidden = !query; buttons.forEach(button => button.classList.toggle('active', button.dataset.filter === active)); }; input.addEventListener('input', render); clear.addEventListener('click', () => { input.value = ''; input.focus(); render(); }); buttons.forEach(button => button.addEventListener('click', () => { active = button.dataset.filter; render(); })); render(); }
+function searchResultElement(item) { const [kind,title,description,href,tags] = item; const link = document.createElement('a'); link.className = 'local-search-result'; link.href = `${appLocaleRoot}${href}`; link.innerHTML = `<span class="local-search-kind">${kind}</span><span class="local-search-result-copy"><strong></strong><small></small></span><span class="local-search-arrow" aria-hidden="true">←</span>`; link.querySelector('strong').textContent = title; link.querySelector('small').textContent = description; link.dataset.searchText = normalizeSearch(`${kind} ${title} ${description} ${tags}`); return link; }
+function mountHomeSearch() { if (document.body.dataset.page !== 'home') return; const form = document.querySelector('[data-home-search-form]'); if (!form) return; const input = form.querySelector('input'); const results = form.querySelector('[data-home-search-results]'); const status = form.querySelector('[data-home-search-status]'); const clear = form.querySelector('[data-home-search-clear]'); const searchIndex = appLocale === 'en' ? [...document.querySelectorAll('main .card, main .latest-tool-card')].map(card => ['Tool', card.querySelector('h3, strong')?.textContent?.trim() || '', card.querySelector('p, small')?.textContent?.trim() || '', card.getAttribute('href') || card.querySelector('a')?.getAttribute('href') || '', card.textContent]) : LOCAL_SEARCH_INDEX; const render = () => { const query = normalizeSearch(input.value); const matches = query ? searchIndex.filter(item => matchesSearchText(`${item[0]} ${item[1]} ${item[2]} ${item[4]}`, query)).slice(0, 8) : []; results.replaceChildren(...matches.map(searchResultElement)); results.hidden = !query; status.textContent = query ? `${formatNumber(matches.length)} ${appLocale === 'en' ? 'matching results' : 'نتيجة مطابقة'}` : (appLocale === 'en' ? 'Search the site for a tool or article' : 'ابحث عن أداة أو مقال من الموقع'); clear.hidden = !query; }; input.addEventListener('input', render); form.addEventListener('submit', event => { event.preventDefault(); render(); if (results.querySelector('a')) results.querySelector('a').focus(); }); clear.addEventListener('click', () => { input.value = ''; input.focus(); render(); }); render(); }
+const TOOL_GROUPS = appLocale === 'en' ? { 'infant-growth-calculator':'Children', 'child-bmi-calculator':'Children', 'pregnancy-calorie-calculator':'Pregnancy & fertility', 'pregnancy-due-date':'Pregnancy & fertility', 'fertile-window':'Pregnancy & fertility', 'anxiety-screening':'Mental health & sleep', 'eating-awareness':'Mental health & sleep', 'sleep-assessment':'Mental health & sleep', 'depression-screening':'Mental health & sleep', 'phone-balance':'Mental health & sleep', 'asthma-control':'Screenings', 'visual-acuity-screening':'Screenings', 'prediabetes-risk':'Screenings' } : { 'infant-growth-calculator':'الأطفال', 'child-bmi-calculator':'الأطفال', 'pregnancy-calorie-calculator':'الحمل والخصوبة', 'pregnancy-due-date':'الحمل والخصوبة', 'fertile-window':'الحمل والخصوبة', 'anxiety-screening':'الصحة النفسية والنوم', 'eating-awareness':'الصحة النفسية والنوم', 'sleep-assessment':'الصحة النفسية والنوم', 'depression-screening':'الصحة النفسية والنوم', 'phone-balance':'الصحة النفسية والنوم', 'asthma-control':'فحوصات', 'visual-acuity-screening':'فحوصات', 'prediabetes-risk':'فحوصات' };
+function mountDirectorySearch() { const page = document.body.dataset.page; const isArticleIndex = page === 'articles' && !window.location.pathname.includes('/articles/'); const isToolIndex = page === 'health-tools'; if (!isArticleIndex && !isToolIndex) return; const toolbar = document.querySelector('[data-directory-search]'); const grid = document.querySelector(isToolIndex ? '.health-tools-grid' : '.article-grid'); if (!toolbar || !grid) return; const cards = [...grid.children]; const input = toolbar.querySelector('input'); const status = toolbar.querySelector('[data-directory-status]'); const empty = toolbar.querySelector('[data-directory-empty]'); const clear = toolbar.querySelector('[data-directory-clear]'); const buttons = [...toolbar.querySelectorAll('[data-filter]')]; cards.forEach(card => { const href = card.getAttribute('href') || ''; const slug = href.split('/').pop().replace(/\.html$/, ''); const category = isToolIndex ? (TOOL_GROUPS[slug] || 'الصحة العامة') : (card.querySelector('.article-art span')?.textContent || 'مقالات'); card.dataset.searchText = normalizeSearch(card.textContent); card.dataset.category = normalizeSearch(category); }); let active = 'all'; const render = () => { const query = normalizeSearch(input.value); let count = 0; cards.forEach(card => { const matchesText = !query || matchesSearchText(card.dataset.searchText, query); const matchesFilter = active === 'all' || card.dataset.category.includes(normalizeSearch(active)); const visible = matchesText && matchesFilter; card.hidden = !visible; if (visible) count += 1; }); status.textContent = query || active !== 'all' ? `${formatNumber(count)} ${appLocale === 'en' ? 'visible results' : 'نتيجة ظاهرة'}` : `${formatNumber(count)} ${appLocale === 'en' ? 'tools or articles available' : 'أداة أو مقال متاح'}`; empty.hidden = count !== 0; clear.hidden = !query; buttons.forEach(button => button.classList.toggle('active', button.dataset.filter === active)); }; input.addEventListener('input', render); clear.addEventListener('click', () => { input.value = ''; input.focus(); render(); }); buttons.forEach(button => button.addEventListener('click', () => { active = button.dataset.filter; render(); })); render(); }
 window.CalorieApp = { links, icon, formatNumber, getNumber, showError, clearError, validRange, shareResult, LOCAL_SEARCH_INDEX, normalizeSearch, matchesSearchText };
 renderShell();
 mountHomeSearch();
