@@ -29,19 +29,60 @@ const icon = (name, size = 22) => {
     info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
     share: '<circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><path d="m8 11 8-5M8 13l8 5"/>',
     check: '<path d="m5 12 4 4L19 6"/>',
-    close: '<path d="m6 6 12 12M18 6 6 18"/>'
+    close: '<path d="m6 6 12 12M18 6 6 18"/>',
+    language: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.3 2.5 3.5 5.5 3.5 9S14.3 18.5 12 21M12 3c-2.3 2.5-3.5 5.5-3.5 9S9.7 18.5 12 21"/>'
   };
   return `<svg aria-hidden="true" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${paths[name] || paths.leaf}</svg>`;
 };
+
+function getCurrentLanguage() {
+  const code = (document.documentElement.lang || 'ar').toLowerCase().split('-')[0];
+  return code === 'en' ? { code: 'en', label: 'English', currentLabel: 'Current' } : { code: 'ar', label: 'العربية', currentLabel: 'الحالية' };
+}
+
+function mountLanguageSwitcher(header) {
+  const switcher = header.querySelector('[data-language-switcher]');
+  const trigger = switcher?.querySelector('[data-language-trigger]');
+  const menu = switcher?.querySelector('[data-language-menu]');
+  if (!switcher || !trigger || !menu) return;
+
+  const setOpen = (open) => {
+    trigger.setAttribute('aria-expanded', String(open));
+    menu.hidden = !open;
+  };
+
+  trigger.addEventListener('click', () => setOpen(trigger.getAttribute('aria-expanded') !== 'true'));
+  document.addEventListener('click', (event) => {
+    if (!switcher.contains(event.target)) setOpen(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setOpen(false);
+      trigger.focus();
+    }
+  });
+}
 
 function renderShell() {
   const header = document.querySelector('[data-site-header]');
   const footer = document.querySelector('[data-site-footer]');
   const active = document.body.dataset.page || '';
+  const currentLanguage = getCurrentLanguage();
   if (header) {
     header.innerHTML = `<div class="container navbar">
       <a class="brand" href="${links.home}" aria-label="العودة إلى الصفحة الرئيسية"><span class="brand-mark"><img class="brand-logo" src="${rootPath}assets/calorie-mark-512.png" alt="" width="38" height="38" decoding="async"></span><span class="brand-name">حاسبة السعرات</span></a>
-      <button class="nav-toggle" aria-label="فتح قائمة التنقل" aria-expanded="false">${icon('menu', 25)}</button>
+      <div class="nav-actions">
+        <div class="language-switcher" data-language-switcher>
+          <button class="language-trigger" type="button" data-language-trigger aria-expanded="false" aria-controls="language-menu" aria-haspopup="true" aria-label="اختيار لغة الموقع">
+            ${icon('language', 19)}<span class="language-current">${currentLanguage.label}</span><span class="language-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="language-menu" id="language-menu" data-language-menu hidden>
+            <a class="language-option is-current" href="${window.location.href}" lang="ar" aria-current="page"><span>العربية</span><small>${currentLanguage.code === 'ar' ? currentLanguage.currentLabel : 'Arabic'}</small></a>
+            <button class="language-option language-option--disabled" type="button" disabled lang="en"><span>English</span><small>قريبًا</small></button>
+          </div>
+        </div>
+        <button class="nav-toggle" aria-label="فتح قائمة التنقل" aria-expanded="false">${icon('menu', 25)}</button>
+      </div>
       <nav class="nav-links" aria-label="التنقل الرئيسي">
         <a class="${active === 'home' ? 'active' : ''}" href="${links.home}">الرئيسية</a>
         <a class="${active === 'calorie' ? 'active' : ''}" href="${links.calorie}">حاسبة السعرات</a>
@@ -55,6 +96,7 @@ function renderShell() {
     const nav = header.querySelector('.nav-links');
     toggle?.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
     nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+    mountLanguageSwitcher(header);
   }
   if (footer) {
     footer.innerHTML = `<div class="container">
