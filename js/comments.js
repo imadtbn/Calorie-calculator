@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  const ENDPOINT = 'https://script.google.com/macros/s/AKfycbyca6dvheW6fIaCMUoE3n_qpPrQExHOpbrz1teWWfPjHwE_1a78Iu0Cda3qNsy6eVpM4A/exec';
+  const ENDPOINT = 'https://script.google.com/macros/s/AKfycbyWtjJW_TdVaufkfZaDAnDv47V9EWE2pqV-WueBX_dBMgGiMHZpA_9OUNvRN5O4DF-T3g/exec';
   const MAX_COMMENT_LENGTH = 1200;
 
   const escapeText = (value) => String(value ?? '').replace(/[<>]/g, '');
