@@ -11,8 +11,10 @@ SITEMAP = ROOT / "sitemap.xml"
 BASE = "https://imadtbn.github.io/Calorie-calculator/"
 NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 XHTML = "http://www.w3.org/1999/xhtml"
+IMAGE = "http://www.google.com/schemas/sitemap-image/1.1"
 ET.register_namespace("", NS)
 ET.register_namespace("xhtml", XHTML)
+ET.register_namespace("image", IMAGE)
 
 
 def tag(name: str) -> str:
@@ -80,6 +82,9 @@ def main() -> None:
         add_hreflang(english_entry, source_path)
 
     tree.write(SITEMAP, encoding="utf-8", xml_declaration=True)
+    text = SITEMAP.read_text(encoding="utf-8")
+    text = text.replace("<?xml version='1.0' encoding='utf-8'?>", "<?xml version=\"1.0\" encoding=\"UTF-8\"?>", 1)
+    SITEMAP.write_text(text, encoding="utf-8")
     print(f"Updated sitemap with {sum(1 for path in by_path if path.startswith('en/'))} English URLs")
 
 
