@@ -173,9 +173,7 @@ summary::after { content: '+'; color: var(--coral); font-size: 1.4rem; }
 details[open] summary::after { content: '−'; }
 details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9rem; }
 
-.ad-slot { min-height: 90px; display: grid; place-items: center; color: #93aaa1; background: repeating-linear-gradient(135deg, rgba(231,243,237,.7), rgba(231,243,237,.7) 5px, rgba(251,250,246,.7) 5px, rgba(251,250,246,.7) 10px); border: 1px dashed var(--mint-deep); border-radius: 14px; font-size: .75rem; letter-spacing: .06em; }
 .content-with-aside { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 34px; align-items: start; }
-.content-with-aside .ad-slot { position: sticky; top: 100px; }
 
 .water-benefit-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .water-info-card { min-width: 0; padding: 22px; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 10px 30px rgba(23,52,46,.05); }
@@ -203,15 +201,6 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
 .water-sources { max-width: 860px; margin: 24px auto 0; color: var(--ink-soft); font-size: .78rem; text-align: center; }
 .water-sources a { display: inline-block; margin-inline-start: 10px; color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
 
-.ad-container { position: relative; width: min(1160px, calc(100% - 36px)); min-height: 96px; margin: 28px auto; padding: 10px 0; overflow: hidden; text-align: center; }
-.ad-container__label { display: block; margin-bottom: 5px; color: #83988f; font-size: .65rem; line-height: 1.2; letter-spacing: .04em; }
-.ad-container .adsbygoogle { display: block; width: 100%; min-height: 74px; }
-.ad-container--fluid { min-height: 104px; }
-.ad-container--autorelaxed { min-height: 180px; }
-.ad-container--sidebar { width: 100%; min-height: 240px; margin: 0; padding: 10px 0; background: rgba(231,243,237,.42); border: 1px dashed var(--mint-deep); border-radius: 14px; }
-.ad-container--sidebar .adsbygoogle { min-height: 200px; }
-.ad-container--between-sections { margin-top: 8px; margin-bottom: 32px; }
-.ad-container--bottom { margin-top: 34px; margin-bottom: 34px; }
 
 .site-footer { background: var(--teal-dark); color: #d8ebe1; padding: 58px 0 25px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 34px; padding-bottom: 38px; }
@@ -239,7 +228,6 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .water-tips-layout { grid-template-columns: 1fr; gap: 24px; }
   .footer-grid { grid-template-columns: repeat(2,1fr); }
   .content-with-aside { grid-template-columns: 1fr; }
-  .content-with-aside .ad-slot { position: static; order: -1; min-height: 70px; }
 }
 @media (max-width: 650px) {
   html { font-size: 15px; }
@@ -269,13 +257,6 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .water-faq-list summary { padding: 14px 0; font-size: .9rem; }
   .water-faq-list details p { font-size: .82rem; }
   .water-sources { line-height: 2; }
-  .ad-container { width: calc(100% - 28px); min-height: 82px; margin: 22px auto; padding: 8px 0; }
-  .ad-container .adsbygoogle { min-height: 62px; }
-  .ad-container--autorelaxed { min-height: 150px; }
-  .ad-container--sidebar { width: 100%; min-height: 180px; margin: 0; }
-  .ad-container--sidebar .adsbygoogle { min-height: 150px; }
-  .ad-container--after-calculator { margin-top: 8px; }
-  .ad-container--bottom { margin-top: 26px; margin-bottom: 26px; }
   .container { width: calc(100% - 28px); max-width: 1160px; }
   h1, h2, h3, p, a, button, label, input, select { overflow-wrap: anywhere; }
   .section { overflow: clip; }
@@ -337,7 +318,6 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
 }
 
 /* Unified AdSense presentation: labeled, reserved, responsive, and non-intrusive. */
-.ad-container {
   position: relative;
   isolation: isolate;
   display: grid;
@@ -356,7 +336,6 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   content-visibility: auto;
   contain-intrinsic-size: 112px;
 }
-.ad-container__label {
   display: block;
   min-height: 14px;
   margin-bottom: 6px;
@@ -366,24 +345,12 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   line-height: 1.35;
   letter-spacing: .04em;
 }
-.ad-container .adsbygoogle {
   display: block;
   width: 100%;
   min-height: 76px;
   max-width: 100%;
   overflow: hidden;
 }
-.ad-container--auto { min-height: 112px; }
-.ad-container--fluid { min-height: 122px; }
-.ad-container--fluid .adsbygoogle { min-height: 86px; }
-.ad-container--autorelaxed { min-height: 220px; contain-intrinsic-size: 220px; }
-.ad-container--autorelaxed .adsbygoogle { min-height: 180px; }
-.ad-container--after-hero { margin-top: 18px; }
-.ad-container--after-calculator { margin-top: 10px; }
-.ad-container--between-sections { margin-top: 12px; margin-bottom: 34px; }
-.ad-container--bottom { margin-top: 38px; margin-bottom: 32px; }
-.ad-container--after-content { margin-top: 26px; }
-.ad-container--in-article {
   width: 100%;
   min-height: 118px;
   margin: 28px 0;
@@ -391,8 +358,6 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   background: transparent;
   border-radius: 0;
 }
-.ad-container--in-article .adsbygoogle { min-height: 86px; }
-.ad-container--sidebar {
   width: 100%;
   min-height: 280px;
   margin: 0;
@@ -401,19 +366,15 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   border: 1px dashed var(--mint-deep);
   border-radius: 14px;
 }
-.content-with-aside > .ad-container--sidebar {
   position: sticky;
   top: 100px;
   align-self: start;
 }
-.ad-container--sidebar .adsbygoogle { min-height: 238px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .ad-container { scroll-behavior: auto; }
 }
 
 @media (max-width: 650px) {
-  .ad-container {
     width: calc(100% - 28px);
     min-height: 86px;
     margin: 22px auto;
@@ -421,30 +382,16 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
     border-radius: 10px;
     contain-intrinsic-size: 86px;
   }
-  .ad-container__label { margin-bottom: 4px; font-size: .6rem; }
-  .ad-container .adsbygoogle { min-height: 60px; }
-  .ad-container--fluid { min-height: 96px; }
-  .ad-container--fluid .adsbygoogle { min-height: 70px; }
-  .ad-container--autorelaxed { min-height: 168px; contain-intrinsic-size: 168px; }
-  .ad-container--autorelaxed .adsbygoogle { min-height: 138px; }
-  .ad-container--in-article {
     width: 100%;
     min-height: 92px;
     margin: 22px 0;
     padding: 7px 0;
   }
-  .ad-container--in-article .adsbygoogle { min-height: 66px; }
-  .ad-container--sidebar {
     width: 100%;
     min-height: 190px;
     margin: 0 0 18px;
     padding: 8px;
   }
-  .content-with-aside > .ad-container--sidebar { position: static; }
-  .ad-container--sidebar .adsbygoogle { min-height: 150px; }
-  .ad-container--after-hero { margin-top: 12px; }
-  .ad-container--between-sections { margin-bottom: 24px; }
-  .ad-container--bottom { margin-top: 26px; margin-bottom: 24px; }
 }
 
 /* Brand icon asset */
