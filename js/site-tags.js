@@ -15,9 +15,19 @@
     // ضع هنا معرف حاوية Google Tag Manager: GTM-xxxxxxxx
     gtmId: 'xxxxxxxx',
     // ضع هنا معرف عميل Google AdSense: ca-pub-xxxxxxxx
-    adsenseClient: 'xxxxxxxx',
-    // ضع هنا معرف الوحدة الإعلانية AdSense: xxxxxxxx
-    adsenseSlot: 'xxxxxxxx',
+    adsenseClient: 'ca-pub-5656416032906373',
+    // معرفات وحدات AdSense المرفقة، موزعة حسب نوع الموضع.
+    adsenseSlots: Object.freeze({
+      fluid01: '7867079394',
+      display01: '3143411927',
+      fluid02: '8546947691',
+      display02: '1760836049',
+      fluid03: '6152718642',
+      display03: '5508509362',
+      inArticle01: '6118497380',
+      inArticle02: '7319898418',
+      multiplex: '6528123169'
+    }),
     // ضع هنا معرف Microsoft Clarity: xxxxxxxx
     clarityId: 'xxxxxxxx'
   });
@@ -91,7 +101,8 @@
     }
     const readyAds = ads.filter(ad => {
       ad.dataset.adClient = CONFIG.adsenseClient;
-      const slot = isConfigured(ad.dataset.adSlot) ? ad.dataset.adSlot : CONFIG.adsenseSlot;
+      const configuredSlot = CONFIG.adsenseSlots[ad.dataset.adKey] || '';
+      const slot = isConfigured(ad.dataset.adSlot) ? ad.dataset.adSlot : configuredSlot;
       if (isConfigured(slot)) ad.dataset.adSlot = slot;
       return isConfigured(slot);
     });

@@ -7,17 +7,28 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED = {"google4e08a8803a39e9f9.html"}
-NO_AD_PAGES = {"about", "contact", "privacy", "terms", "disclaimer", "faq"}
+# Ads are intentionally placed once per content page; verification-only files are excluded above.
+NO_AD_PAGES: set[str] = set()
 GA4_SCRIPT = re.compile(
     r"\s*<script\b[^>]*src=[\"']https://www\.googletagmanager\.com/gtag/js\?id=[^\"']+[\"'][^>]*>\s*</script>\s*"
     r"<script\b[^>]*>[\s\S]*?gtag\s*\(\s*['\"]config['\"][\s\S]*?</script>\s*",
     re.IGNORECASE,
 )
 CENTRAL_SCRIPT = re.compile(r'<script\b[^>]*src=["\'][^"\']*js/site-tags\.js[^"\']*["\'][^>]*>\s*</script>', re.IGNORECASE)
-AD_MARKER = '<div class="ad-container" data-ad-container="content-ad" data-ad-placement="content">'
-AD_BLOCK = '''\n<!-- ضع هنا معرف الوحدة الإعلانية: xxxxxxxx -->
-<div class="ad-container" data-ad-container="content-ad" data-ad-placement="content">
-  <ins class="adsbygoogle" style="display:block" data-ad-slot="xxxxxxxx" data-ad-format="auto" data-full-width-responsive="true"></ins>
+AD_MARKER = 'data-ad-container="content-ad"'
+AD_BLOCK_TEMPLATE = '''\n<!-- AdSense unit is centrally configured in js/site-tags.js -->
+<div class="ad-container" data-ad-container="content-ad" data-ad-placement="content" data-ad-key="{key}">
+  <ins class="adsbygoogle" style="display:block" data-ad-slot="xxxxxxxx" data-ad-key="{key}" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+'''
+ARTICLE_SECOND_BLOCK = '''\n<!-- Second in-article AdSense unit is centrally configured in js/site-tags.js -->
+<div class="ad-container" data-ad-container="content-ad-secondary" data-ad-placement="article-secondary" data-ad-key="inArticle02">
+  <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-slot="xxxxxxxx" data-ad-key="inArticle02" data-ad-layout="in-article" data-ad-format="fluid"></ins>
+</div>
+'''
+MULTIPLEX_BLOCK = '''\n<!-- Multiplex AdSense unit is centrally configured in js/site-tags.js -->
+<div class="ad-container" data-ad-container="multiplex-ad" data-ad-placement="related-content" data-ad-key="multiplex">
+  <ins class="adsbygoogle" style="display:block" data-ad-slot="xxxxxxxx" data-ad-key="multiplex" data-ad-format="autorelaxed"></ins>
 </div>
 '''
 
@@ -30,6 +41,20 @@ def page_name(text: str) -> str:
 def relative_loader(page: Path) -> str:
     rel = os.path.relpath(ROOT / "js/site-tags.js", page.parent).replace(os.sep, "/")
     return f'<script defer src="{rel}"></script>'
+
+
+def ad_key(path: Path, page: str) -> str:
+    if page == "home":
+        return "fluid01"
+    if page == "water":
+        return "fluid02"
+    if page in {"calorie", "bmi", "macros", "ideal"}:
+        return "display02"
+    if page == "foods":
+        return "display01"
+    if page == "articles":
+        return "fluid03" if path.name == "articles.html" else "inArticle01"
+    return "display03"
 
 
 def transform(path: Path, apply: bool) -> tuple[bool, bool, bool]:
@@ -46,11 +71,26 @@ def transform(path: Path, apply: bool) -> tuple[bool, bool, bool]:
         loader_added = True
     ad_added = False
     current_page = page_name(updated)
-    if current_page and current_page not in NO_AD_PAGES and AD_MARKER not in updated and "<ins class=\"adsbygoogle\"" not in updated:
-        marker = re.search(r"</main>", updated, re.IGNORECASE)
-        if marker:
-            updated = updated[: marker.start()] + AD_BLOCK + updated[marker.start():]
-            ad_added = True
+    key = ad_key(path, current_page)
+    if current_page and current_page not in NO_AD_PAGES:
+        if AD_MARKER in updated:
+            updated = re.sub(r'(data-ad-container="content-ad" data-ad-placement="content")(?! data-ad-key=)', rf'\1 data-ad-key="{key}"', updated, count=1)
+            updated = re.sub(r'(<ins\b[^>]*class="adsbygoogle"[^>]*)(data-ad-slot="xxxxxxxx")', rf'\1 data-ad-key="{key}" \2', updated, count=1)
+        elif "<ins class=\"adsbygoogle\"" not in updated:
+            marker = re.search(r"</main>", updated, re.IGNORECASE)
+            if marker:
+                updated = updated[: marker.start()] + AD_BLOCK_TEMPLATE.format(key=key) + updated[marker.start():]
+                ad_added = True
+        if current_page == "articles" and path.parent.name == "articles" and 'data-ad-key="inArticle02"' not in updated:
+            marker = re.search(r"</main>", updated, re.IGNORECASE)
+            if marker:
+                updated = updated[: marker.start()] + ARTICLE_SECOND_BLOCK + updated[marker.start():]
+                ad_added = True
+        if current_page == "articles" and path.name == "articles.html" and 'data-ad-key="multiplex"' not in updated:
+            marker = re.search(r"</main>", updated, re.IGNORECASE)
+            if marker:
+                updated = updated[: marker.start()] + MULTIPLEX_BLOCK + updated[marker.start():]
+                ad_added = True
     changed = updated != text
     if apply and changed:
         path.write_text(updated, encoding="utf-8")
