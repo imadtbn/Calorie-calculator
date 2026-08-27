@@ -12,8 +12,8 @@
   const CONFIG = Object.freeze({
     // Google Analytics 4: existing site measurement ID.
     ga4Id: 'G-V7E7218802',
-    // ضع هنا معرف حاوية Google Tag Manager: GTM-xxxxxxxx
-    gtmId: 'xxxxxxxx',
+    // معرف Google Tag Manager المقدم من المستخدم.
+    gtmId: 'GTM-TKLTZ5T3',
     // ضع هنا معرف عميل Google AdSense: ca-pub-xxxxxxxx
     adsenseClient: 'ca-pub-5656416032906373',
     // معرفات وحدات AdSense المرفقة، موزعة حسب نوع الموضع.
@@ -131,6 +131,7 @@
   };
 
   const start = () => {
+    // GTM هو المسار الأساسي؛ لا نشغّل gtag.js المباشر بالتوازي معه.
     const gtmLoaded = loadGoogleTagManager(CONFIG.gtmId);
     if (!gtmLoaded) loadGoogleAnalytics(CONFIG.ga4Id);
     loadClarity(CONFIG.clarityId);

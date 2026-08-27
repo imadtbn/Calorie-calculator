@@ -7,6 +7,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED = {"google4e08a8803a39e9f9.html"}
+GTM_ID = "GTM-TKLTZ5T3"
+GTM_NOSCRIPT = f'''<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={GTM_ID}" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+'''
 # Ads are intentionally placed once per content page; verification-only files are excluded above.
 NO_AD_PAGES: set[str] = set()
 GA4_SCRIPT = re.compile(
@@ -15,6 +20,7 @@ GA4_SCRIPT = re.compile(
     re.IGNORECASE,
 )
 CENTRAL_SCRIPT = re.compile(r'<script\b[^>]*src=["\'][^"\']*js/site-tags\.js[^"\']*["\'][^>]*>\s*</script>', re.IGNORECASE)
+GTM_NOSCRIPT_MARKER = 'https://www.googletagmanager.com/ns.html?id='
 AD_MARKER = 'data-ad-container="content-ad"'
 AD_BLOCK_TEMPLATE = '''\n<!-- AdSense unit is centrally configured in js/site-tags.js -->
 <div class="ad-container" data-ad-container="content-ad" data-ad-placement="content" data-ad-key="{key}">
@@ -64,6 +70,13 @@ def transform(path: Path, apply: bool) -> tuple[bool, bool, bool]:
     if "</head>" not in text.lower() or "<body" not in text.lower():
         return False, False, False
     updated = GA4_SCRIPT.sub("\n", text)
+    noscript_added = False
+    if GTM_NOSCRIPT_MARKER not in updated:
+        body_open = re.search(r"<body\b[^>]*>", updated, re.IGNORECASE)
+        if body_open:
+            insert_at = body_open.end()
+            updated = updated[:insert_at] + "\n" + GTM_NOSCRIPT + updated[insert_at:]
+            noscript_added = True
     loader_added = False
     if not CENTRAL_SCRIPT.search(updated):
         marker = re.search(r"</head>", updated, re.IGNORECASE)
@@ -94,7 +107,7 @@ def transform(path: Path, apply: bool) -> tuple[bool, bool, bool]:
     changed = updated != text
     if apply and changed:
         path.write_text(updated, encoding="utf-8")
-    return changed, loader_added, ad_added
+    return changed, loader_added or noscript_added, ad_added
 
 
 def main() -> None:
