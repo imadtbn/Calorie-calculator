@@ -14,6 +14,9 @@
     ga4Id: 'G-V7E7218802',
     // معرف Google Tag Manager المقدم من المستخدم.
     gtmId: 'GTM-TKLTZ5T3',
+    // استخدم direct مؤقتًا لأن حاوية GTM الحالية لم يثبت أنها تحتوي على وسم GA4.
+    // بعد إنشاء Google tag داخل GTM، غيّر القيمة إلى gtm لتجنب القياس المزدوج.
+    analyticsMode: 'direct',
     // ضع هنا معرف عميل Google AdSense: ca-pub-xxxxxxxx
     adsenseClient: 'ca-pub-5656416032906373',
     // معرفات وحدات AdSense المرفقة، موزعة حسب نوع الموضع.
@@ -131,9 +134,10 @@
   };
 
   const start = () => {
-    // GTM هو المسار الأساسي؛ لا نشغّل gtag.js المباشر بالتوازي معه.
-    const gtmLoaded = loadGoogleTagManager(CONFIG.gtmId);
-    if (!gtmLoaded) loadGoogleAnalytics(CONFIG.ga4Id);
+    loadGoogleTagManager(CONFIG.gtmId);
+    // هذا الوضع يعيد تشغيل المقطع المقدم مركزيًا حتى يظهر معرف GA4 ويعمل القياس.
+    // عند ضبط GA4 داخل GTM، غيّر analyticsMode إلى gtm لإيقاف المسار المباشر.
+    if (CONFIG.analyticsMode === 'direct') loadGoogleAnalytics(CONFIG.ga4Id);
     loadClarity(CONFIG.clarityId);
     scheduleAds();
   };

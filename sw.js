@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calorie-calculator-v17';
+const CACHE_NAME = 'calorie-calculator-v18';
 const CORE_ASSETS = [
   './', './index.html', './css/main.css', './js/app.js', './js/calculators.js', './js/comments.js', './js/site-tags.js',
   './health-tools.html', './bmi-calculator.html', './calorie-calculator.html', './water-calculator.html', './ideal-weight-calculator.html',

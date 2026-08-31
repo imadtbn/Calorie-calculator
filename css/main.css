@@ -113,7 +113,7 @@ h3 { font-size: 1.2rem; }
 .hint { color: var(--ink-soft); font-size: .76rem; }
 .radio-group { display: flex; flex-wrap: wrap; gap: 10px; }
 .radio-option { flex: 1; min-width: 120px; }
-.radio-option input { position: absolute; opacity: 0; pointer-events: none; }
+.field .radio-option input { position: absolute; width: auto; max-width: none; opacity: 0; pointer-events: none; }
 .radio-option label { display: block; padding: 11px 13px; border: 1px solid var(--line); border-radius: 11px; text-align: center; color: var(--ink-soft); cursor: pointer; transition: .18s; }
 .radio-option input:checked + label { border-color: var(--teal); background: var(--mint); color: var(--teal-dark); font-weight: 700; }
 .form-error { display: none; color: #a33d36; background: #fff1ed; border: 1px solid #f3c3b9; border-radius: 10px; padding: 10px 13px; font-size: .84rem; margin-top: 15px; }
