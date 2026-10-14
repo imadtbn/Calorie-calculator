@@ -37,6 +37,7 @@ const icon = (name, size = 22) => {
     file: '<path d="M6 2h8l5 5v14H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2ZM14 2v6h5M8 13h8M8 17h8"/>',
     alert: '<circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 17h.01"/>',
     menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
+    home: '<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10Z"/><path d="M9 21v-7h6v7"/>',
     leaf: '<path d="M20 4c-8.5.2-14 3.8-14 9.5A5.5 5.5 0 0 0 11.5 19C17.2 19 19.8 12.5 20 4Z"/><path d="M5.5 18.5C8 14.7 11.2 12.2 16 10"/>',
     calculator: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 19h8"/>',
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
@@ -97,19 +98,28 @@ function renderShell() {
   const isEnglish = currentLanguage.code === 'en';
   const ui = isEnglish ? {
     home: 'Home', calorie: 'Calorie calculator', bmi: 'BMI', macros: 'Macros', foods: 'Foods', articles: 'Articles', healthTools: 'Health tools',
-    homeAria: 'Back to homepage', openNav: 'Open navigation', chooseLanguage: 'Choose site language', arabic: 'العربية', current: 'Current', english: 'English', soon: 'Available',
+    homeAria: 'Back to homepage', openNav: 'Open navigation', closeNav: 'Close navigation', chooseLanguage: 'Choose site language', arabic: 'العربية', current: 'Current', english: 'English', soon: 'Available',
     toolsTitle: 'Tools', contentTitle: 'Content', legalTitle: 'Legal information', dailyCalories: 'Daily calorie calculator', bmiCalc: 'BMI calculator', macrosCalc: 'Macro calculator', waterCalc: 'Daily water calculator', idealCalc: 'Estimated weight calculator', foodCalories: 'Food calories', mealPlanner: 'Meal planner (Arabic)', faq: 'FAQ', about: 'About us', contact: 'Contact us', privacy: 'Privacy', terms: 'Terms of use', disclaimer: 'Disclaimer', description: 'Simple health tools to help you understand your daily needs and make more informed choices.', copyright: '© 2026 Calorie Calculator. All rights reserved.', note: 'These tools are for estimation and education, not medical diagnosis.'
   } : {
     home: 'الرئيسية', calorie: 'حاسبة السعرات', bmi: 'BMI', macros: 'الماكروز', foods: 'الأطعمة', articles: 'المقالات', healthTools: 'الأدوات الصحية',
-    homeAria: 'العودة إلى الصفحة الرئيسية', openNav: 'فتح قائمة التنقل', chooseLanguage: 'اختيار لغة الموقع', arabic: 'العربية', current: 'الحالية', english: 'English', soon: 'تبديل',
+    homeAria: 'العودة إلى الصفحة الرئيسية', openNav: 'فتح قائمة التنقل', closeNav: 'إغلاق قائمة التنقل', chooseLanguage: 'اختيار لغة الموقع', arabic: 'العربية', current: 'الحالية', english: 'English', soon: 'تبديل',
     toolsTitle: 'الأدوات', contentTitle: 'المحتوى', legalTitle: 'معلومات قانونية', dailyCalories: 'حاسبة السعرات اليومية', bmiCalc: 'حاسبة مؤشر BMI', macrosCalc: 'حاسبة الماكروز', waterCalc: 'حاسبة الماء اليومية', idealCalc: 'حاسبة الوزن التقريبي', foodCalories: 'السعرات في الأطعمة', mealPlanner: 'مخطط التغذية والوجبات', faq: 'الأسئلة الشائعة', about: 'عن الموقع', contact: 'اتصل بنا', privacy: 'الخصوصية', terms: 'شروط الاستخدام', disclaimer: 'إخلاء المسؤولية', description: 'أدوات صحية مبسطة تساعدك على فهم احتياجاتك اليومية واتخاذ قرارات أكثر وعيًا.', copyright: '© 2026 حاسبة السعرات. جميع الحقوق محفوظة.', note: 'هذه الأدوات للتقدير والتثقيف وليست تشخيصًا طبيًا.'
   };
   const languageRoot = isEnglish ? `${rootPath}en/` : rootPath;
   const pageLinks = Object.fromEntries(Object.entries(links).map(([key, href]) => [key, `${languageRoot}${href.slice(rootPath.length)}`]));
   const navItems = [
-    ['home', ui.home, pageLinks.home], ['calorie', ui.calorie, pageLinks.calorie], ['bmi', ui.bmi, pageLinks.bmi], ['macros', ui.macros, pageLinks.macros], ['foods', ui.foods, pageLinks.foods], ['articles', ui.articles, pageLinks.articles], ['health-tools', ui.healthTools, pageLinks.healthTools]
+    ['home', ui.home, pageLinks.home, 'home'],
+    ['calorie', ui.calorie, pageLinks.calorie, 'calculator'],
+    ['bmi', ui.bmi, pageLinks.bmi, 'ruler'],
+    ['macros', ui.macros, pageLinks.macros, 'pie'],
+    ['foods', ui.foods, pageLinks.foods, 'utensils'],
+    ['articles', ui.articles, pageLinks.articles, 'book'],
+    ['health-tools', ui.healthTools, pageLinks.healthTools, 'heart']
   ];
-  const navMarkup = navItems.map(([key, label, href]) => `<a class="${active === key || (key === 'health-tools' && ['health-tools', 'child-bmi', 'pregnancy-calorie', 'infant-growth'].includes(active)) ? 'active' : ''}" href="${href}">${label}</a>`).join('');
+  const navMarkup = navItems.map(([key, label, href, iconName]) => {
+    const isActive = active === key || (key === 'health-tools' && ['health-tools', 'child-bmi', 'pregnancy-calorie', 'infant-growth'].includes(active));
+    return `<a class="nav-link${isActive ? ' active' : ''}" href="${href}" ${isActive ? 'aria-current="page"' : ''}><span class="nav-link-icon" aria-hidden="true">${icon(iconName, 18)}</span><span class="nav-link-text">${label}</span></a>`;
+  }).join('');
   if (header) {
     header.innerHTML = `<div class="container navbar">
       <a class="brand" href="${pageLinks.home}" aria-label="${ui.homeAria}"><span class="brand-mark"><img class="brand-logo" src="${rootPath}assets/calorie-mark-512.png" alt="" width="38" height="38" decoding="async"></span><span class="brand-name">${isEnglish ? 'Calorie Calculator' : 'حاسبة السعرات'}</span></a>
@@ -123,15 +133,35 @@ function renderShell() {
             <a class="language-option ${isEnglish ? 'is-current' : ''}" href="${getLanguageHref('en')}" lang="en" ${isEnglish ? 'aria-current="page"' : ''}><span>${ui.english}</span><small>${isEnglish ? ui.current : ui.soon}</small></a>
           </div>
         </div>
-        <button class="nav-toggle" aria-label="${ui.openNav}" aria-expanded="false">${icon('menu', 25)}</button>
+        <button class="nav-toggle" type="button" aria-label="${ui.openNav}" aria-controls="primary-site-nav" aria-expanded="false">${icon('menu', 23)}</button>
       </div>
-      <nav class="nav-links" aria-label="${isEnglish ? 'Main navigation' : 'التنقل الرئيسي'}">${navMarkup}</nav>
+      <nav class="nav-links" id="primary-site-nav" aria-label="${isEnglish ? 'Main navigation' : 'التنقل الرئيسي'}">${navMarkup}</nav>
     </div>`;
     const toggle = header.querySelector('.nav-toggle');
     const nav = header.querySelector('.nav-links');
-    toggle?.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
-    nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+    const setNavOpen = (open) => {
+      if (!nav || !toggle) return;
+      nav.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? ui.closeNav : ui.openNav);
+      toggle.innerHTML = icon(open ? 'close' : 'menu', 23);
+    };
+    toggle?.addEventListener('click', () => setNavOpen(!nav.classList.contains('open')));
+    nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNavOpen(false)));
+    document.addEventListener('click', (event) => {
+      if (!header.contains(event.target)) setNavOpen(false);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && nav?.classList.contains('open')) {
+        setNavOpen(false);
+        toggle.focus();
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1200 && nav?.classList.contains('open')) setNavOpen(false);
+    });
     mountLanguageSwitcher(header);
+    header.querySelector('[data-language-trigger]')?.addEventListener('click', () => setNavOpen(false));
   }
   if (footer) {
     footer.innerHTML = `<div class="container">
