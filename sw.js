@@ -1,6 +1,7 @@
-const CACHE_NAME = 'calorie-calculator-v18';
+const CACHE_NAME = 'calorie-calculator-v19';
 const CORE_ASSETS = [
   './', './index.html', './css/main.css', './js/app.js', './js/calculators.js', './js/comments.js', './js/site-tags.js',
+  './nutrition-planner.html', './css/nutrition-planner.css', './js/nutrition-planner.js',
   './health-tools.html', './bmi-calculator.html', './calorie-calculator.html', './water-calculator.html', './ideal-weight-calculator.html',
   './pregnancy-due-date.html', './fertile-window.html', './prediabetes-risk.html', './child-bmi-calculator.html', './pregnancy-calorie-calculator.html', './infant-growth-calculator.html',
   './asthma-control.html', './anxiety-screening.html', './eating-awareness.html', './sleep-assessment.html', './depression-screening.html', './visual-acuity-screening.html', './phone-balance.html', './pilgrim-health-checklist.html', './diabetes-awareness.html',
