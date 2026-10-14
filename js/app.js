@@ -158,7 +158,7 @@ function renderShell() {
       }
     });
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 1200 && nav?.classList.contains('open')) setNavOpen(false);
+      if (window.innerWidth >= 1024 && nav?.classList.contains('open')) setNavOpen(false);
     });
     mountLanguageSwitcher(header);
     header.querySelector('[data-language-trigger]')?.addEventListener('click', () => setNavOpen(false));
