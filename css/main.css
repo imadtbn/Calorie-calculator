@@ -1457,25 +1457,60 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
 
 
 /* Shared header: semantic navigation icons and mobile menu */
+/* A wide header for desktop: the general .container is deliberately narrower. */
 .site-header { z-index: 1000; }
-.site-header .navbar { gap: clamp(10px, 1.3vw, 20px); }
-.site-header .brand { flex-shrink: 0; }
-.site-header .nav-links { order: 2; margin-inline-start: auto; gap: 3px; min-width: 0; }
-.site-header .nav-actions { order: 3; flex-shrink: 0; }
+.site-header .navbar {
+  width: min(1480px, calc(100% - 40px));
+  max-width: 1480px;
+  min-height: 76px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: clamp(8px, 1vw, 16px);
+  row-gap: 0;
+  margin-inline: auto;
+}
+.site-header .brand {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  flex-shrink: 0;
+}
+.site-header .nav-links {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  justify-self: stretch;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  gap: 2px;
+}
+.site-header .nav-actions {
+  grid-column: 3;
+  grid-row: 1;
+  display: inline-flex;
+  justify-self: end;
+  flex-shrink: 0;
+  gap: 8px;
+}
 .site-header .nav-links .nav-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 6px;
   min-height: 44px;
-  padding: 7px 9px;
+  padding: 7px clamp(6px, .7vw, 12px);
   border: 1px solid transparent;
   border-radius: 12px;
-  font-size: .83rem;
+  color: var(--ink-soft);
+  font-size: clamp(.77rem, .84vw, .9rem);
   font-weight: 700;
   line-height: 1.35;
   white-space: nowrap;
-  color: var(--ink-soft);
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
 }
 .site-header .nav-link-icon {
   display: inline-grid;
@@ -1509,6 +1544,7 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   outline-offset: 2px;
 }
 .site-header .nav-toggle {
+  display: none;
   align-items: center;
   justify-content: center;
   width: 44px;
@@ -1518,6 +1554,7 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   border-radius: 12px;
   background: var(--paper);
   color: var(--teal-dark);
+  cursor: pointer;
 }
 .site-header .nav-toggle:hover,
 .site-header .nav-toggle[aria-expanded="true"] {
@@ -1526,8 +1563,43 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
 }
 .site-header .nav-toggle svg { display: block; }
 
-@media (max-width: 1199px) {
-  .site-header .navbar { min-height: 68px; }
+/* Between tablet and large desktop, preserve every link in a dedicated row. */
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .site-header .navbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    min-height: 0;
+    padding-block: 8px 6px;
+    row-gap: 4px;
+  }
+  .site-header .brand { grid-column: 1; grid-row: 1; }
+  .site-header .nav-actions { grid-column: 2; grid-row: 1; }
+  .site-header .nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .site-header .nav-links .nav-link {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 6px 8px;
+    font-size: .88rem;
+  }
+}
+
+/* Mobile and narrow tablets: menu opens immediately below the sticky header. */
+@media (max-width: 1023px) {
+  .site-header .navbar {
+    width: calc(100% - 28px);
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .site-header .brand { flex: 0 1 auto; min-width: 0; }
+  .site-header .nav-actions { display: inline-flex; flex: none; gap: 7px; margin-inline-start: auto; }
   .site-header .nav-toggle { display: inline-flex; }
   .site-header .nav-links {
     display: none;
@@ -1536,16 +1608,15 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
     right: 14px;
     left: 14px;
     z-index: 2;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
     width: auto;
-    max-height: 70vh;
     max-height: min(72dvh, calc(100dvh - 84px));
     margin: 0;
     padding: 10px;
     overflow-y: auto;
     overscroll-behavior: contain;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
     border: 1px solid var(--line);
     border-radius: 16px;
     background: var(--paper);
@@ -1565,7 +1636,7 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
 }
 @media (max-width: 600px) {
   .site-header .navbar { min-height: 64px; gap: 8px; }
-  .site-header .brand { gap: 8px; min-width: 0; }
+  .site-header .brand { gap: 8px; }
   .site-header .brand-name { font-size: .94rem; }
   .site-header .brand-mark { flex-shrink: 0; width: 34px; height: 34px; }
   .site-header .brand-logo { max-width: 100%; height: auto; }
