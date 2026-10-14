@@ -23,6 +23,19 @@ const links = {
 
 const icon = (name, size = 22) => {
   const paths = {
+    ruler: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h5M9 11h3M9 15h5"/>',
+    pie: '<path d="M12 2a10 10 0 1 0 10 10H12V2Z"/><path d="M12 2a10 10 0 0 1 10 10H12V2Z"/>',
+    droplet: '<path d="M12 3c-3 4-7 8.1-7 12a7 7 0 0 0 14 0c0-3.9-4-8-7-12Z"/>',
+    target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+    utensils: '<path d="M4 3v7a3 3 0 0 0 6 0V3M7 3v18M19 21V3c-3 2-4 5-4 9h4"/>',
+    calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 14h3M8 17h3M15 14h2"/>',
+    heart: '<path d="M20.5 8.5c0 5-8.5 11-8.5 11s-8.5-6-8.5-11a5 5 0 0 1 8.5-3.4 5 5 0 0 1 8.5 3.4Z"/><path d="M6 12h3l2-3 2 6 2-3h3"/>',
+    book: '<path d="M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1ZM12 6v14"/>',
+    help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.7 2.7 0 1 1 4.1 2.3c-1.2.8-1.6 1.4-1.6 2.7M12 17h.01"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+    shield: '<path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',
+    file: '<path d="M6 2h8l5 5v14H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2ZM14 2v6h5M8 13h8M8 17h8"/>',
+    alert: '<circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 17h.01"/>',
     menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
     leaf: '<path d="M20 4c-8.5.2-14 3.8-14 9.5A5.5 5.5 0 0 0 11.5 19C17.2 19 19.8 12.5 20 4Z"/><path d="M5.5 18.5C8 14.7 11.2 12.2 16 10"/>',
     calculator: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 19h8"/>',
@@ -124,9 +137,9 @@ function renderShell() {
     footer.innerHTML = `<div class="container">
       <div class="footer-grid">
         <div><a class="brand" href="${pageLinks.home}"><span class="brand-mark"><img class="brand-logo" src="${rootPath}assets/calorie-mark-512.png" alt="" width="38" height="38" decoding="async"></span><span class="brand-name">${isEnglish ? 'Calorie Calculator' : 'حاسبة السعرات'}</span></a><p style="color:#b5d3c5;max-width:280px;font-size:.84rem;margin-top:18px">${ui.description}</p></div>
-        <div><div class="footer-title">${ui.toolsTitle}</div><div class="footer-links"><a href="${pageLinks.calorie}">${ui.dailyCalories}</a><a href="${pageLinks.bmi}">${ui.bmiCalc}</a><a href="${pageLinks.macros}">${ui.macrosCalc}</a><a href="${pageLinks.water}">${ui.waterCalc}</a><a href="${pageLinks.ideal}">${ui.idealCalc}</a><a href="${pageLinks.foods}">${ui.foodCalories}</a><a href="${rootPath}nutrition-planner.html">${ui.mealPlanner}</a><a href="${pageLinks.healthTools}">${ui.healthTools}</a></div></div>
-        <div><div class="footer-title">${ui.contentTitle}</div><div class="footer-links"><a href="${pageLinks.articles}">${ui.articles}</a><a href="${pageLinks.faq}">${ui.faq}</a><a href="${pageLinks.about}">${ui.about}</a><a href="${pageLinks.contact}">${ui.contact}</a></div></div>
-        <div><div class="footer-title">${ui.legalTitle}</div><div class="footer-links"><a href="${pageLinks.privacy}">${ui.privacy}</a><a href="${pageLinks.terms}">${ui.terms}</a><a href="${pageLinks.disclaimer}">${ui.disclaimer}</a></div></div>
+        <div><div class="footer-title">${ui.toolsTitle}</div><div class="footer-links"><a class="footer-link" href="${pageLinks.calorie}"><span class="footer-link-icon">${icon('calculator', 18)}</span><span class="footer-link-label">${ui.dailyCalories}</span></a><a class="footer-link" href="${pageLinks.bmi}"><span class="footer-link-icon">${icon('ruler', 18)}</span><span class="footer-link-label">${ui.bmiCalc}</span></a><a class="footer-link" href="${pageLinks.macros}"><span class="footer-link-icon">${icon('pie', 18)}</span><span class="footer-link-label">${ui.macrosCalc}</span></a><a class="footer-link" href="${pageLinks.water}"><span class="footer-link-icon">${icon('droplet', 18)}</span><span class="footer-link-label">${ui.waterCalc}</span></a><a class="footer-link" href="${pageLinks.ideal}"><span class="footer-link-icon">${icon('target', 18)}</span><span class="footer-link-label">${ui.idealCalc}</span></a><a class="footer-link" href="${pageLinks.foods}"><span class="footer-link-icon">${icon('utensils', 18)}</span><span class="footer-link-label">${ui.foodCalories}</span></a><a class="footer-link" href="${rootPath}nutrition-planner.html"><span class="footer-link-icon">${icon('calendar', 18)}</span><span class="footer-link-label">${ui.mealPlanner}</span></a><a class="footer-link" href="${pageLinks.healthTools}"><span class="footer-link-icon">${icon('heart', 18)}</span><span class="footer-link-label">${ui.healthTools}</span></a></div></div>
+        <div><div class="footer-title">${ui.contentTitle}</div><div class="footer-links"><a class="footer-link" href="${pageLinks.articles}"><span class="footer-link-icon">${icon('book', 18)}</span><span class="footer-link-label">${ui.articles}</span></a><a class="footer-link" href="${pageLinks.faq}"><span class="footer-link-icon">${icon('help', 18)}</span><span class="footer-link-label">${ui.faq}</span></a><a class="footer-link" href="${pageLinks.about}"><span class="footer-link-icon">${icon('info', 18)}</span><span class="footer-link-label">${ui.about}</span></a><a class="footer-link" href="${pageLinks.contact}"><span class="footer-link-icon">${icon('mail', 18)}</span><span class="footer-link-label">${ui.contact}</span></a></div></div>
+        <div><div class="footer-title">${ui.legalTitle}</div><div class="footer-links"><a class="footer-link" href="${pageLinks.privacy}"><span class="footer-link-icon">${icon('shield', 18)}</span><span class="footer-link-label">${ui.privacy}</span></a><a class="footer-link" href="${pageLinks.terms}"><span class="footer-link-icon">${icon('file', 18)}</span><span class="footer-link-label">${ui.terms}</span></a><a class="footer-link" href="${pageLinks.disclaimer}"><span class="footer-link-icon">${icon('alert', 18)}</span><span class="footer-link-label">${ui.disclaimer}</span></a></div></div>
       </div>
       <div class="footer-bottom"><span>${ui.copyright}</span><span>${ui.note}</span></div>
     </div>`;
