@@ -1481,7 +1481,7 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   grid-row: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   justify-self: stretch;
   min-width: 0;
   width: 100%;
