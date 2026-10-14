@@ -32,7 +32,7 @@
   <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/bmi-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/bmi-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/calorie-calculator.html</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -40,6 +40,17 @@
       <image:title>حاسبة السعرات الحرارية اليومية مجانًا | BMR وTDEE</image:title>
     </image:image>
   <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/calorie-calculator.html" /><xhtml:link rel="alternate" hreflang="en" href="https://imadtbn.github.io/Calorie-calculator/en/calorie-calculator.html" /><xhtml:link rel="alternate" hreflang="x-default" href="https://imadtbn.github.io/Calorie-calculator/" /></url>
+  <url>
+    <loc>https://imadtbn.github.io/Calorie-calculator/nutrition-planner.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://imadtbn.github.io/Calorie-calculator/assets/og-calorie.svg</image:loc>
+      <image:title>حاسبة التغذية والوجبات الذكية</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://imadtbn.github.io/Calorie-calculator/nutrition-planner.html" />
+  </url>
   <url>
     <loc>https://imadtbn.github.io/Calorie-calculator/contact.html</loc>
     <lastmod>2026-08-21</lastmod>
