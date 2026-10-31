@@ -196,6 +196,81 @@ async function shareResult(text) {
   try { await navigator.clipboard.writeText(text); alert('تم نسخ النتيجة. يمكنك مشاركتها الآن.'); } catch (_) { alert(text); }
 }
 
+function mountPageShare() {
+  const main = document.querySelector('main');
+  if (!main || main.querySelector('[data-page-share]')) return;
+
+  const hero = main.querySelector(':scope > .hero, :scope > .page-hero, :scope > .article-hero, :scope > [data-page-hero]');
+  const anchor = hero || main.firstElementChild;
+  if (!anchor) return;
+
+  const isEnglish = getCurrentLanguage().code === 'en';
+  const title = main.querySelector('h1')?.textContent?.trim() || document.title;
+  const canonical = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
+  const ui = isEnglish ? {
+    label: 'Share this page',
+    aria: 'Share this page',
+    copied: 'Page link copied. You can share it now.',
+    failed: 'Unable to copy automatically. Copy this link:',
+    shared: 'Choose an app to share this page.',
+    copyFailed: 'Sharing is not available in this browser.'
+  } : {
+    label: 'مشاركة الصفحة',
+    aria: 'مشاركة الصفحة',
+    copied: 'تم نسخ رابط الصفحة، يمكنك مشاركته الآن.',
+    failed: 'تعذر نسخ الرابط تلقائيًا. انسخ الرابط التالي:',
+    shared: 'اختر تطبيقًا لمشاركة هذه الصفحة.',
+    copyFailed: 'المشاركة غير متاحة في هذا المتصفح.'
+  };
+
+  const section = document.createElement('section');
+  section.className = 'page-share';
+  section.dataset.pageShare = '';
+  section.setAttribute('aria-label', ui.aria);
+  section.innerHTML = `<div class="container page-share-inner"><button class="page-share-button" type="button" aria-label="${ui.aria}">${icon('share', 20)}<span>${ui.label}</span></button><p class="page-share-status" role="status" aria-live="polite"></p></div>`;
+
+  const button = section.querySelector('.page-share-button');
+  const status = section.querySelector('.page-share-status');
+  const copyLink = async () => {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(canonical);
+      } else {
+        const field = document.createElement('textarea');
+        field.value = canonical;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        field.style.pointerEvents = 'none';
+        document.body.append(field);
+        field.select();
+        const copied = document.execCommand('copy');
+        field.remove();
+        if (!copied) throw new Error('Clipboard copy failed');
+      }
+      status.textContent = ui.copied;
+    } catch (_) {
+      status.textContent = `${ui.failed} ${canonical}`;
+    }
+  };
+
+  button.addEventListener('click', async () => {
+    button.classList.remove('is-pulsing');
+    if (navigator.share) {
+      try {
+        await navigator.share({ title, text: title, url: canonical });
+        status.textContent = ui.shared;
+        return;
+      } catch (error) {
+        if (error && error.name === 'AbortError') return;
+      }
+    }
+    await copyLink();
+  });
+
+  anchor.insertAdjacentElement('afterend', section);
+}
+
 function mountArticleShare() {
   const isPublishedArticle = document.body.dataset.page === 'articles' && /\/articles\/[^/]+\.html$/.test(window.location.pathname);
   if (!isPublishedArticle || document.querySelector('.article-share')) return;
@@ -399,6 +474,7 @@ const TOOL_GROUPS = appLocale === 'en' ? { 'infant-growth-calculator':'Children'
 function mountDirectorySearch() { const page = document.body.dataset.page; const isArticleIndex = page === 'articles' && !window.location.pathname.includes('/articles/'); const isToolIndex = page === 'health-tools'; if (!isArticleIndex && !isToolIndex) return; const toolbar = document.querySelector('[data-directory-search]'); const grid = document.querySelector(isToolIndex ? '.health-tools-grid' : '.article-grid'); if (!toolbar || !grid) return; const cards = [...grid.children]; const input = toolbar.querySelector('input'); const status = toolbar.querySelector('[data-directory-status]'); const empty = toolbar.querySelector('[data-directory-empty]'); const clear = toolbar.querySelector('[data-directory-clear]'); const buttons = [...toolbar.querySelectorAll('[data-filter]')]; cards.forEach(card => { const href = card.getAttribute('href') || ''; const slug = href.split('/').pop().replace(/\.html$/, ''); const category = isToolIndex ? (TOOL_GROUPS[slug] || 'الصحة العامة') : (card.querySelector('.article-art span')?.textContent || 'مقالات'); card.dataset.searchText = normalizeSearch(card.textContent); card.dataset.category = normalizeSearch(category); }); let active = 'all'; const render = () => { const query = normalizeSearch(input.value); let count = 0; cards.forEach(card => { const matchesText = !query || matchesSearchText(card.dataset.searchText, query); const matchesFilter = active === 'all' || card.dataset.category.includes(normalizeSearch(active)); const visible = matchesText && matchesFilter; card.hidden = !visible; if (visible) count += 1; }); status.textContent = query || active !== 'all' ? `${formatNumber(count)} ${appLocale === 'en' ? 'visible results' : 'نتيجة ظاهرة'}` : `${formatNumber(count)} ${appLocale === 'en' ? 'tools or articles available' : 'أداة أو مقال متاح'}`; empty.hidden = count !== 0; clear.hidden = !query; buttons.forEach(button => button.classList.toggle('active', button.dataset.filter === active)); }; input.addEventListener('input', render); clear.addEventListener('click', () => { input.value = ''; input.focus(); render(); }); buttons.forEach(button => button.addEventListener('click', () => { active = button.dataset.filter; render(); })); render(); }
 window.CalorieApp = { links, icon, formatNumber, getNumber, showError, clearError, validRange, shareResult, LOCAL_SEARCH_INDEX, normalizeSearch, matchesSearchText };
 renderShell();
+mountPageShare();
 mountHomeSearch();
 mountDirectorySearch();
 observeReveals();
