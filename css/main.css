@@ -1670,3 +1670,73 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .site-header .language-current,
   .site-header .language-chevron { display: none; }
 }
+
+
+/* Universal page-share action: centered below each page hero. */
+.page-share {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  padding: 18px 0 10px;
+  overflow: clip;
+}
+.page-share-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+}
+.page-share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 100%;
+  min-height: 48px;
+  padding: 11px 24px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(18,72,61,.18);
+  font-size: .96rem;
+  font-weight: 800;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  animation: page-share-pulse 2.8s ease-in-out 1.5s 3;
+}
+.page-share-button svg { display: block; flex: 0 0 auto; }
+.page-share-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+  box-shadow: 0 12px 25px rgba(18,72,61,.24);
+}
+.page-share-button:active { transform: translateY(0) scale(.98); }
+.page-share-button:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 4px;
+}
+.page-share-status {
+  min-height: 1.4em;
+  max-width: 100%;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: .78rem;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+@keyframes page-share-pulse {
+  0%, 100% { box-shadow: 0 8px 20px rgba(18,72,61,.18); }
+  50% { box-shadow: 0 8px 24px rgba(29,105,89,.32), 0 0 0 5px rgba(191,226,210,.42); }
+}
+@media (max-width: 600px) {
+  .page-share { padding: 14px 0 8px; }
+  .page-share-button { min-height: 46px; padding: 10px 20px; font-size: .92rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-share-button { animation: none; transition: none; }
+}
