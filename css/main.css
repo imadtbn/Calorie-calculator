@@ -342,25 +342,25 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .contact-topic { padding: 13px 0; }
 }
 
-/* Unified AdSense presentation: labeled, reserved, responsive, and non-intrusive. */
+/* Unified AdSense presentation: responsive and isolated from page layout. */
+.ad-container {
   position: relative;
   isolation: isolate;
-  display: grid;
-  justify-items: stretch;
-  align-content: start;
-  width: min(1160px, calc(100% - 36px));
-  min-height: 112px;
-  margin: 30px auto;
-  padding: 12px 0;
-  overflow: hidden;
-  color: var(--ink-soft);
-  text-align: center;
-  background: color-mix(in srgb, var(--paper) 92%, var(--mint) 8%);
-  border-block: 1px solid color-mix(in srgb, var(--line) 75%, var(--mint-deep) 25%);
+  display: block;
+  box-sizing: border-box;
+  inline-size: min(100%, 970px);
+  max-inline-size: calc(100vw - 24px);
+  min-inline-size: 0;
+  min-height: 0;
+  margin: clamp(1.25rem, 3vw, 2rem) auto;
+  padding: 8px 0;
+  overflow: clip;
+  contain: layout paint;
+  background: transparent;
   border-radius: 12px;
-  content-visibility: auto;
-  contain-intrinsic-size: 112px;
 }
+.ad-container::before {
+  content: "إعلان";
   display: block;
   min-height: 14px;
   margin-bottom: 6px;
@@ -369,31 +369,64 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: .04em;
+  text-align: center;
 }
+.ad-container .adsbygoogle {
   display: block;
-  width: 100%;
+  box-sizing: border-box;
+  inline-size: 100% !important;
+  max-inline-size: 100% !important;
+  min-inline-size: 0;
   min-height: 76px;
-  max-width: 100%;
+  margin-inline: auto;
   overflow: hidden;
 }
-  width: 100%;
-  min-height: 118px;
-  margin: 28px 0;
-  padding: 10px 0;
-  background: transparent;
-  border-radius: 0;
+.ad-container iframe,
+.ad-container ins,
+.ad-container img {
+  box-sizing: border-box;
+  max-width: 100% !important;
 }
-  width: 100%;
-  min-height: 280px;
-  margin: 0;
+.ad-container[data-ad-disabled="true"] {
+  display: none;
+}
+.ad-container--wide {
+  inline-size: 100%;
+  max-inline-size: 970px;
+  margin-block: 28px;
+  padding-block: 8px;
+}
+.ad-container--panel {
   padding: 12px;
   background: color-mix(in srgb, var(--mint) 36%, var(--paper) 64%);
   border: 1px dashed var(--mint-deep);
   border-radius: 14px;
 }
+.ad-container--sticky {
   position: sticky;
   top: 100px;
   align-self: start;
+}
+@media (max-width: 640px) {
+  .ad-container {
+    inline-size: calc(100% - 20px);
+    max-inline-size: calc(100vw - 20px);
+    margin-block: 18px;
+    padding-block: 6px;
+    border-radius: 10px;
+  }
+  .ad-container .adsbygoogle {
+    min-height: 90px;
+  }
+  .ad-container--panel {
+    padding: 8px;
+  }
+}
+@media (max-width: 360px) {
+  .ad-container {
+    inline-size: calc(100% - 16px);
+    max-inline-size: calc(100vw - 16px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1422,28 +1455,36 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .latest-tool-icon { width: 40px; height: 40px; border-radius: 13px; }
 }
 
-/* Centralized advertising slots: reserved only when a real AdSense slot is configured. */
+/* Ad containers must never widen the document on small screens. */
 .ad-container {
   width: min(100%, 970px);
-  min-height: 0;
-  margin: clamp(1.25rem, 3vw, 2.25rem) auto;
-  overflow: hidden;
-  border-radius: var(--radius, 22px);
-  background: transparent;
+  max-width: calc(100vw - 24px);
+  min-width: 0;
+  margin-inline: auto;
+  overflow: clip;
+  box-sizing: border-box;
 }
-
 .ad-container:not([data-ad-disabled="true"]) .adsbygoogle {
   display: block;
-  min-height: 90px;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+  box-sizing: border-box;
 }
-
-.ad-container[data-ad-disabled="true"] {
-  display: none;
+.ad-container iframe,
+.ad-container ins,
+.ad-container img {
+  max-width: 100% !important;
+  box-sizing: border-box;
 }
-
 @media (max-width: 640px) {
+  .ad-container {
+    width: calc(100% - 20px);
+    max-width: calc(100vw - 20px);
+    margin-block: 18px;
+  }
   .ad-container:not([data-ad-disabled="true"]) .adsbygoogle {
-    min-height: 100px;
+    min-height: 90px;
   }
 }
 
