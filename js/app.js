@@ -197,15 +197,11 @@ async function shareResult(text) {
 }
 
 function mountPageShare() {
-  const main = document.querySelector('main');
-  if (!main || main.querySelector('[data-page-share]')) return;
-
-  const hero = main.querySelector(':scope > .hero, :scope > .page-hero, :scope > .article-hero, :scope > [data-page-hero]');
-  const anchor = hero || main.firstElementChild;
-  if (!anchor) return;
+  const header = document.querySelector('[data-site-header]');
+  if (!header || document.querySelector('[data-page-share]')) return;
 
   const isEnglish = getCurrentLanguage().code === 'en';
-  const title = main.querySelector('h1')?.textContent?.trim() || document.title;
+  const title = document.querySelector('main h1')?.textContent?.trim() || document.title;
   const canonical = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
   const ui = isEnglish ? {
     label: 'Share this page',
@@ -268,7 +264,7 @@ function mountPageShare() {
     await copyLink();
   });
 
-  anchor.insertAdjacentElement('afterend', section);
+  header.insertAdjacentElement('afterend', section);
 }
 
 function mountArticleShare() {
