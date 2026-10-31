@@ -432,26 +432,6 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
 @media (prefers-reduced-motion: reduce) {
 }
 
-@media (max-width: 650px) {
-    width: calc(100% - 28px);
-    min-height: 86px;
-    margin: 22px auto;
-    padding: 8px 0;
-    border-radius: 10px;
-    contain-intrinsic-size: 86px;
-  }
-    width: 100%;
-    min-height: 92px;
-    margin: 22px 0;
-    padding: 7px 0;
-  }
-    width: 100%;
-    min-height: 190px;
-    margin: 0 0 18px;
-    padding: 8px;
-  }
-}
-
 /* Brand icon asset */
 .brand-mark {
   overflow: hidden;
