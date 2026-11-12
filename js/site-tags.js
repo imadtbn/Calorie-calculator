@@ -174,6 +174,8 @@
   };
 
   const start = () => {
+    // Install the placement guard before analytics/tag-manager scripts can inject ads.
+    guardAdPlacements();
     loadGoogleTagManager(CONFIG.gtmId);
     // هذا الوضع يعيد تشغيل المقطع المقدم مركزيًا حتى يظهر معرف GA4 ويعمل القياس.
     // عند ضبط GA4 داخل GTM، غيّر analyticsMode إلى gtm لإيقاف المسار المباشر.
