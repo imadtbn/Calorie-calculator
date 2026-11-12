@@ -342,6 +342,11 @@ details p { color: var(--ink-soft); padding: 0 0 18px; margin: 0; font-size: .9r
   .contact-topic { padding: 13px 0; }
 }
 
+/* Hide any Google-injected placement that is not inside an approved ad container. */
+[data-ad-outside-container="true"] {
+  display: none !important;
+}
+
 /* Unified AdSense presentation: responsive and isolated from page layout. */
 .ad-container {
   position: relative;
