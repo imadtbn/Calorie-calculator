@@ -95,8 +95,48 @@
     container.setAttribute('aria-hidden', 'true');
   };
 
+  // Google Auto ads (including side-rail/header placements) are not allowed.
+  // Only ad units explicitly wrapped by our own [data-ad-container] are permitted.
+  const hideAdsOutsideContainers = root => {
+    if (!root || !root.querySelectorAll) return;
+    const selectors = [
+      'ins.adsbygoogle',
+      '.google-auto-placed',
+      'iframe[id^="google_ads_iframe"]',
+      'div[id^="google_ads_iframe"]',
+      'iframe[src*="googlesyndication.com"]',
+      'iframe[src*="doubleclick.net"]'
+    ].join(',');
+    const candidates = [];
+    if (root.matches?.(selectors)) candidates.push(root);
+    candidates.push(...root.querySelectorAll(selectors));
+    candidates.forEach(candidate => {
+      if (candidate.closest('[data-ad-container]')) return;
+      const wrapper = candidate.closest('.google-auto-placed') || candidate;
+      if (wrapper.closest('[data-ad-container]')) return;
+      wrapper.dataset.adOutsideContainer = 'true';
+      wrapper.setAttribute('aria-hidden', 'true');
+      wrapper.style.setProperty('display', 'none', 'important');
+    });
+  };
+
+  const guardAdPlacements = () => {
+    hideAdsOutsideContainers(document);
+    if (window.__calorieAdPlacementObserver) return;
+    const observer = new MutationObserver(records => {
+      records.forEach(record => {
+        record.addedNodes.forEach(node => {
+          if (node.nodeType === Node.ELEMENT_NODE) hideAdsOutsideContainers(node);
+        });
+      });
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+    window.__calorieAdPlacementObserver = observer;
+  };
+
   const loadAdSense = () => {
-    const ads = [...document.querySelectorAll('ins.adsbygoogle')];
+    guardAdPlacements();
+    const ads = [...document.querySelectorAll('[data-ad-container] ins.adsbygoogle')];
     if (!ads.length) return;
     if (!isConfigured(CONFIG.adsenseClient)) {
       ads.forEach(ad => markAdDisabled(ad.closest('[data-ad-container]')));
