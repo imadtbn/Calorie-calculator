@@ -26,5 +26,5 @@ const localeText = (arabic, english) => SITE_LOCALE === 'en' ? english : arabic;
     document.getElementById('food-count').textContent = `${rows.length} من ${foods.length} أطعمة معروضة`;
   }
   search.addEventListener('input', render); filter.addEventListener('change', render); render();
-  fetch(new URL('../data/foods.json', document.currentScript.src).href).then(response => response.ok ? response.json() : Promise.reject()).then(data => { if (Array.isArray(data) && data.length) { foods = data; render(); } }).catch(() => {});
+  fetch(new URL(SITE_LOCALE === 'en' ? '../en/data/foods.json' : '../data/foods.json', document.currentScript.src).href).then(response => response.ok ? response.json() : Promise.reject()).then(data => { if (Array.isArray(data) && data.length) { foods = data; render(); } }).catch(() => {});
 })();
