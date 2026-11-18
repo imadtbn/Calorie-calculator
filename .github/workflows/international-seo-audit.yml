@@ -1,0 +1,29 @@
+name: International SEO audit
+
+on:
+  push:
+    branches: [main, "fix/seo-international-audit"]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  seo-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate sitemap, canonical, hreflang and structured data
+        run: python tools/audit_site_seo.py --json seo-audit-report.json
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: international-seo-audit
+          path: seo-audit-report.json
